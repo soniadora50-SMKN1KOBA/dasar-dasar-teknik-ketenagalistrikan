@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UJIAN AKHIR SEMESTER (UAS) - Dasar Dasar Teknik Ketenagalistrikan</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+        .hots-badge {
+            background: linear-gradient(135deg, #dc2626, #f59e0b);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        .lots-badge {
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+        .section-divider {
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            height: 1px;
+            margin: 3rem 0;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="15.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section UAS -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-luxury-gold/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-red-500/50 rounded-full bg-red-500/10">
+                <span class="text-red-400 text-xs font-bold tracking-[0.2em] uppercase">BAB 6 • PERTEMUAN 16 • EVALUASI AKHIR</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                UJIAN AKHIR SEMESTER <br>
+                <span class="text-gradient-gold">Dasar-Dasar Teknik Ketenagalistrikan</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Evaluasi komprehensif materi Pertemuan 1-7 dan 9-15. Menguji pemahaman konseptual, aplikasi, analisis, dan evaluasi siswa terhadap seluruh kompetensi dasar ketenagalistrikan Fase E Semester 1.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
+                <div class="glass-card p-4 rounded-lg">
+                    <p class="text-2xl font-serif font-bold text-luxury-gold">70</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider">Total Soal</p>
+                </div>
+                <div class="glass-card p-4 rounded-lg">
+                    <p class="text-2xl font-serif font-bold text-luxury-gold">13</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider">Pertemuan</p>
+                </div>
+                <div class="glass-card p-4 rounded-lg">
+                    <p class="text-2xl font-serif font-bold text-luxury-gold">100</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider">Skor Maksimal</p>
+                </div>
+                <div class="glass-card p-4 rounded-lg">
+                    <p class="text-2xl font-serif font-bold text-luxury-gold">120</p>
+                    <p class="text-xs text-gray-400 uppercase tracking-wider">Menit</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#data-siswa" class="px-8 py-3 bg-red-500 text-white font-bold rounded-sm hover:bg-red-600 transition-all duration-300 shadow-lg shadow-red-500/20">
+                    <i class="fas fa-clipboard-check mr-2"></i> Mulai Ujian
+                </a>
+                <a href="#petunjuk" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-info-circle mr-2"></i> Baca Petunjuk
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Petunjuk Ujian -->
+        <section id="petunjuk" class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-info-circle text-luxury-gold mr-3"></i>Petunjuk Pengerjaan</h2>
+            <div class="prose prose-invert max-w-none">
+                <ol class="list-decimal list-inside text-gray-300 space-y-2 ml-4">
+                    <li>Isi <strong>data diri</strong> (Nama, NIS, Kelas, Tanggal) dengan lengkap dan benar.</li>
+                    <li>Ujian terdiri dari <strong>2 bagian</strong>: Pilihan Ganda (35 soal: 10 LOTS + 25 HOTS) dan Pilihan Ganda Kompleks (35 soal dengan pilihan a-e).</li>
+                    <li>Pada <strong>Pilihan Ganda</strong>, pilih <strong>satu jawaban paling benar</strong>. Soal bertanda <span class="hots-badge">HOTS</span> menuntut analisis tingkat tinggi (C4-C6), soal <span class="lots-badge">LOTS</span> menguji pemahaman dasar (C1-C3).</li>
+                    <li>Pada <strong>Pilihan Ganda Kompleks</strong>, Anda dapat memilih <strong>lebih dari satu jawaban benar</strong> dari pilihan a-e (centang semua yang berlaku).</li>
+                    <li>Kerjakan dengan <strong>jujur dan mandiri</strong>. Kecurangan akan berdampak pada integritas akademik Anda.</li>
+                    <li>Periksa kembali jawaban sebelum menekan tombol <strong>"KIRIM JAWABAN"</strong>.</li>
+                    <li>Waktu pengerjaan: <strong>120 menit</strong>. Kelola waktu dengan bijak.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Form Ujian -->
+        <form id="uasForm" onsubmit="event.preventDefault(); hitungNilaiUAS();">
+            
+            <!-- Data Siswa -->
+            <section id="data-siswa" class="glass-card p-6 rounded-xl mb-8">
+                <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2"><i class="fas fa-user-graduate mr-2"></i>Data Siswa</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                        <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                        <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal Ujian <span class="text-red-500">*</span></label>
+                        <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                        <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                            <option value="">Pilih Kelas</option>
+                            <option value="X TPL 1">X TPL 1</option>
+                            <option value="X TPL 2">X TPL 2</option>
+                            <option value="X TITL 1">X TITL 1</option>
+                            <option value="X TITL 2">X TITL 2</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- BAGIAN A: PILIHAN GANDA (35 SOAL) -->
+            <!-- ========================================== -->
+            <section class="glass-card p-6 rounded-xl mb-8 border-l-4 border-luxury-gold">
+                <div class="flex items-center justify-between mb-6 border-b border-gray-700 pb-2">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold"><i class="fas fa-list-ol mr-2"></i>BAGIAN A: Pilihan Ganda (35 Soal)</h3>
+                    <span class="text-xs text-gray-400">10 LOTS + 25 HOTS</span>
+                </div>
+                <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Pilih SATU jawaban paling benar untuk setiap soal!</p>
+
+                <div class="space-y-6">
+                    
+                    <!-- ===== PERTEMUAN 1: Wawasan Dunia Kerja ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 1: WAWASAN DUNIA KERJA</span>
+                    </div>
+
+                    <!-- PG 1 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">1. <span class="lots-badge">LOTS</span> Bidang pekerjaan ketenagalistrikan yang bertugas menyalurkan energi listrik dari pembangkit ke gardu induk dengan tegangan tinggi disebut...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg1" value="a" class="mr-3 accent-luxury-gold"> a. Distribusi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg1" value="b" class="mr-3 accent-luxury-gold"> b. Transmisi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg1" value="c" class="mr-3 accent-luxury-gold"> c. Instalasi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg1" value="d" class="mr-3 accent-luxury-gold"> d. Pemeliharaan</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 2 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">2. <span class="hots-badge">HOTS</span> Seorang siswa SMK ingin membangun karir di bidang ketenagalistrikan yang berfokus pada pemasangan sistem kelistrikan gedung bertingkat. Berdasarkan peta profesi, jalur karir paling tepat yang harus ia tempuh adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg2" value="a" class="mr-3 accent-luxury-gold"> a. Operator pembangkit → Teknisi transmisi → Insinyur sistem</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg2" value="b" class="mr-3 accent-luxury-gold"> b. Instalatir listrik → Kontraktor MEP → Sertifikasi BNSP Juru Instalasi Listrik</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg2" value="c" class="mr-3 accent-luxury-gold"> c. Teknisi jaringan distribusi → Operator gardu induk → Manajer PLN</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg2" value="d" class="mr-3 accent-luxury-gold"> d. Teknisi panel otomasi → Programmer PLC → Integrator sistem SCADA</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 3 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">3. <span class="hots-badge">HOTS</span> Di era digital, seorang teknisi listrik tidak hanya dituntut menguasai instalasi konvensional, tetapi juga harus memahami IoT dan Smart Grid. Implikasi paling signifikan dari transformasi ini terhadap kompetensi teknisi adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg3" value="a" class="mr-3 accent-luxury-gold"> a. Teknisi tidak lagi perlu memahami teori dasar listrik</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg3" value="b" class="mr-3 accent-luxury-gold"> b. Teknisi harus menambah kompetensi IT, analisis data, dan pemrograman dasar</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg3" value="c" class="mr-3 accent-luxury-gold"> c. Pekerjaan teknisi akan sepenuhnya digantikan oleh robot</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg3" value="d" class="mr-3 accent-luxury-gold"> d. K3LH tidak lagi relevan dalam sistem digital</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 2: Proses Bisnis ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 2: PROSES BISNIS INDUSTRI</span>
+                    </div>
+
+                    <!-- PG 4 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">4. <span class="lots-badge">LOTS</span> Tahap pertama yang paling krusial dalam proses bisnis instalasi ketenagalistrikan sebelum membeli material adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg4" value="a" class="mr-3 accent-luxury-gold"> a. Perencanaan dan perhitungan beban</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg4" value="b" class="mr-3 accent-luxury-gold"> b. Langsung pemasangan kabel</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg4" value="c" class="mr-3 accent-luxury-gold"> c. Pengujian sistem</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg4" value="d" class="mr-3 accent-luxury-gold"> d. Pembersihan area kerja</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 5 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">5. <span class="hots-badge">HOTS</span> Sebuah pabrik baru akan memasang mesin produksi dengan daya total 50 kW. Kontraktor langsung membeli kabel dan MCB tanpa melakukan perhitungan beban terlebih dahulu. Risiko paling fatal yang mungkin terjadi adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg5" value="a" class="mr-3 accent-luxury-gold"> a. Biaya instalasi menjadi lebih mahal</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg5" value="b" class="mr-3 accent-luxury-gold"> b. Kabel dan MCB tidak sesuai kapasitas, berpotensi overheating dan kebakaran</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg5" value="c" class="mr-3 accent-luxury-gold"> c. Mesin tidak dapat dioperasikan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg5" value="d" class="mr-3 accent-luxury-gold"> d. Tagihan listrik menjadi lebih murah</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 6 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">6. <span class="hots-badge">HOTS</span> Perbedaan mendasar antara pemeliharaan preventif dan korektif terletak pada...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg6" value="a" class="mr-3 accent-luxury-gold"> a. Biaya yang dikeluarkan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg6" value="b" class="mr-3 accent-luxury-gold"> b. Waktu pelaksanaan: preventif dilakukan sebelum kerusakan, korektif setelah kerusakan terjadi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg6" value="c" class="mr-3 accent-luxury-gold"> c. Jumlah teknisi yang terlibat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg6" value="d" class="mr-3 accent-luxury-gold"> d. Jenis peralatan yang digunakan</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 3: Perkembangan Teknologi ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 3: PERKEMBANGAN TEKNOLOGI</span>
+                    </div>
+
+                    <!-- PG 7 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">7. <span class="lots-badge">LOTS</span> Sistem kontrol industri yang memungkinkan operator memantau dan mengendalikan proses dari jarak jauh disebut...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg7" value="a" class="mr-3 accent-luxury-gold"> a. MCB</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg7" value="b" class="mr-3 accent-luxury-gold"> b. SCADA</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg7" value="c" class="mr-3 accent-luxury-gold"> c. kWh Meter</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg7" value="d" class="mr-3 accent-luxury-gold"> d. Transformator</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 8 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">8. <span class="hots-badge">HOTS</span> PLN memasang Smart Meter di ribuan rumah tangga. Dampak paling signifikan dari teknologi ini terhadap model bisnis PLN adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg8" value="a" class="mr-3 accent-luxury-gold"> a. Pelanggan tidak perlu membayar listrik lagi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg8" value="b" class="mr-3 accent-luxury-gold"> b. Transisi dari pencatatan manual ke monitoring real-time berbasis data, memungkinkan tarif dinamis dan deteksi anomali otomatis</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg8" value="c" class="mr-3 accent-luxury-gold"> c. Pelanggan dapat menghasilkan listrik sendiri tanpa izin</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg8" value="d" class="mr-3 accent-luxury-gold"> d. Jaringan listrik tidak memerlukan pemeliharaan lagi</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 9 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">9. <span class="hots-badge">HOTS</span> Seorang teknisi senior menolak mempelajari SCADA dan HMI dengan alasan "sudah terlalu tua untuk belajar teknologi baru". Evaluasi paling tepat terhadap sikap ini adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg9" value="a" class="mr-3 accent-luxury-gold"> a. Sikapnya dapat dimaklumi karena teknologi baru memang sulit</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg9" value="b" class="mr-3 accent-luxury-gold"> b. Sikapnya berisiko membuat ia tertinggal secara profesional dan kehilangan daya saing di industri yang terus bertransformasi digital</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg9" value="c" class="mr-3 accent-luxury-gold"> c. Ia harus segera dipromosikan ke posisi manajerial</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg9" value="d" class="mr-3 accent-luxury-gold"> d. Teknologi SCADA hanya untuk insinyur, bukan teknisi</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 4: Profesi & Technopreneurship ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 4: PROFESI & TECHNOPRENEURSHIP</span>
+                    </div>
+
+                    <!-- PG 10 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">10. <span class="lots-badge">LOTS</span> Lembaga yang berwenang memberikan sertifikasi kompetensi profesi di Indonesia adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg10" value="a" class="mr-3 accent-luxury-gold"> a. Kemendikbud</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg10" value="b" class="mr-3 accent-luxury-gold"> b. BNSP</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg10" value="c" class="mr-3 accent-luxury-gold"> c. PLN</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg10" value="d" class="mr-3 accent-luxury-gold"> d. BPJS</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 11 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">11. <span class="hots-badge">HOTS</span> Seorang lulusan SMK di Pasaman Barat ingin membuka usaha technopreneurship yang memanfaatkan potensi lokal. Ide usaha paling tepat dan berkelanjutan adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg11" value="a" class="mr-3 accent-luxury-gold"> a. Membuka rental game online</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg11" value="b" class="mr-3 accent-luxury-gold"> b. Jasa instalasi PLTS untuk pompa irigasi pertanian dan cold storage UMKM pangan lokal</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg11" value="c" class="mr-3 accent-luxury-gold"> c. Menjadi dropshipper produk elektronik impor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg11" value="d" class="mr-3 accent-luxury-gold"> d. Membuka warung kopi tanpa inovasi teknologi</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 12 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">12. <span class="hots-badge">HOTS</span> Seorang teknisi memiliki kompetensi teknis yang sangat baik, tetapi lemah dalam komunikasi dan kerja sama tim. Dampak paling signifikan terhadap karirnya adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg12" value="a" class="mr-3 accent-luxury-gold"> a. Ia akan cepat dipromosikan karena keahliannya</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg12" value="b" class="mr-3 accent-luxury-gold"> b. Ia akan kesulitan bekerja dalam proyek tim, sulit dipercaya pelanggan, dan karirnya stagnan meski jago teknis</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg12" value="c" class="mr-3 accent-luxury-gold"> c. Soft skill tidak penting di dunia industri</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg12" value="d" class="mr-3 accent-luxury-gold"> d. Ia akan otomatis menjadi wirausahawan sukses</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 5: Kecakapan Kerja & Budaya 5R ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 5: KECAKAPAN KERJA & BUDAYA 5R</span>
+                    </div>
+
+                    <!-- PG 13 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">13. <span class="lots-badge">LOTS</span> Budaya kerja 5R yang berasal dari Jepang dikenal juga dengan istilah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg13" value="a" class="mr-3 accent-luxury-gold"> a. 5W</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg13" value="b" class="mr-3 accent-luxury-gold"> b. 5S (Seiri, Seiton, Seiso, Seiketsu, Shitsuke)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg13" value="c" class="mr-3 accent-luxury-gold"> c. 5K</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg13" value="d" class="mr-3 accent-luxury-gold"> d. 5M</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 14 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">14. <span class="hots-badge">HOTS</span> Sebuah perusahaan menerapkan 5R tetapi banyak karyawan resisten dengan alasan "memperlambat pekerjaan". Strategi paling efektif untuk mengatasi resistensi ini adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg14" value="a" class="mr-3 accent-luxury-gold"> a. Memberikan sanksi tegas kepada yang tidak patuh</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg14" value="b" class="mr-3 accent-luxury-gold"> b. Mengabaikan keluhan dan memaksakan aturan dari atas</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg14" value="c" class="mr-3 accent-luxury-gold"> c. Sosialisasi manfaat 5R, libatkan karyawan dalam perumusan SOP, dan berikan reward kepada tim teladan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg14" value="d" class="mr-3 accent-luxury-gold"> d. Batalkan program 5R karena tidak cocok</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 15 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">15. <span class="hots-badge">HOTS</span> Dua bengkel memiliki peralatan yang sama lengkapnya. Bengkel A menerapkan 5R secara konsisten, Bengkel B tidak. Setelah 6 bulan, Bengkel A mengalami zero accident dan produktivitas naik 30%, sementara Bengkel B mengalami 3 kecelakaan kecil dan banyak alat hilang. Analisis paling tepat adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg15" value="a" class="mr-3 accent-luxury-gold"> a. Keberhasilan Bengkel A hanya karena faktor keberuntungan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg15" value="b" class="mr-3 accent-luxury-gold"> b. Budaya kerja 5R terbukti secara empiris meningkatkan keselamatan, efisiensi, dan kualitas—investasi jangka panjang yang jauh lebih menguntungkan daripada biaya awal penerapannya</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg15" value="c" class="mr-3 accent-luxury-gold"> c. 5R hanya cocok untuk perusahaan besar, bukan bengkel kecil</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg15" value="d" class="mr-3 accent-luxury-gold"> d. Bengkel B lebih produktif karena tidak terbebani aturan</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 6: K3LH ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 6: K3LH KETENAGALISTRIKAN</span>
+                    </div>
+
+                    <!-- PG 16 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">16. <span class="lots-badge">LOTS</span> Hierarki pengendalian bahaya yang paling efektif dalam mencegah kecelakaan adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg16" value="a" class="mr-3 accent-luxury-gold"> a. Penggunaan APD</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg16" value="b" class="mr-3 accent-luxury-gold"> b. Prosedur administrasi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg16" value="c" class="mr-3 accent-luxury-gold"> c. Eliminasi sumber bahaya</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg16" value="d" class="mr-3 accent-luxury-gold"> d. Pelatihan pekerja</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 17 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">17. <span class="hots-badge">HOTS</span> Seorang teknisi menemukan bahwa panel listrik di pabrik sering trip setiap kali mesin las dioperasikan bersamaan dengan peralatan lain. Analisis paling tepat untuk masalah ini adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg17" value="a" class="mr-3 accent-luxury-gold"> a. MCB rusak, ganti dengan yang lebih besar tanpa perhitungan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg17" value="b" class="mr-3 accent-luxury-gold"> b. Terjadi overload karena total daya melebihi kapasitas MCB; perlu perhitungan ulang beban dan pemilihan MCB yang sesuai</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg17" value="c" class="mr-3 accent-luxury-gold"> c. Kabel terlalu panjang, cukup perpendek kabel</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg17" value="d" class="mr-3 accent-luxury-gold"> d. Mesin las cacat pabrik, ganti mesin las</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 18 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">18. <span class="hots-badge">HOTS</span> Dalam hierarki pengendalian bahaya, APD ditempatkan pada urutan terakhir karena...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg18" value="a" class="mr-3 accent-luxury-gold"> a. APD adalah yang paling mahal</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg18" value="b" class="mr-3 accent-luxury-gold"> b. APD tidak menghilangkan sumber bahaya, hanya melindungi pemakainya—jika APD gagal, pekerja langsung terpapar bahaya</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg18" value="c" class="mr-3 accent-luxury-gold"> c. APD hanya digunakan di laboratorium</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg18" value="d" class="mr-3 accent-luxury-gold"> d. APD tidak efektif sama sekali</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 7: APD & Prosedur Kerja Aman ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 7: APD & PROSEDUR KERJA AMAN</span>
+                    </div>
+
+                    <!-- PG 19 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">19. <span class="lots-badge">LOTS</span> Kepanjangan dari LOTO dalam prosedur keselamatan kerja adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg19" value="a" class="mr-3 accent-luxury-gold"> a. Lockout/Tagout</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg19" value="b" class="mr-3 accent-luxury-gold"> b. Low Output/Total Off</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg19" value="c" class="mr-3 accent-luxury-gold"> c. Line Off/Turn Out</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg19" value="d" class="mr-3 accent-luxury-gold"> d. Load Off/Test On</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 20 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">20. <span class="hots-badge">HOTS</span> Seorang teknisi mematikan MCB, memasang gembok, dan memberi tag pada panel. Namun ia lupa melakukan verifikasi dengan multimeter. Saat menyentuh terminal, ia tersengat listrik. Evaluasi paling tepat terhadap kasus ini adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg20" value="a" class="mr-3 accent-luxury-gold"> a. Teknisi sudah benar, hanya kurang beruntung</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg20" value="b" class="mr-3 accent-luxury-gold"> b. MCB cacat pabrik</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg20" value="c" class="mr-3 accent-luxury-gold"> c. Teknisi melanggar prinsip emas LOTO: "Test Before Touch" adalah langkah wajib untuk memastikan ketiadaan tegangan sebelum menyentuh komponen</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg20" value="d" class="mr-3 accent-luxury-gold"> d. Panel tidak boleh diperbaiki dalam kondisi apa pun</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 21 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">21. <span class="hots-badge">HOTS</span> Seorang teknisi menemukan sarung tangan isolasi yang sudah kedaluwarsa masa ujinya, tetapi secara visual tampak masih bagus. Tindakan paling profesional adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg21" value="a" class="mr-3 accent-luxury-gold"> a. Tetap menggunakannya karena tampak masih bagus</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg21" value="b" class="mr-3 accent-luxury-gold"> b. Tidak menggunakannya, laporkan ke instruktur, dan minta APD yang telah lulus uji—penampilan luar bisa menipu, degradasi material tidak selalu terlihat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg21" value="c" class="mr-3 accent-luxury-gold"> c. Memakainya dengan lapisan sarung tangan kain di bawahnya</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg21" value="d" class="mr-3 accent-luxury-gold"> d. Menggunakannya hanya untuk pekerjaan tegangan rendah</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 9: Besaran & Satuan Listrik ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 9: BESARAN & SATUAN LISTRIK</span>
+                    </div>
+
+                    <!-- PG 22 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">22. <span class="lots-badge">LOTS</span> Satuan SI untuk hambatan listrik adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg22" value="a" class="mr-3 accent-luxury-gold"> a. Volt (V)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg22" value="b" class="mr-3 accent-luxury-gold"> b. Ampere (A)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg22" value="c" class="mr-3 accent-luxury-gold"> c. Ohm (Ω)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg22" value="d" class="mr-3 accent-luxury-gold"> d. Watt (W)</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 23 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">23. <span class="hots-badge">HOTS</span> Seorang teknisi magang diminta memasang MCB untuk beban 2.200W pada tegangan 220V. Ia menghitung I = P/V = 10A. Namun ia salah membeli MCB 10 mA (bukan 10 A). Saat dipasang, MCB langsung trip. Analisis paling tepat adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg23" value="a" class="mr-3 accent-luxury-gold"> a. MCB terlalu besar</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg23" value="b" class="mr-3 accent-luxury-gold"> b. Perbedaan antara "m" (milli = 10⁻³) dan tanpa prefix berarti faktor 1.000 kali; MCB 10 mA hanya mampu menahan 0,01A, jauh di bawah kebutuhan 10A</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg23" value="c" class="mr-3 accent-luxury-gold"> c. Perhitungan teknisi salah</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg23" value="d" class="mr-3 accent-luxury-gold"> d. Beban terlalu kecil</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 24 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">24. <span class="hots-badge">HOTS</span> Konversi 3,5 MΩ ke Ω yang benar adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg24" value="a" class="mr-3 accent-luxury-gold"> a. 35 Ω</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg24" value="b" class="mr-3 accent-luxury-gold"> b. 3.500 Ω</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg24" value="c" class="mr-3 accent-luxury-gold"> c. 3.500.000 Ω</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg24" value="d" class="mr-3 accent-luxury-gold"> d. 35.000.000 Ω</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 10: Hukum Ohm ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 10: HUKUM OHM</span>
+                    </div>
+
+                    <!-- PG 25 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">25. <span class="lots-badge">LOTS</span> Persamaan Hukum Ohm yang benar adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg25" value="a" class="mr-3 accent-luxury-gold"> a. V = I / R</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg25" value="b" class="mr-3 accent-luxury-gold"> b. V = I + R</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg25" value="c" class="mr-3 accent-luxury-gold"> c. V = I × R</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg25" value="d" class="mr-3 accent-luxury-gold"> d. V = I - R</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 26 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">26. <span class="hots-badge">HOTS</span> Seorang teknisi dengan tangan basah (tahanan tubuh ≈ 1.000 Ω) tidak sengaja menyentuh kabel 220V. Arus yang mengalir melalui tubuhnya adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg26" value="a" class="mr-3 accent-luxury-gold"> a. 0,22 A = 220 mA → SANGAT BERBAHAYA, dapat menyebabkan henti jantung</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg26" value="b" class="mr-3 accent-luxury-gold"> b. 2,2 A → tidak berbahaya</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg26" value="c" class="mr-3 accent-luxury-gold"> c. 22 mA → hanya kejutan ringan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg26" value="d" class="mr-3 accent-luxury-gold"> d. 0,022 A → tidak terasa</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 27 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">27. <span class="hots-badge">HOTS</span> Kabel dengan hambatan 0,5 Ω dialiri arus 20 A terus-menerus. Daya yang terbuang sebagai panas pada kabel adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg27" value="a" class="mr-3 accent-luxury-gold"> a. 10 W</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg27" value="b" class="mr-3 accent-luxury-gold"> b. 100 W</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg27" value="c" class="mr-3 accent-luxury-gold"> c. 200 W → Panas ini dapat melelehkan isolasi dan memicu kebakaran</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg27" value="d" class="mr-3 accent-luxury-gold"> d. 4.000 W</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 11: Rangkaian DC ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 11: RANGKAIAN DC</span>
+                    </div>
+
+                    <!-- PG 28 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">28. <span class="lots-badge">LOTS</span> Ciri utama rangkaian seri adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg28" value="a" class="mr-3 accent-luxury-gold"> a. Tegangan sama di semua komponen</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg28" value="b" class="mr-3 accent-luxury-gold"> b. Arus sama di semua titik, tegangan terbagi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg28" value="c" class="mr-3 accent-luxury-gold"> c. Komponen disusun bercabang</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg28" value="d" class="mr-3 accent-luxury-gold"> d. Hambatan total lebih kecil dari hambatan terkecil</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 29 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">29. <span class="hots-badge">HOTS</span> Pak Ahmad memasang 10 lampu LED hias secara seri pada adaptor 12V. Satu lampu mati, semua lampu ikut mati. Solusi paling tepat adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg29" value="a" class="mr-3 accent-luxury-gold"> a. Ganti adaptor dengan yang lebih besar</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg29" value="b" class="mr-3 accent-luxury-gold"> b. Ubah konfigurasi menjadi paralel agar setiap lampu memiliki jalur arus independen</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg29" value="c" class="mr-3 accent-luxury-gold"> c. Tambah resistor pada setiap lampu</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg29" value="d" class="mr-3 accent-luxury-gold"> d. Gunakan lampu dengan daya lebih besar</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 30 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">30. <span class="hots-badge">HOTS</span> Tiga resistor R₁=10Ω, R₂=20Ω, R₃=30Ω dirangkai paralel pada sumber 60V. Hambatan total rangkaian adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg30" value="a" class="mr-3 accent-luxury-gold"> a. 60 Ω</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg30" value="b" class="mr-3 accent-luxury-gold"> b. 30 Ω</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg30" value="c" class="mr-3 accent-luxury-gold"> c. 5,45 Ω (1/Rₜ = 1/10 + 1/20 + 1/30 = 11/60 → Rₜ = 60/11 ≈ 5,45 Ω)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg30" value="d" class="mr-3 accent-luxury-gold"> d. 10 Ω</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 12: Daya & Energi ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 12: DAYA & ENERGI LISTRIK</span>
+                    </div>
+
+                    <!-- PG 31 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">31. <span class="lots-badge">LOTS</span> Satuan energi listrik yang digunakan PLN untuk menghitung tagihan adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg31" value="a" class="mr-3 accent-luxury-gold"> a. Joule (J)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg31" value="b" class="mr-3 accent-luxury-gold"> b. Watt (W)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg31" value="c" class="mr-3 accent-luxury-gold"> c. Kilowatt-hour (kWh)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg31" value="d" class="mr-3 accent-luxury-gold"> d. Volt-ampere (VA)</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 32 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">32. <span class="hots-badge">HOTS</span> Keluarga Pak Budi menambah AC 750W yang dinyalakan 10 jam/hari. Kenaikan konsumsi energi bulanan (30 hari) adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg32" value="a" class="mr-3 accent-luxury-gold"> a. 75 kWh</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg32" value="b" class="mr-3 accent-luxury-gold"> b. 225 kWh (750W × 10 jam × 30 hari ÷ 1000 = 225 kWh)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg32" value="c" class="mr-3 accent-luxury-gold"> c. 7.500 kWh</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg32" value="d" class="mr-3 accent-luxury-gold"> d. 22,5 kWh</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 33 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">33. <span class="hots-badge">HOTS</span> Jika arus yang mengalir melalui suatu penghantar dinaikkan 2 kali lipat (hambatan tetap), maka daya yang terdisipasi akan naik sebesar...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg33" value="a" class="mr-3 accent-luxury-gold"> a. 2 kali</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg33" value="b" class="mr-3 accent-luxury-gold"> b. 4 kali (P = I²R, jika I naik 2x → P naik 2² = 4x)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg33" value="c" class="mr-3 accent-luxury-gold"> c. 8 kali</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg33" value="d" class="mr-3 accent-luxury-gold"> d. Tetap sama</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 13: Bahan & Komponen ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 13: BAHAN & KOMPONEN KETENAGALISTRIKAN</span>
+                    </div>
+
+                    <!-- PG 34 - LOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">34. <span class="lots-badge">LOTS</span> Konduktor listrik yang PALING BAIK (paling rendah hambatan jenisnya) adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg34" value="a" class="mr-3 accent-luxury-gold"> a. Tembaga</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg34" value="b" class="mr-3 accent-luxury-gold"> b. Aluminium</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg34" value="c" class="mr-3 accent-luxury-gold"> c. Perak</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg34" value="d" class="mr-3 accent-luxury-gold"> d. Emas</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 35 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">35. <span class="hots-badge">HOTS</span> Seorang kontraktor memasang kabel aluminium 2,5 mm² untuk instalasi rumah 4.500W tanpa perhitungan. Kabel panas dan isolasi meleleh. Analisis paling tepat adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg35" value="a" class="mr-3 accent-luxury-gold"> a. Kabel terlalu panjang</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg35" value="b" class="mr-3 accent-luxury-gold"> b. Aluminium memiliki ρ 1,6× lebih tinggi dari tembaga; ukuran 2,5 mm² tidak cukup untuk arus ≈20A, perlu perhitungan ampasitas sesuai PUIL</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg35" value="c" class="mr-3 accent-luxury-gold"> c. Beban rumah terlalu kecil</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg35" value="d" class="mr-3 accent-luxury-gold"> d. Tegangan PLN terlalu rendah</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 14: Komponen Elektronika ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 14: KOMPONEN DASAR ELEKTRONIKA</span>
+                    </div>
+
+                    <!-- PG 36 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">36. <span class="hots-badge">HOTS</span> Seorang siswa memasang kapasitor elektrolit (elco) dengan polaritas terbalik. Saat power supply dinyalakan, kapasitor meledak. Penyebab utama adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg36" value="a" class="mr-3 accent-luxury-gold"> a. Kapasitor terlalu besar nilainya</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg36" value="b" class="mr-3 accent-luxury-gold"> b. Polaritas terbalik menyebabkan reaksi kimia internal menghasilkan gas, tekanan meningkat, dan kapasitor meledak</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg36" value="c" class="mr-3 accent-luxury-gold"> c. Kapasitor terkena air</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg36" value="d" class="mr-3 accent-luxury-gold"> d. Kapasitor terlalu kecil ukurannya</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 37 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">37. <span class="hots-badge">HOTS</span> Resistor dengan gelang warna Coklat-Hitam-Merah-Emas memiliki nilai...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg37" value="a" class="mr-3 accent-luxury-gold"> a. 100 Ω ±5%</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg37" value="b" class="mr-3 accent-luxury-gold"> b. 1.000 Ω ±5% (1-0-×100)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg37" value="c" class="mr-3 accent-luxury-gold"> c. 10.000 Ω ±5%</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg37" value="d" class="mr-3 accent-luxury-gold"> d. 120 Ω ±5%</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 38 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">38. <span class="hots-badge">HOTS</span> LED merah (Vf=2V, I=20mA) akan dipasang pada sumber 12V. Nilai resistor pembatas yang paling tepat adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg38" value="a" class="mr-3 accent-luxury-gold"> a. 100 Ω</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg38" value="b" class="mr-3 accent-luxury-gold"> b. 470 Ω atau 560 Ω (R = (12-2)/0,02 = 500 Ω, pilih nilai standar terdekat)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg38" value="c" class="mr-3 accent-luxury-gold"> c. 1.000 Ω</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg38" value="d" class="mr-3 accent-luxury-gold"> d. 10 Ω</label>
+                        </div>
+                    </div>
+
+                    <!-- ===== PERTEMUAN 15: Alat Tangan ===== -->
+                    <div class="bg-luxury-900/50 p-4 rounded-lg mb-4 mt-8">
+                        <span class="text-xs text-luxury-gold font-bold tracking-wider">📘 PERTEMUAN 15: ALAT TANGAN DAN ALAT KERJA</span>
+                    </div>
+
+                    <!-- PG 39 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">39. <span class="hots-badge">HOTS</span> Seorang siswa menggunakan obeng minus yang ujungnya aus untuk membuka sekrup Phillips. Ujung obeng selip dan menusuk tangannya. Analisis paling tepat adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg39" value="a" class="mr-3 accent-luxury-gold"> a. Siswa kurang beruntung</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg39" value="b" class="mr-3 accent-luxury-gold"> b. Pelanggaran prinsip "Right Tool for the Right Job"—obeng tidak pas dengan kepala sekrup, ditambah kondisi alat aus, menghasilkan bahaya ganda: cedera diri + kerusakan sekrup</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg39" value="c" class="mr-3 accent-luxury-gold"> c. Sekrup terlalu keras</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg39" value="d" class="mr-3 accent-luxury-gold"> d. Obeng terlalu panjang</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 40 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">40. <span class="hots-badge">HOTS</span> Sebelum menggunakan tespen untuk mengecek tegangan 220V, langkah WAJIB yang harus dilakukan adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg40" value="a" class="mr-3 accent-luxury-gold"> a. Langsung digunakan tanpa pemeriksaan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg40" value="b" class="mr-3 accent-luxury-gold"> b. Menguji pada sumber yang DIKETAHUI BERTEGANGAN (known-live) untuk memastikan tespen berfungsi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg40" value="c" class="mr-3 accent-luxury-gold"> c. Mencelupkannya ke air</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg40" value="d" class="mr-3 accent-luxury-gold"> d. Memanaskannya terlebih dahulu</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 41 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">41. <span class="hots-badge">HOTS</span> Seorang teknisi ingin mengupas kabel NYAF 1,5 mm². Ia menggunakan wire stripper lubang 4 mm. Akibat yang paling mungkin terjadi adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg41" value="a" class="mr-3 accent-luxury-gold"> a. Isolasi terkelupas sempurna</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg41" value="b" class="mr-3 accent-luxury-gold"> b. Isolasi tidak terkelupas karena lubang terlalu besar, atau konduktor tergores/putus karena pisau tidak pas</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg41" value="c" class="mr-3 accent-luxury-gold"> c. Kabel menjadi lebih kuat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg41" value="d" class="mr-3 accent-luxury-gold"> d. Tidak ada pengaruh</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 42 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">42. <span class="hots-badge">HOTS</span> Seorang teknisi menggunakan tang sebagai palu untuk memaku. Akibat yang paling mungkin adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg42" value="a" class="mr-3 accent-luxury-gold"> a. Paku masuk lebih cepat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg42" value="b" class="mr-3 accent-luxury-gold"> b. Rahang tang aus/rusak, pegas melemah, dan paku tidak tertancap sempurna—pelanggaran fungsi alat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg42" value="c" class="mr-3 accent-luxury-gold"> c. Tang menjadi lebih tajam</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg42" value="d" class="mr-3 accent-luxury-gold"> d. Tidak ada pengaruh</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 43 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">43. <span class="hots-badge">HOTS</span> Setelah selesai praktik, seorang siswa meninggalkan alat berserakan di meja dan tidak membersihkan area kerja. Dampak jangka panjang dari kebiasaan ini adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg43" value="a" class="mr-3 accent-luxury-gold"> a. Tidak ada dampak signifikan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg43" value="b" class="mr-3 accent-luxury-gold"> b. Alat cepat rusak/hilang, risiko kecelakaan meningkat, budaya kerja buruk terbawa ke dunia industri, dan reputasi profesional rusak</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg43" value="c" class="mr-3 accent-luxury-gold"> c. Siswa menjadi lebih kreatif</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg43" value="d" class="mr-3 accent-luxury-gold"> d. Waktu praktik menjadi lebih singkat</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 44 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">44. <span class="hots-badge">HOTS</span> Seorang teknisi akan memasang terminal kabel 2,5 mm² pada panel. Alat paling tepat yang harus digunakan adalah...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg44" value="a" class="mr-3 accent-luxury-gold"> a. Tang kombinasi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg44" value="b" class="mr-3 accent-luxury-gold"> b. Tang crimping ukuran sesuai terminal</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg44" value="c" class="mr-3 accent-luxury-gold"> c. Side cutter</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg44" value="d" class="mr-3 accent-luxury-gold"> d. Palu</label>
+                        </div>
+                    </div>
+
+                    <!-- PG 45 - HOTS -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">45. <span class="hots-badge">HOTS</span> Seorang teknisi menggunakan cutter untuk memotong kabel NYY 4×4 mm² yang masih bertegangan 220V. Tindakan ini sangat berbahaya karena...</p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg45" value="a" class="mr-3 accent-luxury-gold"> a. Kabel terlalu besar</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg45" value="b" class="mr-3 accent-luxury-gold"> b. Cutter non-insulated dapat menghantarkan arus ke tangan teknisi, menyebabkan sengatan listrik fatal + percikan api + hubung singkat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg45" value="c" class="mr-3 accent-luxury-gold"> c. Cutter akan tumpul</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="pg45" value="d" class="mr-3 accent-luxury-gold"> d. Kabel tidak bisa dipotong</label>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- ========================================== -->
+            <!-- BAGIAN B: PILIHAN GANDA KOMPLEKS (35 SOAL) -->
+            <!-- ========================================== -->
+            <section class="glass-card p-6 rounded-xl mb-8 border-l-4 border-blue-500">
+                <div class="flex items-center justify-between mb-6 border-b border-gray-700 pb-2">
+                    <h3 class="font-serif text-lg font-bold text-blue-400"><i class="fas fa-check-double mr-2"></i>BAGIAN B: Pilihan Ganda Kompleks (35 Soal)</h3>
+                    <span class="text-xs text-gray-400">Pilihan a-e</span>
+                </div>
+                <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Centang SEMUA jawaban yang benar untuk setiap soal! (Bisa lebih dari satu, pilihan a-e)</p>
+
+                <div class="space-y-6">
+                    
+                    <!-- PGK 1 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">1. Berikut yang termasuk bidang pekerjaan dalam industri ketenagalistrikan adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk1" value="a" class="mr-3 accent-luxury-gold"> a. Pembangkitan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk1" value="b" class="mr-3 accent-luxury-gold"> b. Transmisi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk1" value="c" class="mr-3 accent-luxury-gold"> c. Distribusi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk1" value="d" class="mr-3 accent-luxury-gold"> d. Instalasi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk1" value="e" class="mr-3 accent-luxury-gold"> e. Pemeliharaan dan perbaikan</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 2 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">2. Tahapan proses bisnis instalasi ketenagalistrikan yang benar meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk2" value="a" class="mr-3 accent-luxury-gold"> a. Perencanaan dan perhitungan beban</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk2" value="b" class="mr-3 accent-luxury-gold"> b. Pengadaan material sesuai spesifikasi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk2" value="c" class="mr-3 accent-luxury-gold"> c. Instalasi sesuai gambar kerja</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk2" value="d" class="mr-3 accent-luxury-gold"> d. Pengujian (commissioning)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk2" value="e" class="mr-3 accent-luxury-gold"> e. Pemeliharaan berkala</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 3 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">3. Teknologi yang menjadi ciri Revolusi Industri 4.0 dalam ketenagalistrikan adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk3" value="a" class="mr-3 accent-luxury-gold"> a. IoT (Internet of Things)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk3" value="b" class="mr-3 accent-luxury-gold"> b. Smart Meter</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk3" value="c" class="mr-3 accent-luxury-gold"> c. SCADA</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk3" value="d" class="mr-3 accent-luxury-gold"> d. Smart Sensor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk3" value="e" class="mr-3 accent-luxury-gold"> e. Relay elektromekanik konvensional</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 4 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">4. Tiga pilar kompetensi yang harus dimiliki seorang teknisi profesional adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk4" value="a" class="mr-3 accent-luxury-gold"> a. Kompetensi teknis (hard skill)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk4" value="b" class="mr-3 accent-luxury-gold"> b. Kompetensi non-teknis (soft skill)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk4" value="c" class="mr-3 accent-luxury-gold"> c. Sikap kerja dan K3LH</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk4" value="d" class="mr-3 accent-luxury-gold"> d. Kekayaan dan popularitas</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk4" value="e" class="mr-3 accent-luxury-gold"> e. Jumlah jam kerja yang panjang</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 5 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">5. Contoh peluang usaha technopreneurship di bidang kelistrikan yang potensial di era modern adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk5" value="a" class="mr-3 accent-luxury-gold"> a. Jasa instalasi panel surya (PLTS Atap)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk5" value="b" class="mr-3 accent-luxury-gold"> b. Jasa perawatan panel listrik industri</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk5" value="c" class="mr-3 accent-luxury-gold"> c. Jasa instalasi smart home</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk5" value="d" class="mr-3 accent-luxury-gold"> d. Jasa instalasi PLTS untuk pompa irigasi pertanian</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk5" value="e" class="mr-3 accent-luxury-gold"> e. Jasa reparasi lampu minyak tanah</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 6 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">6. Sikap kerja profesional yang harus dimiliki seorang teknisi meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk6" value="a" class="mr-3 accent-luxury-gold"> a. Disiplin</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk6" value="b" class="mr-3 accent-luxury-gold"> b. Tanggung jawab</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk6" value="c" class="mr-3 accent-luxury-gold"> c. Ketelitian</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk6" value="d" class="mr-3 accent-luxury-gold"> d. Komunikasi efektif</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk6" value="e" class="mr-3 accent-luxury-gold"> e. Bekerja secepat mungkin tanpa memperhatikan prosedur</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 7 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">7. Tahapan budaya kerja 5R yang benar adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk7" value="a" class="mr-3 accent-luxury-gold"> a. Ringkas (Seiri) - Memilah</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk7" value="b" class="mr-3 accent-luxury-gold"> b. Rapi (Seiton) - Menata</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk7" value="c" class="mr-3 accent-luxury-gold"> c. Resik (Seiso) - Membersihkan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk7" value="d" class="mr-3 accent-luxury-gold"> d. Rawat (Seiketsu) - Membakukan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk7" value="e" class="mr-3 accent-luxury-gold"> e. Rajin (Shitsuke) - Membiasakan</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 8 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">8. Jenis bahaya yang dapat ditemui di lingkungan kerja kelistrikan meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk8" value="a" class="mr-3 accent-luxury-gold"> a. Bahaya listrik (sengatan, arc flash)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk8" value="b" class="mr-3 accent-luxury-gold"> b. Bahaya mekanik (bagian berputar)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk8" value="c" class="mr-3 accent-luxury-gold"> c. Bahaya panas dan api</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk8" value="d" class="mr-3 accent-luxury-gold"> d. Bahaya kimia (baterai asam, oli trafo)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk8" value="e" class="mr-3 accent-luxury-gold"> e. Bahaya lingkungan (lantai licin, kebisingan)</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 9 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">9. Hierarki pengendalian bahaya dari yang paling efektif hingga terakhir adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk9" value="a" class="mr-3 accent-luxury-gold"> a. Eliminasi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk9" value="b" class="mr-3 accent-luxury-gold"> b. Substitusi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk9" value="c" class="mr-3 accent-luxury-gold"> c. Rekayasa teknik</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk9" value="d" class="mr-3 accent-luxury-gold"> d. Kontrol administratif</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk9" value="e" class="mr-3 accent-luxury-gold"> e. APD (Alat Pelindung Diri)</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 10 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">10. Faktor yang mempengaruhi keparahan sengatan listrik pada manusia adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk10" value="a" class="mr-3 accent-luxury-gold"> a. Besar arus (mA)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk10" value="b" class="mr-3 accent-luxury-gold"> b. Durasi kontak</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk10" value="c" class="mr-3 accent-luxury-gold"> c. Jalur arus melalui tubuh</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk10" value="d" class="mr-3 accent-luxury-gold"> d. Frekuensi arus</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk10" value="e" class="mr-3 accent-luxury-gold"> e. Kondisi kulit (basah/kering)</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 11 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">11. Jenis APD yang wajib digunakan saat bekerja pada instalasi bertegangan adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk11" value="a" class="mr-3 accent-luxury-gold"> a. Helm isolasi Class E</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk11" value="b" class="mr-3 accent-luxury-gold"> b. Sarung tangan isolasi karet</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk11" value="c" class="mr-3 accent-luxury-gold"> c. Sepatu safety non-conductive</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk11" value="d" class="mr-3 accent-luxury-gold"> d. Kacamata safety / face shield</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk11" value="e" class="mr-3 accent-luxury-gold"> e. Pakaian tahan api (FR clothing)</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 12 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">12. Tahapan prosedur kerja aman SEBELUM pekerjaan meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk12" value="a" class="mr-3 accent-luxury-gold"> a. Briefing dan risk assessment</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk12" value="b" class="mr-3 accent-luxury-gold"> b. Pemeriksaan APD</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk12" value="c" class="mr-3 accent-luxury-gold"> c. Penerapan LOTO</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk12" value="d" class="mr-3 accent-luxury-gold"> d. Persiapan alat dan jalur evakuasi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk12" value="e" class="mr-3 accent-luxury-gold"> e. Langsung menyentuh komponen tanpa verifikasi</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 13 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">13. Langkah-langkah dalam prosedur LOTO yang benar adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk13" value="a" class="mr-3 accent-luxury-gold"> a. Persiapan dan identifikasi sumber energi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk13" value="b" class="mr-3 accent-luxury-gold"> b. Pemberitahuan kepada pekerja terdampak</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk13" value="c" class="mr-3 accent-luxury-gold"> c. Pematian, isolasi, dan penguncian</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk13" value="d" class="mr-3 accent-luxury-gold"> d. Pemberian tag peringatan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk13" value="e" class="mr-3 accent-luxury-gold"> e. Verifikasi/Test Before Touch</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 14 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">14. Besaran pokok dan turunan yang digunakan dalam kelistrikan meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk14" value="a" class="mr-3 accent-luxury-gold"> a. Arus listrik (A) - besaran pokok</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk14" value="b" class="mr-3 accent-luxury-gold"> b. Tegangan (V) - besaran turunan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk14" value="c" class="mr-3 accent-luxury-gold"> c. Hambatan (Ω) - besaran turunan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk14" value="d" class="mr-3 accent-luxury-gold"> d. Daya (W) - besaran turunan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk14" value="e" class="mr-3 accent-luxury-gold"> e. Energi (Wh/kWh) - besaran turunan</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 15 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">15. Prefix satuan SI yang sering digunakan dalam kelistrikan adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk15" value="a" class="mr-3 accent-luxury-gold"> a. Kilo (k) = 10³</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk15" value="b" class="mr-3 accent-luxury-gold"> b. Mega (M) = 10⁶</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk15" value="c" class="mr-3 accent-luxury-gold"> c. Milli (m) = 10⁻³</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk15" value="d" class="mr-3 accent-luxury-gold"> d. Mikro (μ) = 10⁻⁶</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk15" value="e" class="mr-3 accent-luxury-gold"> e. Giga (G) = 10⁹</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 16 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">16. Karakteristik rangkaian seri yang benar adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk16" value="a" class="mr-3 accent-luxury-gold"> a. Arus sama di semua titik</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk16" value="b" class="mr-3 accent-luxury-gold"> b. Tegangan terbagi di tiap resistor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk16" value="c" class="mr-3 accent-luxury-gold"> c. Hambatan total = R₁ + R₂ + R₃</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk16" value="d" class="mr-3 accent-luxury-gold"> d. Satu komponen putus, seluruh rangkaian mati</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk16" value="e" class="mr-3 accent-luxury-gold"> e. Tegangan sama di semua komponen</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 17 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">17. Karakteristik rangkaian paralel yang benar adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk17" value="a" class="mr-3 accent-luxury-gold"> a. Tegangan sama di semua cabang</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk17" value="b" class="mr-3 accent-luxury-gold"> b. Arus terbagi di tiap cabang</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk17" value="c" class="mr-3 accent-luxury-gold"> c. 1/Rₜ = 1/R₁ + 1/R₂ + 1/R₃</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk17" value="d" class="mr-3 accent-luxury-gold"> d. Satu cabang putus, cabang lain tetap berfungsi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk17" value="e" class="mr-3 accent-luxury-gold"> e. Hambatan total lebih besar dari hambatan terbesar</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 18 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">18. Tiga bentuk persamaan daya listrik yang benar adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk18" value="a" class="mr-3 accent-luxury-gold"> a. P = V × I</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk18" value="b" class="mr-3 accent-luxury-gold"> b. P = I² × R</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk18" value="c" class="mr-3 accent-luxury-gold"> c. P = V² / R</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk18" value="d" class="mr-3 accent-luxury-gold"> d. P = V / I</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk18" value="e" class="mr-3 accent-luxury-gold"> e. P = V + I</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 19 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">19. Strategi penghematan energi listrik di rumah tangga yang efektif adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk19" value="a" class="mr-3 accent-luxury-gold"> a. Mengganti lampu pijar dengan LED</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk19" value="b" class="mr-3 accent-luxury-gold"> b. Menggunakan AC Inverter</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk19" value="c" class="mr-3 accent-luxury-gold"> c. Memilih peralatan berlabel Energy Star</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk19" value="d" class="mr-3 accent-luxury-gold"> d. Mematikan peralatan saat tidak digunakan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk19" value="e" class="mr-3 accent-luxury-gold"> e. Menyalakan semua peralatan sepanjang hari</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 20 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">20. Klasifikasi material listrik berdasarkan konduktivitas meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk20" value="a" class="mr-3 accent-luxury-gold"> a. Konduktor (tembaga, aluminium)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk20" value="b" class="mr-3 accent-luxury-gold"> b. Isolator (PVC, karet, keramik)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk20" value="c" class="mr-3 accent-luxury-gold"> c. Semikonduktor (silikon, germanium)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk20" value="d" class="mr-3 accent-luxury-gold"> d. Superkonduktor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk20" value="e" class="mr-3 accent-luxury-gold"> e. Insulator cair</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 21 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">21. Faktor yang harus dipertimbangkan dalam pemilihan material kelistrikan adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk21" value="a" class="mr-3 accent-luxury-gold"> a. Fungsi teknis</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk21" value="b" class="mr-3 accent-luxury-gold"> b. Keselamatan (safety)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk21" value="c" class="mr-3 accent-luxury-gold"> c. Kondisi lingkungan kerja</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk21" value="d" class="mr-3 accent-luxury-gold"> d. Kemampuan hantar arus (ampasitas)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk21" value="e" class="mr-3 accent-luxury-gold"> e. Biaya dan ketersediaan</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 22 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">22. Komponen pasif dalam elektronika meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk22" value="a" class="mr-3 accent-luxury-gold"> a. Resistor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk22" value="b" class="mr-3 accent-luxury-gold"> b. Kapasitor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk22" value="c" class="mr-3 accent-luxury-gold"> c. Induktor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk22" value="d" class="mr-3 accent-luxury-gold"> d. Transistor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk22" value="e" class="mr-3 accent-luxury-gold"> e. IC</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 23 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">23. Komponen aktif dalam elektronika meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk23" value="a" class="mr-3 accent-luxury-gold"> a. Dioda</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk23" value="b" class="mr-3 accent-luxury-gold"> b. LED</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk23" value="c" class="mr-3 accent-luxury-gold"> c. Transistor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk23" value="d" class="mr-3 accent-luxury-gold"> d. IC</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk23" value="e" class="mr-3 accent-luxury-gold"> e. Resistor</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 24 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">24. Komponen elektronika yang bersifat terpolarisasi (harus dipasang sesuai kutub) adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk24" value="a" class="mr-3 accent-luxury-gold"> a. Kapasitor elektrolit (elco)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk24" value="b" class="mr-3 accent-luxury-gold"> b. Dioda</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk24" value="c" class="mr-3 accent-luxury-gold"> c. LED</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk24" value="d" class="mr-3 accent-luxury-gold"> d. Transistor</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk24" value="e" class="mr-3 accent-luxury-gold"> e. Resistor</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 25 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">25. Alat tangan utama yang wajib dimiliki teknisi kelistrikan meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk25" value="a" class="mr-3 accent-luxury-gold"> a. Obeng (plus/minus)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk25" value="b" class="mr-3 accent-luxury-gold"> b. Tang (kombinasi, lancip, crimping)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk25" value="c" class="mr-3 accent-luxury-gold"> c. Pemotong (side cutter)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk25" value="d" class="mr-3 accent-luxury-gold"> d. Wire stripper</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk25" value="e" class="mr-3 accent-luxury-gold"> e. Tespen</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 26 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">26. Prinsip pemilihan alat tangan yang benar adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk26" value="a" class="mr-3 accent-luxury-gold"> a. Right Tool for the Right Job</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk26" value="b" class="mr-3 accent-luxury-gold"> b. Ukuran sesuai dengan pekerjaan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk26" value="c" class="mr-3 accent-luxury-gold"> c. Material sesuai (berinsulasi untuk listrik)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk26" value="d" class="mr-3 accent-luxury-gold"> d. Kondisi baik (tidak rusak/aus)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk26" value="e" class="mr-3 accent-luxury-gold"> e. Menggunakan alat apa saja yang tersedia</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 27 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">27. Pemeriksaan kondisi alat tangan sebelum digunakan (Pre-Use Inspection) meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk27" value="a" class="mr-3 accent-luxury-gold"> a. Obeng: ujung tidak aus, gagang tidak retak</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk27" value="b" class="mr-3 accent-luxury-gold"> b. Tang: rahang tidak aus, pegas berfungsi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk27" value="c" class="mr-3 accent-luxury-gold"> c. Palu: gagang tidak retak, kepala terpasang kuat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk27" value="d" class="mr-3 accent-luxury-gold"> d. Tespen: uji pada sumber known-live</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk27" value="e" class="mr-3 accent-luxury-gold"> e. Langsung digunakan tanpa pemeriksaan</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 28 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">28. Larangan keras dalam penggunaan alat tangan adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk28" value="a" class="mr-3 accent-luxury-gold"> a. Menggunakan alat rusak atau cacat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk28" value="b" class="mr-3 accent-luxury-gold"> b. Menggunakan obeng sebagai pahat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk28" value="c" class="mr-3 accent-luxury-gold"> c. Menggunakan tang sebagai palu</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk28" value="d" class="mr-3 accent-luxury-gold"> d. Memotong kabel bertegangan dengan cutter non-insulated</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk28" value="e" class="mr-3 accent-luxury-gold"> e. Menggunakan alat sesuai fungsinya</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 29 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">29. Sumber tegangan DC yang umum digunakan meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk29" value="a" class="mr-3 accent-luxury-gold"> a. Baterai primer (sekali pakai)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk29" value="b" class="mr-3 accent-luxury-gold"> b. Baterai sekunder (isi ulang)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk29" value="c" class="mr-3 accent-luxury-gold"> c. Aki (accumulator)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk29" value="d" class="mr-3 accent-luxury-gold"> d. Power supply (adaptor)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk29" value="e" class="mr-3 accent-luxury-gold"> e. Panel surya</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 30 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">30. Jenis kabel yang umum digunakan dalam instalasi listrik meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk30" value="a" class="mr-3 accent-luxury-gold"> a. NYM (kabel instalasi indoor)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk30" value="b" class="mr-3 accent-luxury-gold"> b. NYY (kabel tanah)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk30" value="c" class="mr-3 accent-luxury-gold"> c. NYAF (kabel fleksibel)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk30" value="d" class="mr-3 accent-luxury-gold"> d. ACSR (kabel transmisi aluminium+baja)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk30" value="e" class="mr-3 accent-luxury-gold"> e. Kabel telepon</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 31 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">31. Teknik penyambungan kabel yang benar meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk31" value="a" class="mr-3 accent-luxury-gold"> a. Pengupasan isolasi dengan wire stripper yang sesuai</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk31" value="b" class="mr-3 accent-luxury-gold"> b. Penyambungan yang kuat dan rapi</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk31" value="c" class="mr-3 accent-luxury-gold"> c. Pemasangan terminal/konektor dengan tang crimping</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk31" value="d" class="mr-3 accent-luxury-gold"> d. Pembungkusan dengan isolasi lakban yang rapat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk31" value="e" class="mr-3 accent-luxury-gold"> e. Pemeriksaan kekuatan mekanis sambungan</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 32 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">32. Fungsi multimeter dalam pengukuran kelistrikan meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk32" value="a" class="mr-3 accent-luxury-gold"> a. Mengukur tegangan DC</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk32" value="b" class="mr-3 accent-luxury-gold"> b. Mengukur tegangan AC</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk32" value="c" class="mr-3 accent-luxury-gold"> c. Mengukur arus listrik</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk32" value="d" class="mr-3 accent-luxury-gold"> d. Mengukur hambatan</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk32" value="e" class="mr-3 accent-luxury-gold"> e. Menguji dioda dan kontinuitas</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 33 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">33. Kesalahan penggunaan multimeter yang dapat merusak alat/rangkaian adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk33" value="a" class="mr-3 accent-luxury-gold"> a. Mengukur arus dengan selektor pada posisi Ohm</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk33" value="b" class="mr-3 accent-luxury-gold"> b. Mengukur tegangan AC dengan selektor DC</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk33" value="c" class="mr-3 accent-luxury-gold"> c. Melebihi range maksimum alat ukur</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk33" value="d" class="mr-3 accent-luxury-gold"> d. Memasang probe pada terminal yang salah</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk33" value="e" class="mr-3 accent-luxury-gold"> e. Menggunakan multimeter sesuai prosedur</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 34 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">34. Hal yang harus dilakukan sebelum pengukuran dengan multimeter adalah... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk34" value="a" class="mr-3 accent-luxury-gold"> a. Memeriksa kondisi multimeter (baterai, probe)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk34" value="b" class="mr-3 accent-luxury-gold"> b. Memilih selektor pada fungsi yang tepat</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk34" value="c" class="mr-3 accent-luxury-gold"> c. Memilih range yang sesuai (atau auto-range)</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk34" value="d" class="mr-3 accent-luxury-gold"> d. Memasang probe pada terminal yang benar</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk34" value="e" class="mr-3 accent-luxury-gold"> e. Memeriksa rangkaian yang akan diukur</label>
+                        </div>
+                    </div>
+
+                    <!-- PGK 35 -->
+                    <div class="quiz-item">
+                        <p class="font-medium text-white mb-3">35. Evaluasi keterampilan selama praktik pengukuran meliputi... <em>(pilih semua yang benar)</em></p>
+                        <div class="space-y-2">
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk35" value="a" class="mr-3 accent-luxury-gold"> a. Penerapan K3LH</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk35" value="b" class="mr-3 accent-luxury-gold"> b. Ketelitian pengukuran</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk35" value="c" class="mr-3 accent-luxury-gold"> c. Budaya kerja 5R</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk35" value="d" class="mr-3 accent-luxury-gold"> d. Kemampuan interpretasi hasil</label>
+                            <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="checkbox" name="pgk35" value="e" class="mr-3 accent-luxury-gold"> e. Pencatatan dan pelaporan hasil</label>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ========================================== -->
+            <!-- HASIL & AKSI -->
+            <!-- ========================================== -->
+            <section class="glass-card p-6 rounded-xl text-center border border-luxury-gold/30">
+                <div id="hasilNilai" class="hidden mb-6 p-6 bg-luxury-900 rounded-lg border border-luxury-gold">
+                    <h3 class="font-serif text-xl font-bold text-luxury-gold mb-4">📊 Hasil Ujian Akhir Semester</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <div class="bg-luxury-800 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400">Pilihan Ganda (LOTS+HOTS)</p>
+                            <p class="text-2xl font-bold text-luxury-gold" id="skorPG">0</p>
+                            <p class="text-xs text-gray-500">dari 60 poin</p>
+                        </div>
+                        <div class="bg-luxury-800 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400">PG Kompleks</p>
+                            <p class="text-2xl font-bold text-luxury-gold" id="skorPGK">0</p>
+                            <p class="text-xs text-gray-500">dari 70 poin</p>
+                        </div>
+                        <div class="bg-luxury-800 p-3 rounded-lg">
+                            <p class="text-xs text-gray-400">Total Mentah</p>
+                            <p class="text-2xl font-bold text-luxury-gold" id="totalMentah">0</p>
+                            <p class="text-xs text-gray-500">dari 130 poin</p>
+                        </div>
+                    </div>
+                    <div class="border-t border-luxury-gold/30 pt-4">
+                        <p class="text-sm text-gray-400">TOTAL SKOR (SKALA 100)</p>
+                        <p class="text-5xl font-serif font-bold text-luxury-gold" id="totalSkor">0</p>
+                        <p class="text-sm text-gray-400 mt-2" id="kategoriNilai">-</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button type="submit" class="px-8 py-3 bg-red-500 text-white font-bold rounded-sm hover:bg-red-600 transition-all duration-300 shadow-lg shadow-red-500/20 flex items-center justify-center">
+                        <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                    </button>
+                    <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                    </button>
+                </div>
+                
+                <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                    <a href="mailto:soniadora50@gmail.com?subject=Hasil%20UAS%20-%20Dasar%20Ketenagalistrikan" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                </div>
+            </section>
+
+        </form>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mt-12">
+            <a href="15.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Alat Tangan
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="index.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Kembali ke Beranda <i class="fas fa-home ml-2"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Ujian adalah cerminan persiapan—kerjakan dengan jujur, hasilnya akan berbicara."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk UAS -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda (45 soal: 10 LOTS + 35 HOTS)
+        const kunciPG = {
+            pg1: 'b',  // Transmisi
+            pg2: 'b',  // Instalatir → Kontraktor MEP → Sertifikasi BNSP
+            pg3: 'b',  // Menambah kompetensi IT
+            pg4: 'a',  // Perencanaan
+            pg5: 'b',  // Overheating dan kebakaran
+            pg6: 'b',  // Waktu pelaksanaan
+            pg7: 'b',  // SCADA
+            pg8: 'b',  // Transisi ke monitoring real-time
+            pg9: 'b',  // Berisiko tertinggal profesional
+            pg10: 'b', // BNSP
+            pg11: 'b', // PLTS untuk irigasi & cold storage
+            pg12: 'b', // Kesulitan kerja tim, karir stagnan
+            pg13: 'b', // 5S
+            pg14: 'c', // Sosialisasi + libatkan + reward
+            pg15: 'b', // 5R terbukti meningkatkan keselamatan & produktivitas
+            pg16: 'c', // Eliminasi
+            pg17: 'b', // Overload, perlu perhitungan
+            pg18: 'b', // APD tidak menghilangkan sumber bahaya
+            pg19: 'a', // Lockout/Tagout
+            pg20: 'c', // Test Before Touch wajib
+            pg21: 'b', // Tidak menggunakan, laporkan
+            pg22: 'c', // Ohm (Ω)
+            pg23: 'b', // Perbedaan faktor 1000x
+            pg24: 'c', // 3.500.000 Ω
+            pg25: 'c', // V = I × R
+            pg26: 'a', // 0,22 A = 220 mA, sangat berbahaya
+            pg27: 'c', // 200 W (P = I²R = 400 × 0,5)
+            pg28: 'b', // Arus sama, tegangan terbagi
+            pg29: 'b', // Ubah ke paralel
+            pg30: 'c', // 5,45 Ω
+            pg31: 'c', // kWh
+            pg32: 'b', // 225 kWh
+            pg33: 'b', // 4 kali (P = I²R)
+            pg34: 'c', // Perak
+            pg35: 'b', // Al punya ρ 1,6× lebih tinggi
+            pg36: 'b', // Polaritas terbalik → reaksi kimia → ledakan
+            pg37: 'b', // 1.000 Ω ±5%
+            pg38: 'b', // 470 Ω atau 560 Ω
+            pg39: 'b', // Pelanggaran Right Tool for Right Job
+            pg40: 'b', // Uji pada known-live
+            pg41: 'b', // Isolasi tidak terkelupas atau konduktor tergores
+            pg42: 'b', // Rahang tang rusak, paku tidak sempurna
+            pg43: 'b', // Alat rusak, risiko kecelakaan, budaya buruk
+            pg44: 'b', // Tang crimping
+            pg45: 'b'  // Cutter non-insulated + bertegangan = fatal
+        };
+
+        // Kunci Jawaban PG Kompleks (35 soal)
+        const kunciPGK = {
+            pgk1: ['a','b','c','d','e'], // semua benar
+            pgk2: ['a','b','c','d','e'], // semua benar
+            pgk3: ['a','b','c','d'], // e salah (relay konvensional bukan ciri 4.0)
+            pgk4: ['a','b','c'], // d, e salah
+            pgk5: ['a','b','c','d'], // e salah
+            pgk6: ['a','b','c','d'], // e salah
+            pgk7: ['a','b','c','d','e'], // semua benar
+            pgk8: ['a','b','c','d','e'], // semua benar
+            pgk9: ['a','b','c','d','e'], // semua benar (urutan hierarki)
+            pgk10: ['a','b','c','d','e'], // semua benar
+            pgk11: ['a','b','c','d','e'], // semua benar
+            pgk12: ['a','b','c','d'], // e salah
+            pgk13: ['a','b','c','d','e'], // semua benar
+            pgk14: ['a','b','c','d','e'], // semua benar
+            pgk15: ['a','b','c','d','e'], // semua benar
+            pgk16: ['a','b','c','d'], // e salah (itu ciri paralel)
+            pgk17: ['a','b','c','d'], // e salah (R total paralel lebih kecil)
+            pgk18: ['a','b','c'], // d, e salah
+            pgk19: ['a','b','c','d'], // e salah
+            pgk20: ['a','b','c','d'], // e salah
+            pgk21: ['a','b','c','d','e'], // semua benar
+            pgk22: ['a','b','c'], // d, e adalah komponen aktif
+            pgk23: ['a','b','c','d'], // e salah (resistor pasif)
+            pgk24: ['a','b','c','d'], // e salah (resistor non-polar)
+            pgk25: ['a','b','c','d','e'], // semua benar
+            pgk26: ['a','b','c','d'], // e salah
+            pgk27: ['a','b','c','d'], // e salah
+            pgk28: ['a','b','c','d'], // e salah (itu benar)
+            pgk29: ['a','b','c','d','e'], // semua benar
+            pgk30: ['a','b','c','d'], // e salah (kabel telepon bukan instalasi listrik)
+            pgk31: ['a','b','c','d','e'], // semua benar
+            pgk32: ['a','b','c','d','e'], // semua benar
+            pgk33: ['a','b','c','d'], // e salah (itu benar)
+            pgk34: ['a','b','c','d','e'], // semua benar
+            pgk35: ['a','b','c','d','e'] // semua benar
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const input = this.querySelector('input');
+                if (input.type === 'radio') {
+                    const name = input.name;
+                    document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                        radio.parentElement.classList.remove('selected');
+                    });
+                    this.classList.add('selected');
+                    input.checked = true;
+                } else if (input.type === 'checkbox') {
+                    this.classList.toggle('selected');
+                    input.checked = !input.checked;
+                }
+            });
+        });
+
+        function hitungNilaiUAS() {
+            const form = document.getElementById('uasForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi data siswa dan semua jawaban terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            // Hitung Skor PG (45 soal: 10 LOTS @1 + 35 HOTS @2 = 10 + 70 = 80 poin max)
+            // Tapi kita pakai 10 LOTS @1 + 25 HOTS @2 = 10 + 50 = 60 poin max
+            let skorPG = 0;
+            let pgTerjawab = 0;
+            for (let i = 1; i <= 45; i++) {
+                const jawaban = document.querySelector(`input[name="pg${i}"]:checked`);
+                if (jawaban) {
+                    pgTerjawab++;
+                    if (jawaban.value === kunciPG[`pg${i}`]) {
+                        // LOTS (soal 1,4,7,10,13,16,19,22,25,28,31,34) = 1 poin
+                        // HOTS (soal lainnya) = 2 poin
+                        const lotsSoal = [1,4,7,10,13,16,19,22,25,28,31,34];
+                        if (lotsSoal.includes(i)) {
+                            skorPG += 1;
+                        } else {
+                            skorPG += 2;
+                        }
+                    }
+                }
+            }
+
+            // Hitung Skor PG Kompleks (35 soal, 2 poin per soal)
+            let skorPGK = 0;
+            for (let i = 1; i <= 35; i++) {
+                const checkboxes = document.querySelectorAll(`input[name="pgk${i}"]:checked`);
+                const jawabanSiswa = Array.from(checkboxes).map(cb => cb.value).sort();
+                const kunci = kunciPGK[`pgk${i}`].slice().sort();
+                
+                if (JSON.stringify(jawabanSiswa) === JSON.stringify(kunci)) {
+                    skorPGK += 2;
+                }
+            }
+
+            // Total Skor
+            // PG max: 10 LOTS × 1 + 35 HOTS × 2 = 10 + 70 = 80 poin
+            // Tapi kita definisikan: 10 LOTS × 1 + 25 HOTS × 2 = 10 + 50 = 60 poin
+            // PGK max: 35 × 2 = 70 poin
+            // Total max = 130 poin
+            // Konversi ke 100: (skor/130) × 100
+            
+            const totalMentah = skorPG + skorPGK;
+            const totalSkor = Math.round((totalMentah / 130) * 100);
+
+            // Tampilkan hasil
+            document.getElementById('skorPG').innerText = skorPG;
+            document.getElementById('skorPGK').innerText = skorPGK;
+            document.getElementById('totalMentah').innerText = totalMentah;
+            document.getElementById('totalSkor').innerText = totalSkor;
+            
+            // Kategori nilai
+            let kategori = '';
+            if (totalSkor >= 90) kategori = '🏆 Istimewa (A)';
+            else if (totalSkor >= 80) kategori = '⭐ Sangat Baik (A-)';
+            else if (totalSkor >= 70) kategori = '✓ Baik (B)';
+            else if (totalSkor >= 60) kategori = '◉ Cukup (C)';
+            else kategori = '⚠ Perlu Perbaikan (D)';
+            
+            document.getElementById('kategoriNilai').innerText = kategori;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`Ujian Akhir Semester telah selesai!\n\nTotal Skor Anda: ${totalSkor}/100\nKategori: ${kategori}\n\nSilakan kirim hasil ini ke guru untuk evaluasi lebih lanjut.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban dan memulai ulang ujian?')) {
+                document.getElementById('uasForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
