@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 7: Alat Pelindung Diri dan Prosedur Kerja Aman - Sonia Dora, S.Pd.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="6.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="8.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-orange-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 3 • PERTEMUAN 7</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Alat Pelindung Diri <br>
+                <span class="text-gradient-gold">dan Prosedur Kerja Aman</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Menguasai jenis dan fungsi APD kelistrikan, prosedur pemeriksaan, tata cara kerja aman sebelum–saat–sesudah pekerjaan, serta penerapan sistem Lockout/Tagout (LOTO) sebagai pelindung nyawa terakhir.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-red-500">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-hard-hat text-red-400 mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Setelah memahami bahaya dan risiko di lingkungan kerja kelistrikan pada pertemuan sebelumnya, kini saatnya mempelajari <strong>lapisan pertahanan terakhir</strong> bagi seorang teknisi: <strong>Alat Pelindung Diri (APD)</strong> dan <strong>Prosedur Kerja Aman</strong>. APD bukanlah jaminan absolut keselamatan, tetapi ketika dikombinasikan dengan prosedur yang benar—seperti Lockout/Tagout (LOTO)—ia menjadi perisai yang menyelamatkan nyawa.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Banyak kecelakaan fatal terjadi bukan karena ketiadaan APD, melainkan karena <strong>APD tidak diperiksa, tidak digunakan dengan benar, atau prosedur kerja aman diabaikan</strong>. Pertemuan ini akan membekali siswa dengan pengetahuan praktis: memilih APD yang tepat, memeriksanya sebelum digunakan, menerapkan prosedur kerja aman tiga tahap (sebelum–saat–sesudah), serta memahami esensi LOTO sebagai standar emas keselamatan kerja di industri kelistrikan global.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: APD Kelistrikan dan Prosedur LOTO</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-white text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video demonstrasi APD dan prosedur LOTO</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal PLN / BNSP Ketenagalistrikan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">APD (Alat Pelindung Diri)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Peralatan yang dikenakan pekerja untuk melindungi sebagian atau seluruh tubuh dari potensi bahaya kecelakaan kerja. Dalam kelistrikan, APD harus bersifat isolator.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Prosedur Kerja Aman</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Rangkaian langkah baku yang harus diikuti sebelum, saat, dan sesudah pekerjaan untuk menjamin keselamatan pekerja dan keandalan hasil kerja.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">LOTO (Lockout/Tagout)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Prosedur penguncian dan pemberian tanda pada sumber energi untuk mencegah penyalaan tidak sengaja selama pekerjaan pemeliharaan dilakukan.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Pre-Use Inspection</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Pemeriksaan kondisi APD dan alat kerja sebelum digunakan untuk memastikan tidak ada kerusakan yang dapat membahayakan pemakainya.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-red-900/20 border border-red-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-red-300 mb-4"><i class="fas fa-exclamation-triangle mr-2"></i> Studi Kasus 7: Sarung Tangan yang "Tampak" Baik</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Seorang teknisi senior menggunakan sarung tangan isolasi yang sudah berusia 4 tahun. Secara visual, sarung tangan tampak bersih dan tidak robek. Namun, saat ia bekerja pada panel bertegangan 380V, ia merasakan sengatan listrik yang cukup kuat. Setelah diperiksa di laboratorium, ternyata sarung tangan tersebut telah mengalami degradasi material akibat paparan panas dan ozon—meski tidak terlihat dari luar, daya isolasinya telah menurun drastis."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-red-500">
+                <h4 class="font-bold text-red-400 mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kasus ini mengajarkan bahwa <strong>penampilan luar APD bisa menipu</strong>. Sarung tangan isolasi memiliki masa pakai terbatas dan harus diuji secara berkala (electrical test) sesuai standar ASTM D120 atau SNI. Pemeriksaan visual saja tidak cukup—diperlukan <strong>uji dielektrik periodik</strong> dan pencatatan tanggal penggunaan. APD yang "tampak baik" belum tentu "aman secara elektrik".
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">7.1 Jenis dan Fungsi APD pada Pekerjaan Kelistrikan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    APD kelistrikan dirancang khusus untuk melindungi pekerja dari bahaya sengatan listrik, arc flash, dan ledakan. Berikut adalah jenis-jenis APD utama beserta fungsinya:
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Jenis APD</th>
+                                <th class="p-4">Fungsi Utama</th>
+                                <th class="p-4 rounded-tr-lg">Standar Acuan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-hard-hat text-yellow-400 mr-2"></i>Helm Isolasi (Safety Helmet Class E)</td>
+                                <td class="p-4">Melindungi kepala dari benturan dan sengatan listrik hingga 20.000V.</td>
+                                <td class="p-4">ANSI Z89.1, SNI 1693:2015</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-hand-paper text-blue-400 mr-2"></i>Sarung Tangan Isolasi</td>
+                                <td class="p-4">Melindungi tangan dari sengatan listrik. Tersedia dalam 5 kelas (00–4) sesuai tegangan kerja.</td>
+                                <td class="p-4">ASTM D120, IEC 60903</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-shoe-prints text-green-400 mr-2"></i>Sepatu Safety (Non-Conductive)</td>
+                                <td class="p-4">Melindungi kaki dari benda jatuh dan mencegah aliran arus ke tanah.</td>
+                                <td class="p-4">ASTM F2413, SNI 2388</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-glasses text-purple-400 mr-2"></i>Kacamata Safety / Face Shield</td>
+                                <td class="p-4">Melindungi mata dan wajah dari percikan api, partikel, dan arc flash.</td>
+                                <td class="p-4">ANSI Z87.1, NFPA 70E</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-vest text-orange-400 mr-2"></i>Pakaian Tahan Api (FR Clothing)</td>
+                                <td class="p-4">Melindungi tubuh dari luka bakar akibat arc flash. Terbuat dari bahan Nomex/Kevlar.</td>
+                                <td class="p-4">NFPA 70E, ASTM F1506</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-user-shield text-red-400 mr-2"></i>Full Body Harness</td>
+                                <td class="p-4">Melindungi pekerja dari jatuh saat bekerja di ketinggian (menara, tiang).</td>
+                                <td class="p-4">ANSI Z359.1, SNI 7831</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-ear-listen text-pink-400 mr-2"></i>Pelindung Telinga (Ear Plug/Muff)</td>
+                                <td class="p-4">Melindungi pendengaran dari kebisingan tinggi di gardu induk atau area generator.</td>
+                                <td class="p-4">ANSI S3.19, OSHA 1910.95</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-info-circle mr-2"></i>Kelas Sarung Tangan Isolasi (ASTM D120):</h4>
+                    <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                        <li><strong>Class 00:</strong> Maks 500V AC</li>
+                        <li><strong>Class 0:</strong> Maks 1.000V AC</li>
+                        <li><strong>Class 1:</strong> Maks 7.500V AC</li>
+                        <li><strong>Class 2:</strong> Maks 17.000V AC</li>
+                        <li><strong>Class 3:</strong> Maks 26.500V AC</li>
+                        <li><strong>Class 4:</strong> Maks 36.000V AC</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">7.2 Pemeriksaan Kondisi APD Sebelum Digunakan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    APD yang rusak sama berbahayanya dengan tidak menggunakan APD sama sekali. Pemeriksaan harus dilakukan <strong>sebelum setiap penggunaan</strong> dengan prinsip <strong>"L.I.F.T"</strong>:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 mt-6">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-eye mr-2"></i>LOOK (Lihat)</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Periksa visual: robekan, retakan, perubahan warna, bekas terbakar, atau deformasi pada APD.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-hand-pointer mr-2"></i>FEEL (Raba)</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Raba permukaan APD untuk mendeteksi kelemahan material, kekakuan tidak wajar, atau bagian yang menipis.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-expand-arrows-alt mr-2"></i>STRETCH (Regangkan)</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Untuk sarung tangan karet, regangkan perlahan untuk melihat apakah ada retakan mikro atau kebocoran.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-calendar-check mr-2"></i>CHECK DATE (Cek Tanggal)</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Pastikan APD masih dalam masa pakai dan telah lulus uji periodik (tertera pada label/stiker).</p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Tanda APD Harus Segera Diganti:</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li>Terdapat robekan, lubang, atau retakan pada material isolasi.</li>
+                    <li>Perubahan warna yang signifikan (menguning, menghitam) pada sarung tangan karet.</li>
+                    <li>Bau menyengat yang tidak wajar (indikasi degradasi kimia).</li>
+                    <li>Masa uji periodik telah lewat (sarung tangan isolasi: setiap 6 bulan).</li>
+                    <li>Bagian pengencang (strap, buckle) rusak atau tidak berfungsi.</li>
+                    <li>APD pernah terpapar arc flash atau sengatan listrik, meski tidak terlihat rusak.</li>
+                </ul>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">7.3 Prosedur Kerja Aman: Sebelum, Saat, dan Sesudah Pekerjaan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Keselamatan kerja bukan hanya tentang apa yang dilakukan saat bekerja, tetapi juga persiapan sebelum dan evaluasi sesudahnya. Berikut adalah prosedur kerja aman tiga tahap:
+                </p>
+
+                <div class="space-y-4 mt-6">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-400 mb-3"><i class="fas fa-flag-checkered mr-2"></i>TAHAP 1: SEBELUM PEKERJAAN</h4>
+                        <ol class="text-gray-300 text-sm space-y-2 list-decimal list-inside">
+                            <li><strong>Briefing & Risk Assessment:</strong> Pahami lingkup pekerjaan, identifikasi bahaya, dan tentukan APD yang dibutuhkan.</li>
+                            <li><strong>Siapkan Izin Kerja (Work Permit):</strong> Dapatkan izin tertulis dari supervisor/pejabat berwenang.</li>
+                            <li><strong>Pemeriksaan APD:</strong> Lakukan inspeksi L.I.F.T pada seluruh APD yang akan digunakan.</li>
+                            <li><strong>Persiapan Alat:</strong> Pastikan alat tangan dan alat ukur dalam kondisi baik dan terkalibrasi.</li>
+                            <li><strong>Terapkan LOTO:</strong> Matikan sumber energi, kunci, beri tag, dan uji ketiadaan tegangan (Test Before Touch).</li>
+                            <li><strong>Siapkan Jalur Evakuasi:</strong> Pastikan jalur keluar bebas hambatan dan APAR tersedia.</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-400 mb-3"><i class="fas fa-cog mr-2"></i>TAHAP 2: SAAT PEKERJAAN</h4>
+                        <ol class="text-gray-300 text-sm space-y-2 list-decimal list-inside">
+                            <li><strong>Gunakan APD Lengkap:</strong> Jangan membuka APD selama bekerja, meski terasa tidak nyaman.</li>
+                            <li><strong>Ikuti SOP:</strong> Kerjakan sesuai prosedur yang telah ditetapkan, jangan memintas langkah.</li>
+                            <li><strong>Komunikasi dengan Tim:</strong> Beri tahu rekan kerja sebelum melakukan perubahan pada rangkaian.</li>
+                            <li><strong>Gunakan Satu Tangan:</strong> Saat bekerja dekat bagian bertegangan, gunakan satu tangan untuk mengurangi risiko arus melewati jantung.</li>
+                            <li><strong>Jaga Area Kerja Tetap Rapi:</strong> Terapkan 5R selama bekerja—jangan biarkan kabel atau alat berserakan.</li>
+                            <li><strong>Hentikan Pekerjaan Jika:</strong> Terjadi kondisi tidak aman, cuaca buruk (untuk pekerjaan luar), atau APD rusak.</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-400 mb-3"><i class="fas fa-check-circle mr-2"></i>TAHAP 3: SESUDAH PEKERJAAN</h4>
+                        <ol class="text-gray-300 text-sm space-y-2 list-decimal list-inside">
+                            <li><strong>Periksa Kembali Rangkaian:</strong> Pastikan tidak ada alat tertinggal, sambungan longgar, atau kabel terkelupas.</li>
+                            <li><strong>Bersihkan Area Kerja:</strong> Kembalikan semua alat dan bahan ke tempatnya, bersihkan sisa material.</li>
+                            <li><strong>Lepas LOTO Secara Berurutan:</strong> Hanya oleh orang yang memasang, setelah semua pekerja aman.</li>
+                            <li><strong>Pengujian Fungsi:</strong> Nyalakan sumber listrik dan uji fungsi sistem secara bertahap.</li>
+                            <li><strong>Pembersihan APD:</strong> Bersihkan APD sesuai panduan, simpan di tempat kering dan terlindung.</li>
+                            <li><strong>Pembuatan Laporan:</strong> Dokumentasikan pekerjaan, temuan, dan rekomendasi untuk pemeliharaan berikutnya.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">7.4 Lockout/Tagout (LOTO): Standar Emas Keselamatan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Lockout/Tagout (LOTO)</strong> adalah prosedur keselamatan yang mengharuskan pemutusan sumber energi berbahaya dan pengunciannya sebelum pekerjaan pemeliharaan dilakukan. Prosedur ini diwajibkan oleh OSHA (AS) dan diadopsi oleh industri di seluruh dunia, termasuk Indonesia melalui Permenaker No. 8 Tahun 2020.
+                </p>
+
+                <h4 class="font-bold text-white mt-6 mb-3">6 Langkah LOTO yang Benar:</h4>
+                <div class="space-y-3 mt-4">
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-gray-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-gray-400">1</span>
+                        <div>
+                            <h4 class="font-bold text-gray-300">PERSIAPAN (Preparation)</h4>
+                            <p class="text-gray-400 text-sm">Identifikasi semua sumber energi (listrik, mekanik, hidrolik, pneumatik, kimia). Pelajari jenis dan besarnya.</p>
+                        </div>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-yellow-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-yellow-400">2</span>
+                        <div>
+                            <h4 class="font-bold text-yellow-300">PEMBERITAHUAN (Notification)</h4>
+                            <p class="text-gray-400 text-sm">Beri tahu semua pekerja yang terdampak bahwa akan dilakukan LOTO dan mesin tidak akan beroperasi.</p>
+                        </div>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-orange-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-orange-400">3</span>
+                        <div>
+                            <h4 class="font-bold text-orange-300">PEMATIAN (Shutdown)</h4>
+                            <p class="text-gray-400 text-sm">Matikan mesin/peralatan melalui prosedur normal (tombol stop, sakelar, MCB).</p>
+                        </div>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-red-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-red-400">4</span>
+                        <div>
+                            <h4 class="font-bold text-red-300">ISOLASI & PENGUNCIAN (Isolation & Lockout)</h4>
+                            <p class="text-gray-400 text-sm">Putus sumber energi dan pasang gembok pribadi (personal lock) pada titik isolasi. Setiap pekerja memiliki kuncinya sendiri.</p>
+                        </div>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-purple-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-purple-400">5</span>
+                        <div>
+                            <h4 class="font-bold text-purple-300">PEMBERIAN TAG (Tagout)</h4>
+                            <p class="text-gray-400 text-sm">Pasang label peringatan yang berisi: nama pekerja, tanggal, alasan LOTO, dan kontak darurat. Tag harus tidak bisa dilepas tanpa alat.</p>
+                        </div>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-green-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-green-400">6</span>
+                        <div>
+                            <h4 class="font-bold text-green-300">PENGUJIAN (Verification / Try Out)</h4>
+                            <p class="text-gray-400 text-sm"><strong>Langkah paling kritis!</strong> Coba nyalakan mesin untuk memastikan benar-benar mati. Gunakan multimeter untuk verifikasi ketiadaan tegangan (<em>Test Before Touch</em>).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-red-900/20 border border-red-500/30 p-5 rounded-lg">
+                    <h4 class="font-bold text-red-400 mb-2"><i class="fas fa-exclamation-circle mr-2"></i>Prinsip Emas LOTO:</h4>
+                    <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                        <li><strong>Satu orang, satu gembok, satu kunci:</strong> Setiap pekerja yang terlibat wajib memasang gembok pribadinya sendiri.</li>
+                        <li><strong>Hanya pemasang yang boleh melepas:</strong> Gembok hanya boleh dibuka oleh orang yang memasangnya, kecuali dalam keadaan darurat dengan prosedur khusus.</li>
+                        <li><strong>Verifikasi adalah wajib:</strong> Jangan pernah berasumsi mesin sudah mati—selalu uji sendiri.</li>
+                        <li><strong>LOTO bukan pilihan, melainkan kewajiban:</strong> Pelanggaran prosedur LOTO adalah pelanggaran berat yang dapat berakibat pemecatan dan tuntutan hukum.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Bayangkan Anda akan bekerja pada panel bertegangan 380V. Apakah Anda akan terburu-buru tanpa memeriksa sarung tangan? Apakah Anda akan melewatkan tahap LOTO karena "hanya sebentar"? Ingatlah: <strong>setiap detik yang Anda habiskan untuk keselamatan adalah investasi untuk pulang ke rumah dengan selamat</strong>. Tidak ada pekerjaan yang begitu penting sehingga tidak boleh dilakukan dengan aman.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-red-500">
+                <h4 class="font-serif text-lg font-bold text-red-400 mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Buat checklist pribadi untuk pemeriksaan APD—gunakan setiap kali sebelum praktik.</li>
+                    <li>Hafalkan 6 langkah LOTO dan latih secara berulang hingga menjadi refleks.</li>
+                    <li>Jangan malu mengingatkan rekan yang lupa menggunakan APD—Anda mungkin menyelamatkan nyawanya.</li>
+                    <li>Dokumentasikan setiap pemeriksaan APD di buku log pribadi sebagai kebiasaan profesional.</li>
+                    <li>Pelajari simbol-simbol pada label APD (kelas tegangan, tanggal uji, standar).</li>
+                    <li>Simpan APD di tempat kering, gelap, dan jauh dari bahan kimia yang dapat merusak material.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Alat Pelindung Diri dan Prosedur Kerja Aman adalah dua sisi dari mata uang yang sama dalam keselamatan kerja kelistrikan. APD—mulai dari helm isolasi, sarung tangan, sepatu safety, hingga pakaian tahan api—harus dipilih sesuai jenis bahaya, diperiksa dengan metode L.I.F.T sebelum digunakan, dan diganti segera jika menunjukkan tanda kerusakan.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Prosedur kerja aman tiga tahap (sebelum–saat–sesudah) memberikan kerangka sistematis untuk menjamin keselamatan di setiap fase pekerjaan. Sementara itu, <strong>Lockout/Tagout (LOTO)</strong> adalah standar emas yang wajib diterapkan saat bekerja pada peralatan bertegangan—dengan prinsip "satu orang, satu gembok, satu kunci" dan verifikasi "Test Before Touch". 
+            </p>
+            <p class="text-gray-300 leading-relaxed mt-4">
+                Sebagai calon teknisi profesional, Anda adalah penjaga keselamatan—bagi diri sendiri, rekan kerja, dan lingkungan. Ingatlah: <strong>keselamatan bukan beban, melainkan investasi nyawa</strong>.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>Kementerian Ketenagakerjaan RI. (2020). <em>Permenaker No. 8 Tahun 2020 tentang Keselamatan dan Kesehatan Kerja Pesawat Listrik dan Elektronik.</em> Jakarta.</li>
+                <li>NFPA. (2021). <em>NFPA 70E: Standard for Electrical Safety in the Workplace.</em> Quincy: National Fire Protection Association.</li>
+                <li>ASTM International. (2020). <em>ASTM D120: Standard Specification for Rubber Insulating Gloves.</em> West Conshohocken.</li>
+                <li>PLN. (2023). <em>Buku Saku Keselamatan Ketenagalistrikan.</em> Jakarta: PT PLN (Persero).</li>
+                <li>OSHA. (2019). <em>Control of Hazardous Energy (Lockout/Tagout) - OSHA 3120.</em> U.S. Department of Labor.</li>
+                <li>IEC. (2017). <em>IEC 60903: Live Working - Electrical Insulating Gloves.</em> Geneva: International Electrotechnical Commission.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="6.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: K3LH Ketenagalistrikan
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="8.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Penanganan Darurat <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 7</h2>
+                <p class="text-gray-400">Alat Pelindung Diri dan Prosedur Kerja Aman</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Dalam hierarki pengendalian bahaya, APD ditempatkan pada urutan terakhir karena...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. APD adalah yang paling mahal</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. APD tidak menghilangkan sumber bahaya, hanya melindungi pemakainya</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. APD hanya digunakan di laboratorium</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. APD tidak efektif sama sekali</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. APD yang berfungsi melindungi tangan dari sengatan listrik saat bekerja pada instalasi bertegangan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. Sarung tangan kain</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. Sarung tangan kulit</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. Sarung tangan isolasi karet (sesuai kelas tegangan)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Sarung tangan lateks medis</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Pemeriksaan kondisi APD harus dilakukan...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. Sebulan sekali</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. Sebelum setiap penggunaan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. Hanya saat dibeli baru</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. Setelah terjadi kecelakaan</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Helm isolasi Class E (Electrical) dirancang untuk melindungi kepala dari sengatan listrik hingga tegangan...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. 2.200V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. 5.000V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. 20.000V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. 100.000V</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Kepanjangan dari LOTO dalam prosedur keselamatan kerja adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. Lockout/Tagout</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. Low Output/Total Off</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. Line Off/Turn Out</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. Load Off/Test On</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Langkah terakhir dalam prosedur LOTO yang paling kritis untuk memastikan keselamatan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. Mematikan mesin</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. Memasang gembok</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. Memberi label/tag</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. Verifikasi/Test Before Touch (menguji ketiadaan tegangan)</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. APD yang berfungsi melindungi mata dan wajah dari percikan api atau arc flash adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. Helm isolasi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. Kacamata safety / Face shield</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. Ear plug</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. Sepatu safety</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Sarung tangan isolasi Class 1 sesuai standar ASTM D120 dirancang untuk pekerjaan dengan tegangan maksimum...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. 500V AC</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. 1.000V AC</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. 7.500V AC</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. 17.000V AC</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Dalam prosedur kerja aman, tahap "Test Before Touch" dilakukan untuk...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. Membersihkan peralatan sebelum disentuh</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Memastikan tidak ada tegangan tersisa sebelum tangan menyentuh komponen</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Menguji kekuatan mekanis alat</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Mengukur suhu peralatan</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Jika seorang siswa menemukan sarung tangan isolasi yang sudah kedaluwarsa masa ujinya, tindakan yang paling tepat adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Tetap menggunakannya karena tampak masih bagus</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Tidak menggunakannya, laporkan ke instruktur, dan minta APD yang telah lulus uji</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Memakainya dengan lapisan sarung tangan kain di bawahnya</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Menggunakannya hanya untuk pekerjaan tegangan rendah</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Sebutkan dan jelaskan minimal 7 (tujuh) jenis APD utama yang digunakan dalam pekerjaan kelistrikan! Jelaskan fungsi masing-masing dan standar acuan yang berlaku!</p>
+                            <textarea name="essay1" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Jelaskan metode pemeriksaan APD dengan prinsip "L.I.F.T" (Look, Feel, Stretch, Check Date)! Berikan contoh konkret penerapannya pada sarung tangan isolasi dan helm isolasi!</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Uraikan secara rinci prosedur kerja aman tiga tahap (sebelum, saat, dan sesudah pekerjaan) dalam pekerjaan kelistrikan! Berikan minimal 3 contoh konkret untuk setiap tahap!</p>
+                            <textarea name="essay3" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Jelaskan 6 (enam) langkah prosedur Lockout/Tagout (LOTO) secara berurutan! Mengapa langkah "Verifikasi/Test Before Touch" dianggap paling kritis? Apa prinsip emas LOTO yang harus dipatuhi?</p>
+                            <textarea name="essay4" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Berdasarkan studi kasus "Sarung Tangan yang Tampak Baik" di atas, analisis mengapa penampilan luar APD bisa menipu! Rumuskan prosedur pengelolaan APD yang seharusnya diterapkan di bengkel sekolah untuk mencegah kejadian serupa!</p>
+                            <textarea name="essay5" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%207%20-%20APD%20dan%20Prosedur%20Kerja%20Aman" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 7
+        const kunciJawaban = {
+            q1: 'b', // APD tidak menghilangkan sumber bahaya
+            q2: 'c', // Sarung tangan isolasi karet
+            q3: 'b', // Sebelum setiap penggunaan
+            q4: 'c', // 20.000V
+            q5: 'a', // Lockout/Tagout
+            q6: 'd', // Verifikasi/Test Before Touch
+            q7: 'b', // Kacamata safety / Face shield
+            q8: 'c', // 7.500V AC
+            q9: 'b', // Memastikan tidak ada tegangan tersisa
+            q10: 'b' // Tidak menggunakan, laporkan, minta yang lulus uji
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

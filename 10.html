@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 10: Tegangan, Arus, Hambatan dan Hukum Ohm - Sonia Dora, S.Pd.</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(243, 229, 171, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            font-family: 'Courier New', monospace;
+        }
+        .ohm-triangle {
+            width: 0;
+            height: 0;
+            border-left: 120px solid transparent;
+            border-right: 120px solid transparent;
+            border-bottom: 180px solid rgba(212, 175, 55, 0.15);
+            position: relative;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="9.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="11.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 4 • PERTEMUAN 10</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Tegangan, Arus, Hambatan <br>
+                <span class="text-gradient-gold">dan Hukum Ohm</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Menguasai hukum paling fundamental dalam kelistrikan—Hukum Ohm (V = I × R)—sebagai kunci untuk menganalisis, merancang, dan memecahkan masalah pada setiap rangkaian listrik.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-atom text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Pada pertemuan sebelumnya, siswa telah mengenal "alfabet" kelistrikan: besaran dan satuan listrik. Kini saatnya mempelajari "tata bahasa" yang menghubungkan huruf-huruf tersebut menjadi kalimat yang bermakna. <strong>Hukum Ohm</strong> adalah hukum paling fundamental dan paling sering digunakan dalam seluruh bidang teknik listrik dan elektronika.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Ditemukan oleh fisikawan Jerman <strong>Georg Simon Ohm</strong> pada tahun 1827, hukum ini menyatakan hubungan matematis yang sederhana namun sangat kuat antara tiga besaran utama: <strong>Tegangan (V)</strong>, <strong>Arus (I)</strong>, dan <strong>Hambatan (R)</strong>. Dengan menguasai Hukum Ohm, seorang teknisi dapat menghitung arus yang mengalir dalam kabel, menentukan ukuran MCB yang tepat, menganalisis penyebab kerusakan peralatan, dan merancang rangkaian yang aman dan efisien. Hukum ini adalah <strong>jembatan</strong> antara teori dasar dan praktik nyata di lapangan.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Hukum Ohm dalam Kehidupan Sehari-hari</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video penjelasan Hukum Ohm dan penerapannya</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal Edukasi Teknik / Dokumentasi Laboratorium</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Tegangan (Voltage, V)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Gaya dorong atau beda potensial yang menyebabkan muatan listrik mengalir. Diukur dalam Volt (V). Analogi: tekanan air dalam pipa.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Arus (Current, I)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Laju aliran muatan listrik melalui suatu penghantar per satuan waktu. Diukur dalam Ampere (A). Analogi: debit air yang mengalir.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Hambatan (Resistance, R)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Tahanan suatu bahan terhadap aliran arus listrik. Diukur dalam Ohm (Ω). Analogi: penyempitan atau gesekan dalam pipa air.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Hukum Ohm</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Hukum yang menyatakan bahwa arus yang mengalir berbanding lurus dengan tegangan dan berbanding terbalik dengan hambatan: V = I × R.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-blue-300 mb-4"><i class="fas fa-search mr-2"></i> Studi Kasus 10: Kabel Terbakar di Ruang Server</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Sebuah ruang server sekolah mengalami kebakaran kecil yang berasal dari kabel power supply. Setelah diselidiki, ternyata kabel yang digunakan memiliki hambatan internal 0,5 Ω dan dialiri arus 20 A secara terus-menerus. Menggunakan Hukum Ohm, tegangan jatuh (voltage drop) pada kabel adalah V = I × R = 20 × 0,5 = 10V. Daya yang terbuang sebagai panas pada kabel adalah P = I² × R = 20² × 0,5 = 200 Watt. Panas sebesar 200W yang terbuang di kabel kecil inilah yang menyebabkan isolasi meleleh dan memicu kebakaran."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-luxury-gold">
+                <h4 class="font-bold text-luxury-gold mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kasus ini menunjukkan bahwa Hukum Ohm bukan sekadar rumus di atas kertas—ia adalah <strong>alat analisis keselamatan</strong>. Dengan memahami hubungan V = I × R, seorang teknisi dapat memprediksi bahwa kabel dengan hambatan tertentu yang dialiri arus besar akan menghasilkan panas berbahaya. Pemilihan ukuran kabel yang tepat (hambatan rendah) untuk arus yang diharapkan adalah aplikasi langsung Hukum Ohm yang menyelamatkan nyawa dan aset.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">10.1 Konsep Mendalam: Tegangan, Arus, dan Hambatan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Sebelum mempelajari hubungan matematis antara ketiga besaran ini, mari kita pahami secara mendalam makna fisis masing-masing melalui analogi sistem air yang konsisten:
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-4 mt-6">
+                    <!-- Tegangan -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-yellow-500">
+                        <div class="text-center mb-3">
+                            <span class="text-4xl">💧</span>
+                            <h4 class="font-bold text-yellow-400 mt-2">Tegangan (V)</h4>
+                            <span class="formula-box inline-block px-3 py-1 rounded text-luxury-gold font-bold text-sm mt-1">Volt (V)</span>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-2"><strong>Analogi Air:</strong> Tekanan air dalam tangki. Semakin tinggi tangki, semakin besar tekanan di dasar.</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-2"><strong>Dalam Listrik:</strong> Beda potensial antara dua titik. Sumber tegangan (baterai, generator) "mendorong" elektron untuk bergerak.</p>
+                        <p class="text-gray-400 text-xs leading-relaxed"><strong>Fakta:</strong> Tegangan PLN rumah tangga = 220V AC. Baterai AA = 1,5V DC. Tegangan di atas 50V AC sudah berbahaya bagi manusia.</p>
+                    </div>
+
+                    <!-- Arus -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-blue-500">
+                        <div class="text-center mb-3">
+                            <span class="text-4xl">🌊</span>
+                            <h4 class="font-bold text-blue-400 mt-2">Arus (I)</h4>
+                            <span class="formula-box inline-block px-3 py-1 rounded text-luxury-gold font-bold text-sm mt-1">Ampere (A)</span>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-2"><strong>Analogi Air:</strong> Debit air yang mengalir melalui pipa per satuan waktu (liter/detik).</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-2"><strong>Dalam Listrik:</strong> Jumlah muatan listrik (Coulomb) yang melewati suatu titik per detik. 1 Ampere = 1 Coulomb/detik.</p>
+                        <p class="text-gray-400 text-xs leading-relaxed"><strong>Fakta:</strong> Lampu LED ≈ 0,02A. AC 1 PK ≈ 4,5A. Arus 50mA (0,05A) sudah dapat menghentikan jantung manusia.</p>
+                    </div>
+
+                    <!-- Hambatan -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-red-500">
+                        <div class="text-center mb-3">
+                            <span class="text-4xl">🪨</span>
+                            <h4 class="font-bold text-red-400 mt-2">Hambatan (R)</h4>
+                            <span class="formula-box inline-block px-3 py-1 rounded text-luxury-gold font-bold text-sm mt-1">Ohm (Ω)</span>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-2"><strong>Analogi Air:</strong> Penyempitan pipa atau batu yang menghalangi aliran air. Semakin sempit, semakin sulit air mengalir.</p>
+                        <p class="text-gray-400 text-xs leading-relaxed mb-2"><strong>Dalam Listrik:</strong> Sifat bahan yang melawan aliran elektron. Konduktor (tembaga) memiliki R rendah; isolator (karet) memiliki R sangat tinggi.</p>
+                        <p class="text-gray-400 text-xs leading-relaxed"><strong>Fakta:</strong> Kabel tembaga 1m ≈ 0,01Ω. Tubuh manusia kering ≈ 100.000Ω. Tubuh basah ≈ 1.000Ω.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">10.2 Hukum Ohm: V = I × R</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Hukum Ohm</strong> menyatakan bahwa: <em>"Arus listrik (I) yang mengalir melalui suatu penghantar berbanding lurus dengan tegangan (V) yang diberikan dan berbanding terbalik dengan hambatan (R) penghantar tersebut, asalkan suhu tetap konstan."</em>
+                </p>
+
+                <!-- Formula Utama -->
+                <div class="formula-box p-6 rounded-xl text-center my-8">
+                    <p class="text-luxury-gold text-3xl font-bold mb-4">V = I × R</p>
+                    <div class="flex justify-center gap-6 text-lg">
+                        <div class="bg-luxury-900/50 px-4 py-2 rounded">
+                            <span class="text-yellow-400 font-bold">V</span> <span class="text-gray-400">= Tegangan (Volt)</span>
+                        </div>
+                        <div class="bg-luxury-900/50 px-4 py-2 rounded">
+                            <span class="text-blue-400 font-bold">I</span> <span class="text-gray-400">= Arus (Ampere)</span>
+                        </div>
+                        <div class="bg-luxury-900/50 px-4 py-2 rounded">
+                            <span class="text-red-400 font-bold">R</span> <span class="text-gray-400">= Hambatan (Ohm)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segitiga Ohm -->
+                <div class="bg-luxury-800/50 p-6 rounded-xl my-8">
+                    <h4 class="font-bold text-luxury-gold mb-4 text-center"><i class="fas fa-shapes mr-2"></i>Segitiga Ohm (Ohm's Law Triangle)</h4>
+                    <p class="text-gray-300 text-sm text-center mb-6">Tutup besaran yang ingin dicari, maka tersisa rumusnya:</p>
+                    <div class="flex justify-center">
+                        <div class="relative w-64 h-48">
+                            <!-- Triangle SVG -->
+                            <svg viewBox="0 0 240 200" class="w-full h-full">
+                                <polygon points="120,10 10,190 230,190" fill="none" stroke="#d4af37" stroke-width="2"/>
+                                <line x1="10" y1="100" x2="230" y2="100" stroke="#d4af37" stroke-width="1" stroke-dasharray="5,5"/>
+                                <!-- V di atas -->
+                                <text x="120" y="70" text-anchor="middle" fill="#d4af37" font-size="28" font-weight="bold">V</text>
+                                <!-- I di kiri bawah -->
+                                <text x="75" y="160" text-anchor="middle" fill="#60a5fa" font-size="28" font-weight="bold">I</text>
+                                <!-- × di tengah bawah -->
+                                <text x="120" y="160" text-anchor="middle" fill="#94a3b8" font-size="20">×</text>
+                                <!-- R di kanan bawah -->
+                                <text x="165" y="160" text-anchor="middle" fill="#f87171" font-size="28" font-weight="bold">R</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 mt-6 text-center text-sm">
+                        <div class="bg-luxury-900/50 p-3 rounded">
+                            <p class="text-yellow-400 font-bold mb-1">Cari V?</p>
+                            <p class="text-gray-300">Tutup V → <strong>V = I × R</strong></p>
+                        </div>
+                        <div class="bg-luxury-900/50 p-3 rounded">
+                            <p class="text-blue-400 font-bold mb-1">Cari I?</p>
+                            <p class="text-gray-300">Tutup I → <strong>I = V / R</strong></p>
+                        </div>
+                        <div class="bg-luxury-900/50 p-3 rounded">
+                            <p class="text-red-400 font-bold mb-1">Cari R?</p>
+                            <p class="text-gray-300">Tutup R → <strong>R = V / I</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Tiga Bentuk Persamaan Hukum Ohm:</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-yellow-400 font-bold text-lg mb-1">V = I × R</p>
+                        <p class="text-gray-400 text-xs">Digunakan untuk mencari <strong>tegangan</strong> jika arus dan hambatan diketahui.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <p class="text-blue-400 font-bold text-lg mb-1">I = V / R</p>
+                        <p class="text-gray-400 text-xs">Digunakan untuk mencari <strong>arus</strong> jika tegangan dan hambatan diketahui.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-red-500">
+                        <p class="text-red-400 font-bold text-lg mb-1">R = V / I</p>
+                        <p class="text-gray-400 text-xs">Digunakan untuk mencari <strong>hambatan</strong> jika tegangan dan arus diketahui.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">10.3 Hubungan Proporsional dalam Hukum Ohm</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Memahami hubungan proporsional antar besaran sangat penting untuk mengembangkan intuisi teknis:
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Hubungan</th>
+                                <th class="p-4">Kondisi</th>
+                                <th class="p-4">Efek</th>
+                                <th class="p-4 rounded-tr-lg">Contoh Nyata</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-yellow-400">I ∝ V</td>
+                                <td class="p-4">R tetap, V naik</td>
+                                <td class="p-4">I naik (berbanding lurus)</td>
+                                <td class="p-4">Baterai 9V menghasilkan arus lebih besar dari baterai 1,5V pada lampu yang sama</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-blue-400">I ∝ 1/R</td>
+                                <td class="p-4">V tetap, R naik</td>
+                                <td class="p-4">I turun (berbanding terbalik)</td>
+                                <td class="p-4">Kabel panjang (R besar) mengalirkan arus lebih kecil dari kabel pendek</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-red-400">V ∝ R</td>
+                                <td class="p-4">I tetap, R naik</td>
+                                <td class="p-4">V naik (berbanding lurus)</td>
+                                <td class="p-4">Voltage drop pada kabel panjang lebih besar dari kabel pendek</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">10.4 Penyelesaian Masalah Numerik</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Berikut adalah contoh-contoh penyelesaian masalah menggunakan Hukum Ohm yang sering dihadapi teknisi di lapangan:
+                </p>
+
+                <div class="space-y-4 mt-6">
+                    <!-- Contoh 1 -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 1: Mencari Arus (I = V/R)</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Sebuah lampu pijar dengan hambatan 440 Ω dipasang pada tegangan 220V. Berapa arus yang mengalir?</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold">Diketahui: V = 220 V, R = 440 Ω</p>
+                            <p class="text-luxury-gold">Ditanya: I = ?</p>
+                            <p class="text-luxury-gold">Jawab: I = V / R = 220 / 440 = <strong>0,5 A</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 2 -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 2: Mencari Hambatan (R = V/I)</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Sebuah setrika listrik menarik arus 2 A saat dipasang pada tegangan 220V. Berapa hambatan elemen pemanas setrika?</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold">Diketahui: V = 220 V, I = 2 A</p>
+                            <p class="text-luxury-gold">Ditanya: R = ?</p>
+                            <p class="text-luxury-gold">Jawab: R = V / I = 220 / 2 = <strong>110 Ω</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 3 -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 3: Mencari Tegangan (V = I × R)</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Arus sebesar 3 A mengalir melalui resistor 100 Ω. Berapa tegangan pada ujung-ujung resistor?</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold">Diketahui: I = 3 A, R = 100 Ω</p>
+                            <p class="text-luxury-gold">Ditanya: V = ?</p>
+                            <p class="text-luxury-gold">Jawab: V = I × R = 3 × 100 = <strong>300 V</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 4 -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 4: Konversi Satuan + Hukum Ohm</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Sebuah resistor 4,7 kΩ dialiri arus 5 mA. Berapa tegangan pada resistor tersebut?</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold">Diketahui: R = 4,7 kΩ = 4.700 Ω, I = 5 mA = 0,005 A</p>
+                            <p class="text-luxury-gold">Ditanya: V = ?</p>
+                            <p class="text-luxury-gold">Jawab: V = I × R = 0,005 × 4.700 = <strong>23,5 V</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 5: Analisis Keselamatan -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400 mb-2">⚠️ Contoh 5: Analisis Keselamatan Tubuh Manusia</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Seorang teknisi dengan tangan basah (tahanan tubuh ≈ 1.000 Ω) tidak sengaja menyentuh kabel bertegangan 220V. Berapa arus yang mengalir melalui tubuhnya? Apakah berbahaya?</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-red-300">Diketahui: V = 220 V, R = 1.000 Ω</p>
+                            <p class="text-red-300">Ditanya: I = ?</p>
+                            <p class="text-red-300">Jawab: I = V / R = 220 / 1.000 = <strong>0,22 A = 220 mA</strong></p>
+                            <p class="text-red-400 font-bold mt-2">⚠️ ANALISIS: 220 mA >> 50 mA (batas fatal). Arus ini SANGAT BERBAHAYA dan dapat menyebabkan henti jantung (ventricular fibrillation) serta kematian. Ini menunjukkan mengapa bekerja dengan tangan basah di dekat sumber listrik sangat dilarang!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">10.5 Batasan Hukum Ohm</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Meskipun sangat fundamental, Hukum Ohm memiliki batasan. Hukum ini berlaku sempurna untuk <strong>komponen ohmik</strong> (seperti resistor logam pada suhu konstan), tetapi tidak berlaku linear untuk <strong>komponen non-ohmik</strong>:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-400 mb-2">Komponen Ohmik (Hukum Ohm Berlaku)</h4>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            <li>Resistor karbon/metal film</li>
+                            <li>Kabel tembaga (pada suhu konstan)</li>
+                            <li>Kawat pemanas (nichrome)</li>
+                            <li>Grafik V-I berupa garis lurus</li>
+                        </ul>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-orange-500">
+                        <h4 class="font-bold text-orange-400 mb-2">Komponen Non-Ohmik (Hukum Ohm Tidak Linear)</h4>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            <li>Dioda (hanya mengalirkan arus satu arah)</li>
+                            <li>LED (memerlukan tegangan threshold)</li>
+                            <li>Transistor (karakteristik kompleks)</li>
+                            <li>Filamen lampu pijar (R berubah dengan suhu)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Hukum Ohm adalah "pisau Swiss Army" bagi teknisi listrik. Hampir setiap perhitungan yang akan Anda lakukan di bengkel, di lapangan, atau di industri—mulai dari memilih ukuran kabel, menentukan rating MCB, hingga menganalisis kerusakan—bermula dari V = I × R. Kuasai rumus ini hingga menjadi refleks. Jika Anda bisa menghitung dalam hati bahwa 220V dibagi 100Ω menghasilkan 2,2A, Anda sudah memiliki intuisi teknis yang baik.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Hafalkan segitiga Ohm—ia adalah alat bantu tercepat untuk mengingat tiga bentuk rumus.</li>
+                    <li>Selalu konversi satuan ke satuan dasar (V, A, Ω) SEBELUM menghitung.</li>
+                    <li>Periksa apakah jawaban Anda masuk akal secara fisis. Arus 1.000A pada lampu rumah? Pasti ada yang salah!</li>
+                    <li>Latih perhitungan mental sederhana: 220/100 = 2,2A; 12/6 = 2A; dst.</li>
+                    <li>Saat mengukur dengan multimeter, gunakan Hukum Ohm untuk memverifikasi apakah hasil pengukuran masuk akal.</li>
+                    <li>Ingat: Hukum Ohm berlaku pada suhu konstan. Resistansi logam naik saat panas.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Hukum Ohm (V = I × R) adalah hukum paling fundamental dalam kelistrikan yang menghubungkan tiga besaran utama: tegangan, arus, dan hambatan. Dengan memahami bahwa arus berbanding lurus dengan tegangan dan berbanding terbalik dengan hambatan, seorang teknisi dapat menganalisis, merancang, dan memecahkan masalah pada setiap rangkaian listrik.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Penguasaan tiga bentuk persamaan (V = I×R, I = V/R, R = V/I) beserta kemampuan konversi satuan yang akurat merupakan kompetensi inti yang akan digunakan siswa sepanjang karir mereka. Dari perhitungan sederhana seperti menentukan arus lampu, hingga analisis keselamatan seperti memprediksi bahaya sengatan listrik—semuanya bermula dari Hukum Ohm. Ini adalah fondasi yang akan diperluas pada pertemuan selanjutnya untuk menganalisis rangkaian seri, paralel, dan kombinasi.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>Ohm, G. S. (1827). <em>Die galvanische Kette, mathematisch bearbeitet.</em> Berlin: T.H. Riemann.</li>
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+                <li>Sumanto. (2019). <em>Instalasi Listrik Arus Kuat Jilid 1.</em> Yogyakarta: Andi Offset.</li>
+                <li>Malvino, A. P., & Bates, D. J. (2016). <em>Electronic Principles (8th ed.).</em> New York: McGraw-Hill Education.</li>
+                <li>Boylestad, R. L. (2016). <em>Introductory Circuit Analysis (13th ed.).</em> Pearson.</li>
+                <li>PLN. (2023). <em>Buku Saku Keselamatan Ketenagalistrikan.</em> Jakarta: PT PLN (Persero).</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="9.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Besaran & Satuan
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="11.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Rangkaian DC <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 10</h2>
+                <p class="text-gray-400">Tegangan, Arus, Hambatan dan Hukum Ohm</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Hukum Ohm menyatakan hubungan antara tiga besaran listrik, yaitu...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. Daya, energi, dan waktu</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Tegangan, arus, dan hambatan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. Frekuensi, periode, dan amplitudo</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. Kapasitansi, induktansi, dan resistansi</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Persamaan Hukum Ohm yang benar adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. V = I / R</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. V = I + R</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. V = I × R</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. V = I - R</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Sebuah resistor 220 Ω dipasang pada tegangan 22V. Arus yang mengalir adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. 0,01 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. 0,1 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. 1 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. 10 A</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Jika tegangan pada suatu rangkaian tetap dan hambatan diperbesar, maka arus yang mengalir akan...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. Bertambah besar</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Berkurang</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. Tetap sama</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. Menjadi nol</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Sebuah peralatan listrik menarik arus 5 A pada tegangan 220V. Hambatan peralatan tersebut adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. 44 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. 110 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. 225 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. 1.100 Ω</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Arus 2 A mengalir melalui resistor 1,5 kΩ. Tegangan pada resistor tersebut adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. 3 V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. 30 V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. 300 V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. 3.000 V</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Hukum Ohm ditemukan oleh fisikawan bernama...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. Michael Faraday</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. Georg Simon Ohm</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. Nikola Tesla</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. Thomas Alva Edison</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Jika arus yang mengalir melalui tubuh manusia adalah 220 mA, maka nilai tersebut dalam Ampere adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. 0,022 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. 0,22 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. 2,2 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. 22 A</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Komponen yang mengikuti Hukum Ohm secara linear (grafik V-I berupa garis lurus) disebut komponen...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. Non-ohmik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Ohmik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Semikonduktor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Superkonduktor</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Menggunakan segitiga Ohm, jika kita ingin mencari nilai hambatan (R), maka rumus yang digunakan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. R = V × I</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. R = I / V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. R = V / I</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. R = V + I</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Jelaskan secara mendalam konsep tegangan, arus, dan hambatan! Gunakan analogi sistem air untuk menjelaskan hubungan antara ketiga besaran tersebut!</p>
+                            <textarea name="essay1" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Tuliskan bunyi Hukum Ohm dan ketiga bentuk persamaannya! Jelaskan kapan masing-masing bentuk persamaan digunakan! Gambarkan segitiga Ohm dan jelaskan cara menggunakannya!</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Selesaikan soal-soal berikut (tulis langkah perhitungannya secara lengkap):
+                               a. Sebuah lampu memiliki hambatan 880 Ω dan dipasang pada tegangan 220V. Hitung arusnya!
+                               b. Arus 15 mA mengalir melalui resistor 2 kΩ. Hitung tegangannya!
+                               c. Sebuah peralatan menarik arus 10 A pada tegangan 220V. Hitung hambatannya!</p>
+                            <textarea name="essay3" rows="5" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Berdasarkan studi kasus "Kabel Terbakar di Ruang Server" di atas, analisis menggunakan Hukum Ohm mengapa kabel bisa terbakar! Jelaskan bagaimana pemahaman Hukum Ohm dapat mencegah kejadian serupa di masa depan!</p>
+                            <textarea name="essay4" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Jelaskan perbedaan antara komponen ohmik dan non-ohmik! Berikan masing-masing 3 contoh! Mengapa Hukum Ohm tidak berlaku linear untuk komponen non-ohmik?</p>
+                            <textarea name="essay5" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%2010%20-%20Hukum%20Ohm" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 10
+        const kunciJawaban = {
+            q1: 'b',  // Tegangan, arus, dan hambatan
+            q2: 'c',  // V = I × R
+            q3: 'b',  // 0,1 A (22/220)
+            q4: 'b',  // Berkurang (berbanding terbalik)
+            q5: 'a',  // 44 Ω (220/5)
+            q6: 'd',  // 3.000 V (2 × 1500)
+            q7: 'b',  // Georg Simon Ohm
+            q8: 'b',  // 0,22 A (220/1000)
+            q9: 'b',  // Ohmik
+            q10: 'c'  // R = V / I
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

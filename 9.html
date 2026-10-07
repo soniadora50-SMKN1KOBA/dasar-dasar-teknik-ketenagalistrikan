@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 9: Besaran dan Satuan Listrik - Sonia Dora, S.Pd.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(243, 229, 171, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="8.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> UTS</a>
+                <a href="10.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 4 • PERTEMUAN 9</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Besaran dan <br>
+                <span class="text-gradient-gold">Satuan Listrik</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Memahami bahasa universal kelistrikan—besaran pokok dan turunan, satuan SI, konversi prefix, serta penerapannya dalam perhitungan dasar sebagai fondasi menuju Hukum Ohm dan analisis rangkaian.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-ruler-combined text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Setelah melewati Ujian Tengah Semester dan menguasai fondasi wawasan dunia kerja, K3LH, serta prosedur keselamatan, kini saatnya memasuki <strong>inti teknis</strong> ketenagalistrikan: <strong>besaran dan satuan listrik</strong>. Jika K3LH adalah "bahasa keselamatan", maka besaran listrik adalah "bahasa teknik"—bahasa universal yang digunakan oleh seluruh insinyur dan teknisi di dunia untuk berkomunikasi tentang energi listrik.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Memahami besaran seperti tegangan, arus, hambatan, daya, dan energi bukan sekadar hafalan rumus. Ini adalah <strong>kemampuan literasi teknis</strong> yang membedakan seorang teknisi profesional dengan orang awam. Salah membaca satuan (misalnya mengira mA sama dengan A) dapat berakibat fatal—mulai dari kerusakan peralatan hingga kecelakaan kerja. Pertemuan ini akan membangun fondasi matematis yang kokoh sebelum siswa melangkah ke Hukum Ohm dan analisis rangkaian pada pertemuan-pertemuan selanjutnya.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Bahasa Universal Kelistrikan</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video penjelasan besaran dan satuan listrik</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal Edukasi Teknik / Dokumentasi PLN</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Besaran Pokok</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Besaran yang satuannya telah ditetapkan secara internasional dan tidak diturunkan dari besaran lain. Dalam listrik, arus listrik (A) adalah salah satu dari 7 besaran pokok SI.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Besaran Turunan</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Besaran yang diturunkan dari satu atau lebih besaran pokok. Contoh: tegangan (V = W/A), hambatan (Ω = V/A), daya (W = V×A).</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Satuan SI (Système International)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Sistem satuan internasional yang menjadi standar global dalam pengukuran ilmiah dan teknik, termasuk dalam bidang ketenagalistrikan.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Prefix (Awalan) Satuan</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Imbuhan pada satuan untuk menyatakan kelipatan atau sub-kelipatan: milli (m=10⁻³), kilo (k=10³), mega (M=10⁶), giga (G=10⁹), mikro (μ=10⁻⁶).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-blue-300 mb-4"><i class="fas fa-search mr-2"></i> Studi Kasus 9: Fatalitas Akibat Salah Baca Satuan</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Seorang teknisi magang diminta memasang MCB untuk beban 2.200 Watt pada tegangan 220V. Ia menghitung arus: I = P/V = 2200/220 = 10A. Namun, saat membeli MCB di toko, ia salah membaca label dan membeli MCB 10 mA (miliampere), bukan 10 A (ampere). Saat MCB dipasang dan beban dinyalakan, MCB langsung trip karena arus 10A jauh melebihi kapasitas 10mA (0,01A). Lebih parah, jika ia memaksakan menggunakan kabel kecil yang dirancang untuk arus mikro, kabel dapat terbakar."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-luxury-gold">
+                <h4 class="font-bold text-luxury-gold mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kasus ini menunjukkan betapa <strong>krusialnya pemahaman konversi satuan</strong>. Perbedaan antara "m" (milli = 10⁻³) dan tanpa prefix dapat berarti perbedaan faktor 1.000 kali. Dalam kelistrikan, kesalahan baca satuan bukan hanya soal angka—ia bisa berakibat pada kerusakan peralatan, kebakaran, atau bahkan korban jiwa. Literasi besaran dan satuan adalah <strong>keterampilan hidup</strong> bagi seorang teknisi.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">9.1 Besaran Pokok dan Turunan dalam Kelistrikan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Dalam Sistem Satuan Internasional (SI), terdapat <strong>7 besaran pokok</strong> yang menjadi fondasi seluruh pengukuran ilmiah. Dalam bidang kelistrikan, satu besaran pokok sangat sentral: <strong>Arus Listrik (Ampere)</strong>. Besaran listrik lainnya merupakan besaran turunan yang diturunkan dari besaran pokok.
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Jenis</th>
+                                <th class="p-4">Besaran</th>
+                                <th class="p-4">Simbol</th>
+                                <th class="p-4 rounded-tr-lg">Satuan SI</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-luxury-gold">Besaran Pokok</td>
+                                <td class="p-4">Arus Listrik</td>
+                                <td class="p-4 font-mono text-luxury-goldlight">I</td>
+                                <td class="p-4">Ampere (A)</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-blue-400" rowspan="5">Besaran Turunan</td>
+                                <td class="p-4">Tegangan Listrik</td>
+                                <td class="p-4 font-mono text-luxury-goldlight">V</td>
+                                <td class="p-4">Volt (V) = W/A</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4">Hambatan Listrik</td>
+                                <td class="p-4 font-mono text-luxury-goldlight">R</td>
+                                <td class="p-4">Ohm (Ω) = V/A</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4">Daya Listrik</td>
+                                <td class="p-4 font-mono text-luxury-goldlight">P</td>
+                                <td class="p-4">Watt (W) = V×A</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4">Energi Listrik</td>
+                                <td class="p-4 font-mono text-luxury-goldlight">W / E</td>
+                                <td class="p-4">Joule (J) atau Wh</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4">Muatan Listrik</td>
+                                <td class="p-4 font-mono text-luxury-goldlight">Q</td>
+                                <td class="p-4">Coulomb (C) = A×s</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">9.2 Lima Besaran Listrik Utama</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Lima besaran berikut adalah "alfabet" dari dunia kelistrikan. Menguasainya berarti menguasai bahasa dasar teknik listrik.
+                </p>
+
+                <div class="space-y-4 mt-6">
+                    <!-- Tegangan -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-yellow-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-yellow-400"><i class="fas fa-bolt mr-2"></i>Tegangan Listrik (Voltage)</h4>
+                            <span class="formula-box px-3 py-1 rounded text-luxury-gold font-bold">V (Volt)</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-2">Beda potensial listrik antara dua titik. Analogi: <strong>tekanan air</strong> dalam pipa—semakin tinggi tekanan, semakin kuat air mengalir.</p>
+                        <p class="text-gray-400 text-xs">Nilai umum: 220V (rumah tangga), 380V (industri 3-fasa), 20.000V (SUTM), 150.000V (SUTT).</p>
+                    </div>
+
+                    <!-- Arus -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-blue-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-blue-400"><i class="fas fa-water mr-2"></i>Arus Listrik (Current)</h4>
+                            <span class="formula-box px-3 py-1 rounded text-luxury-gold font-bold">A (Ampere)</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-2">Aliran muatan listrik per satuan waktu. Analogi: <strong>debit air</strong>—berapa banyak air yang mengalir per detik.</p>
+                        <p class="text-gray-400 text-xs">Rumus: I = Q/t. Nilai umum: 2A (MCB rumah), 10A (AC 1 PK), 50mA (batas fatal bagi manusia).</p>
+                    </div>
+
+                    <!-- Hambatan -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-red-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-red-400"><i class="fas fa-road mr-2"></i>Hambatan Listrik (Resistance)</h4>
+                            <span class="formula-box px-3 py-1 rounded text-luxury-gold font-bold">Ω (Ohm)</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-2">Tahanan terhadap aliran arus. Analogi: <strong>penyempitan pipa</strong>—semakin sempit, semakin sulit air mengalir.</p>
+                        <p class="text-gray-400 text-xs">Nilai umum: 1Ω–1MΩ untuk komponen, >1MΩ untuk isolator baik.</p>
+                    </div>
+
+                    <!-- Daya -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-green-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-green-400"><i class="fas fa-tachometer-alt mr-2"></i>Daya Listrik (Power)</h4>
+                            <span class="formula-box px-3 py-1 rounded text-luxury-gold font-bold">W (Watt)</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-2">Laju penggunaan energi per satuan waktu. Analogi: <strong>kecepatan kerja</strong>—berapa cepat energi dikonsumsi.</p>
+                        <p class="text-gray-400 text-xs">Rumus: P = V × I. Nilai umum: 10W (LED), 100W (kipas), 2.200W (daya rumah standar).</p>
+                    </div>
+
+                    <!-- Energi -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-purple-500">
+                        <div class="flex justify-between items-start mb-2">
+                            <h4 class="font-bold text-purple-400"><i class="fas fa-battery-three-quarters mr-2"></i>Energi Listrik (Energy)</h4>
+                            <span class="formula-box px-3 py-1 rounded text-luxury-gold font-bold">Wh / kWh / J</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-2">Jumlah total daya yang digunakan selama periode waktu tertentu. Analogi: <strong>volume air</strong> yang telah ditampung.</p>
+                        <p class="text-gray-400 text-xs">Rumus: W = P × t. Satuan PLN: kWh (1 kWh = 1.000 Wh = 3,6 juta Joule).</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">9.3 Satuan SI dan Konversi Prefix</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Prefix (awalan) satuan digunakan untuk menyatakan nilai yang sangat besar atau sangat kecil tanpa harus menulis banyak nol. Penguasaan prefix adalah <strong>keterampilan wajib</strong> bagi teknisi.
+                </p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Prefix</th>
+                                <th class="p-4">Simbol</th>
+                                <th class="p-4">Faktor</th>
+                                <th class="p-4">Contoh Penggunaan</th>
+                                <th class="p-4 rounded-tr-lg">Nilai Ekuivalen</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-purple-400">Tera</td>
+                                <td class="p-4 font-mono">T</td>
+                                <td class="p-4">10¹²</td>
+                                <td class="p-4">Kapasitas pembangkit besar</td>
+                                <td class="p-4">1 TW = 1.000.000.000.000 W</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-blue-400">Giga</td>
+                                <td class="p-4 font-mono">G</td>
+                                <td class="p-4">10⁹</td>
+                                <td class="p-4">Kapasitas trafo besar</td>
+                                <td class="p-4">1 GW = 1.000.000.000 W</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-green-400">Mega</td>
+                                <td class="p-4 font-mono">M</td>
+                                <td class="p-4">10⁶</td>
+                                <td class="p-4">Kapasitas pembangkit (MW)</td>
+                                <td class="p-4">1 MW = 1.000.000 W</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-luxury-gold">Kilo</td>
+                                <td class="p-4 font-mono">k</td>
+                                <td class="p-4">10³</td>
+                                <td class="p-4">Daya rumah, tegangan menengah</td>
+                                <td class="p-4">1 kW = 1.000 W; 1 kV = 1.000 V</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Satuan Dasar</td>
+                                <td class="p-4 font-mono">-</td>
+                                <td class="p-4">10⁰</td>
+                                <td class="p-4">Satuan standar</td>
+                                <td class="p-4">1 W, 1 V, 1 A, 1 Ω</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-yellow-400">Milli</td>
+                                <td class="p-4 font-mono">m</td>
+                                <td class="p-4">10⁻³</td>
+                                <td class="p-4">Arus kecil, sinyal elektronik</td>
+                                <td class="p-4">1 mA = 0,001 A</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-orange-400">Mikro</td>
+                                <td class="p-4 font-mono">μ</td>
+                                <td class="p-4">10⁻⁶</td>
+                                <td class="p-4">Kapasitor, arus sangat kecil</td>
+                                <td class="p-4">1 μA = 0,000001 A</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-red-400">Nano</td>
+                                <td class="p-4 font-mono">n</td>
+                                <td class="p-4">10⁻⁹</td>
+                                <td class="p-4">Komponen elektronika presisi</td>
+                                <td class="p-4">1 nA = 0,000000001 A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-3"><i class="fas fa-calculator mr-2"></i>Contoh Konversi Penting:</h4>
+                    <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                        <li>2,5 A = <strong>2.500 mA</strong> (× 1.000)</li>
+                        <li>450 mA = <strong>0,45 A</strong> (÷ 1.000)</li>
+                        <li>5 kV = <strong>5.000 V</strong> (× 1.000)</li>
+                        <li>2.200 W = <strong>2,2 kW</strong> (÷ 1.000)</li>
+                        <li>1,5 MΩ = <strong>1.500.000 Ω</strong> (× 1.000.000)</li>
+                        <li>100 μF = <strong>0,0001 F</strong> (÷ 1.000.000)</li>
+                        <li>3 kWh = <strong>3.000 Wh</strong> = <strong>10.800.000 J</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">9.4 Penerapan Besaran Listrik dalam Permasalahan Sederhana</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Berikut adalah contoh-contoh penerapan besaran listrik dalam permasalahan sehari-hari yang akan sering dihadapi teknisi:
+                </p>
+
+                <div class="space-y-4 mt-6">
+                    <!-- Contoh 1 -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 1: Menghitung Arus dari Daya dan Tegangan</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Sebuah AC memiliki daya 1.000 Watt dan dipasang pada tegangan 220V. Berapa arus yang mengalir?</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold">Diketahui: P = 1.000 W, V = 220 V</p>
+                            <p class="text-luxury-gold">Ditanya: I = ?</p>
+                            <p class="text-luxury-gold">Jawab: P = V × I → I = P / V = 1000 / 220 = <strong>4,55 A</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 2 -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 2: Menghitung Energi Listrik (Tagihan PLN)</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Sebuah lampu LED 15 Watt dinyalakan 8 jam per hari selama 30 hari. Berapa energi yang dikonsumsi dalam kWh?</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold">Diketahui: P = 15 W = 0,015 kW, t = 8 × 30 = 240 jam</p>
+                            <p class="text-luxury-gold">Ditanya: W = ?</p>
+                            <p class="text-luxury-gold">Jawab: W = P × t = 0,015 × 240 = <strong>3,6 kWh</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 3 -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 3: Konversi Satuan dalam Spesifikasi Komponen</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Sebuah resistor memiliki nilai 4,7 kΩ. Nyatakan dalam Ω dan MΩ!</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold">4,7 kΩ = 4,7 × 1.000 = <strong>4.700 Ω</strong></p>
+                            <p class="text-luxury-gold">4,7 kΩ = 4,7 ÷ 1.000 = <strong>0,0047 MΩ</strong></p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 4 -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 4: Analisis Keamanan Arus terhadap Tubuh</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Seorang teknisi tersengat arus sebesar 75 mA. Nyatakan dalam Ampere dan analisis dampaknya terhadap tubuh!</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold">75 mA = 75 ÷ 1.000 = <strong>0,075 A</strong></p>
+                            <p class="text-luxury-gold">Analisis: Arus 50 mA sudah dapat menyebabkan henti jantung. Arus 75 mA > 50 mA → <strong class="text-red-400">BERBAHAYA / FATAL</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Bayangkan Anda membaca label MCB: "C10". Apakah itu 10 Ampere atau 10 miliampere? Bayangkan Anda melihat spesifikasi kapasitor: "100μF". Apakah itu 100 Farad atau 0,0001 Farad? Perbedaan ini bukan sekadar angka—ia adalah <strong>perbedaan antara peralatan yang berfungsi dan peralatan yang meledak</strong>. Literasi besaran adalah nyawa kedua Anda di dunia teknik.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Hafalkan prefix utama: T, G, M, k, (dasar), m, μ, n—dan faktor pengalinya.</li>
+                    <li>Selalu tulis satuan saat menghitung. Jangan pernah menulis "10" tanpa "A", "V", atau "Ω".</li>
+                    <li>Perhatikan huruf kapital vs kecil: "M" (Mega = 10⁶) berbeda dengan "m" (milli = 10⁻³).</li>
+                    <li>Gunakan kalkulator ilmiah untuk konversi cepat saat praktik.</li>
+                    <li>Baca label komponen dengan teliti—satu karakter yang terlewat dapat mengubah makna sepenuhnya.</li>
+                    <li>Latih konversi satuan setiap hari dengan soal-soal sederhana.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Besaran dan satuan listrik adalah fondasi tak terpisahkan dari seluruh kompetensi teknis di bidang ketenagalistrikan. Lima besaran utama—tegangan (V), arus (A), hambatan (Ω), daya (W), dan energi (Wh)—merupakan "alfabet" yang akan digunakan siswa sepanjang karir mereka, mulai dari perhitungan sederhana hingga analisis rangkaian kompleks.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Penguasaan konversi satuan melalui prefix SI (T, G, M, k, m, μ, n) bukan hanya keterampilan akademis, melainkan <strong>keterampilan keselamatan</strong>. Kesalahan baca satuan dapat berakibat fatal, mulai dari kerusakan peralatan hingga kecelakaan kerja. Oleh karena itu, literasi besaran dan satuan harus dikuasai dengan matang sebelum siswa melangkah ke Hukum Ohm dan analisis rangkaian pada pertemuan berikutnya.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>BIPM. (2019). <em>The International System of Units (SI) - 9th Edition.</em> Sèvres: Bureau International des Poids et Mesures.</li>
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+                <li>Sumanto. (2019). <em>Instalasi Listrik Arus Kuat Jilid 1.</em> Yogyakarta: Andi Offset.</li>
+                <li>PLN. (2023). <em>Buku Saku Keselamatan Ketenagalistrikan.</em> Jakarta: PT PLN (Persero).</li>
+                <li>BSN. (2018). <em>SNI 19-02-2004: Standar Satuan Listrik.</em> Jakarta: Badan Standardisasi Nasional.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="8.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> UTS
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="10.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Hukum Ohm <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 9</h2>
+                <p class="text-gray-400">Besaran dan Satuan Listrik</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Besaran pokok dalam sistem SI yang menjadi fondasi pengukuran kelistrikan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. Tegangan (Volt)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Arus Listrik (Ampere)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. Hambatan (Ohm)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. Daya (Watt)</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Satuan SI untuk hambatan listrik adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. Volt (V)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. Ampere (A)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. Ohm (Ω)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Watt (W)</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Konversi 2.500 mA ke Ampere yang benar adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. 0,25 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. 2,5 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. 25 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. 250 A</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Prefix "Mega" (M) dalam sistem SI memiliki faktor...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. 10³</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. 10⁶</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. 10⁹</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. 10⁻³</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Rumus daya listrik yang benar adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. P = V + I</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. P = V / I</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. P = V × I</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. P = V - I</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Sebuah lampu LED 10 Watt dinyalakan selama 5 jam. Energi listrik yang dikonsumsi adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. 2 Wh</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. 15 Wh</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. 50 Wh</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. 500 Wh</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Konversi 3,5 kV ke Volt yang benar adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. 35 V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. 350 V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. 3.500 V</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. 35.000 V</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Besaran turunan yang didefinisikan sebagai "laju penggunaan energi per satuan waktu" adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. Tegangan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. Arus</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. Hambatan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. Daya</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Perbedaan antara "M" (Mega) dan "m" (milli) dalam prefix SI adalah faktor...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. 1.000 kali</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. 1.000.000 kali</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. 1.000.000.000 kali</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. 100 kali</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Sebuah peralatan listrik memiliki daya 2.200 Watt. Jika dinyatakan dalam kiloWatt, nilainya adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. 0,22 kW</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. 2,2 kW</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. 22 kW</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. 220 kW</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Jelaskan perbedaan antara besaran pokok dan besaran turunan dalam kelistrikan! Berikan masing-masing 3 contoh beserta satuannya!</p>
+                            <textarea name="essay1" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Uraikan lima besaran listrik utama (tegangan, arus, hambatan, daya, energi)! Jelaskan makna fisis masing-masing besaran dan berikan analogi sederhana untuk memahaminya!</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Lakukan konversi satuan berikut (tulis langkah perhitungannya):
+                               a. 450 mA = ... A
+                               b. 7,2 kV = ... V
+                               c. 1.500 W = ... kW
+                               d. 3,3 MΩ = ... Ω
+                               e. 250 μA = ... mA</p>
+                            <textarea name="essay3" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Sebuah rumah tangga menggunakan 5 lampu LED masing-masing 12 Watt yang menyala rata-rata 8 jam per hari selama 30 hari. Hitunglah:
+                               a. Total daya semua lampu (dalam Watt dan kW)
+                               b. Total energi yang dikonsumsi dalam kWh
+                               c. Jika tarif listrik Rp 1.500/kWh, berapa biaya listrik bulanan untuk lampu saja?</p>
+                            <textarea name="essay4" rows="5" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Berdasarkan studi kasus "Fatalitas Akibat Salah Baca Satuan" di atas, analisis mengapa pemahaman konversi satuan sangat krusial bagi seorang teknisi! Berikan 3 contoh situasi nyata di dunia kerja di mana kesalahan baca satuan dapat berakibat fatal!</p>
+                            <textarea name="essay5" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%209%20-%20Besaran%20dan%20Satuan%20Listrik" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 9
+        const kunciJawaban = {
+            q1: 'b', // Arus Listrik (Ampere) - besaran pokok
+            q2: 'c', // Ohm (Ω)
+            q3: 'b', // 2,5 A (2500/1000)
+            q4: 'b', // 10⁶
+            q5: 'c', // P = V × I
+            q6: 'c', // 50 Wh (10 × 5)
+            q7: 'c', // 3.500 V (3,5 × 1000)
+            q8: 'd', // Daya
+            q9: 'c', // 1.000.000.000 kali (10⁹ / 10⁻³ = 10¹², tapi M/m = 10⁶/10⁻³ = 10⁹)
+            q10: 'b' // 2,2 kW (2200/1000)
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

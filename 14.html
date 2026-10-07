@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 14: Komponen Dasar Elektronika - Sonia Dora, S.Pd.</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(243, 229, 171, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            font-family: 'Courier New', monospace;
+        }
+        .component-card {
+            transition: all 0.3s ease;
+        }
+        .component-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="13.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="15.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-teal-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 5 • PERTEMUAN 14</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Komponen Dasar <br>
+                <span class="text-gradient-gold">Elektronika</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Mengenal "batu bata" penyusun seluruh perangkat elektronik modern—resistor, kapasitor, induktor, dioda, LED, dan transistor—serta memahami simbol, fungsi, dan cara identifikasi komponen aktif maupun pasif.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-microchip text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Setelah mempelajari bahan konduktor, isolator, dan semikonduktor pada pertemuan sebelumnya, kini saatnya memasuki dunia <strong>komponen elektronika</strong>—"batu bata" penyusun seluruh perangkat elektronik yang kita gunakan sehari-hari. Smartphone, TV, laptop, panel kontrol industri, hingga mobil listrik—semuanya dibangun dari kombinasi beberapa jenis komponen dasar.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Memahami komponen elektronika bukan hanya soal menghafal simbol. Seorang teknisi harus mampu <strong>mengidentifikasi komponen berdasarkan bentuk fisik</strong>, <strong>memahami fungsinya dalam rangkaian</strong>, <strong>membaca kode nilainya</strong>, dan <strong>memilih komponen yang tepat</strong> untuk aplikasi tertentu. Kesalahan identifikasi—seperti memasang kapasitor terpolarisasi dengan polaritas terbalik—dapat berakibat fatal: komponen meledak, rangkaian rusak, bahkan terjadi kebakaran. Pertemuan ini akan membekali siswa dengan fondasi pengenalan komponen yang kokoh sebelum melangkah ke analisis rangkaian elektronika yang lebih kompleks.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Mengenal Komponen Elektronika Dasar</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video identifikasi komponen elektronika</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal Edukasi Teknik / Dokumentasi Laboratorium Elektronika</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-blue-400 mb-2"><i class="fas fa-battery-quarter mr-2"></i>Komponen Pasif</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Komponen yang tidak dapat menguatkan sinyal atau menghasilkan energi. Hanya dapat menyerap, menyimpan, atau melepaskan energi. Contoh: resistor, kapasitor, induktor.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-bolt mr-2"></i>Komponen Aktif</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Komponen yang dapat menguatkan sinyal, menghasilkan energi, atau mengendalikan aliran arus. Membutuhkan sumber daya eksternal. Contoh: dioda, transistor, IC.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-green-400 mb-2"><i class="fas fa-shield-alt mr-2"></i>Komponen Terpolarisasi</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Komponen yang memiliki kutub positif dan negatif, harus dipasang dengan orientasi yang benar. Contoh: kapasitor elektrolit, dioda, LED, transistor.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-yellow-400 mb-2"><i class="fas fa-sync mr-2"></i>Komponen Non-Polarisasi</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Komponen yang dapat dipasang bolak-balik tanpa mempengaruhi fungsi. Contoh: resistor, kapasitor keramik, induktor.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-red-900/20 border border-red-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-red-300 mb-4"><i class="fas fa-exclamation-triangle mr-2"></i> Studi Kasus 14: Kapasitor yang "Meledak"</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Seorang siswa SMK sedang merakit power supply sederhana. Ia menggunakan kapasitor elektrolit (elco) 1000μF/25V sebagai filter. Karena terburu-buru, ia memasang kapasitor dengan polaritas terbalik—kaki positif dihubungkan ke ground, kaki negatif ke tegangan +12V. Saat power supply dinyalakan, kapasitor mulai memanas, kemudian meletus dengan suara keras, mengeluarkan asap dan cairan elektrolit berbau menyengat. Untung tidak ada korban jiwa, tetapi rangkaian rusak total dan meja praktik kotor."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-red-500">
+                <h4 class="font-bold text-red-400 mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kasus ini menunjukkan betapa berbahayanya <strong>kesalahan pemasangan komponen terpolarisasi</strong>. Kapasitor elektrolit dirancang dengan kutub tertentu—memasang terbalik menyebabkan reaksi kimia internal yang menghasilkan gas, tekanan meningkat, dan akhirnya meledak. Inilah mengapa identifikasi komponen, pemahaman polaritas, dan pemeriksaan ulang sebelum menyalakan rangkaian adalah <strong>keterampilan keselamatan</strong> yang wajib dikuasai setiap teknisi elektronika.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">14.1 Komponen Pasif vs Komponen Aktif</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Seluruh komponen elektronika dapat diklasifikasikan menjadi dua kategori besar berdasarkan kemampuannya dalam mengolah energi dan sinyal:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <!-- Komponen Pasif -->
+                    <div class="bg-luxury-800/50 p-6 rounded-xl border-t-4 border-blue-500">
+                        <h4 class="font-bold text-blue-400 text-xl mb-4"><i class="fas fa-battery-quarter mr-2"></i>Komponen Pasif</h4>
+                        <p class="text-gray-300 text-sm mb-3">Tidak dapat menguatkan sinyal atau menghasilkan energi listrik. Hanya dapat:</p>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside mb-4">
+                            <li>Menyerap energi (resistor → panas)</li>
+                            <li>Menyimpan energi (kapasitor → medan listrik, induktor → medan magnet)</li>
+                            <li>Melepaskan energi yang telah disimpan</li>
+                        </ul>
+                        <div class="bg-luxury-900/50 p-3 rounded">
+                            <p class="text-xs text-gray-400 font-bold mb-1">CONTOH:</p>
+                            <p class="text-sm text-gray-300">Resistor, Kapasitor, Induktor, Transformator</p>
+                        </div>
+                    </div>
+
+                    <!-- Komponen Aktif -->
+                    <div class="bg-luxury-800/50 p-6 rounded-xl border-t-4 border-purple-500">
+                        <h4 class="font-bold text-purple-400 text-xl mb-4"><i class="fas fa-bolt mr-2"></i>Komponen Aktif</h4>
+                        <p class="text-gray-300 text-sm mb-3">Dapat menguatkan sinyal, menghasilkan energi, atau mengendalikan aliran arus. Membutuhkan sumber daya eksternal.</p>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside mb-4">
+                            <li>Menguatkan sinyal lemah menjadi kuat (amplifier)</li>
+                            <li>Mengubah AC menjadi DC (rectifier)</li>
+                            <li>Berfungsi sebagai sakelar elektronik</li>
+                            <li>Menghasilkan cahaya (LED)</li>
+                        </ul>
+                        <div class="bg-luxury-900/50 p-3 rounded">
+                            <p class="text-xs text-gray-400 font-bold mb-1">CONTOH:</p>
+                            <p class="text-sm text-gray-300">Dioda, LED, Transistor, IC, Thyristor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-info-circle mr-2"></i>Analogi Sederhana:</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Bayangkan sistem air: <strong>Komponen pasif</strong> seperti pipa, katup, dan tangki—hanya mengalirkan, menahan, atau menampung air. <strong>Komponen aktif</strong> seperti pompa air—dapat menambah tekanan dan menggerakkan air. Tanpa pompa, air tidak akan mengalir; tanpa pipa, air tidak punya jalur. Keduanya saling melengkapi dalam sebuah sistem.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">14.2 Resistor (R): Penghambat Arus</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Resistor</strong> adalah komponen pasif yang berfungsi <strong>menghambat aliran arus listrik</strong> dan <strong>membagi tegangan</strong>. Satuan hambatannya adalah <strong>Ohm (Ω)</strong>. Resistor adalah komponen paling banyak digunakan dalam setiap rangkaian elektronika.
+                </p>
+
+                <div class="component-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-orange-500 my-6">
+                    <div class="flex items-start justify-between mb-4">
+                        <h4 class="font-bold text-orange-400 text-xl"><i class="fas fa-wave-square mr-2"></i>Resistor</h4>
+                        <span class="text-xs bg-orange-500/20 text-orange-300 px-2 py-1 rounded">KOMPONEN PASIF</span>
+                    </div>
+                    
+                    <!-- Simbol Resistor SVG -->
+                    <div class="flex justify-center mb-4">
+                        <svg viewBox="0 0 200 60" class="w-48 h-16">
+                            <line x1="10" y1="30" x2="50" y2="30" stroke="#d4af37" stroke-width="2"/>
+                            <path d="M 50 30 L 60 15 L 80 45 L 100 15 L 120 45 L 140 15 L 150 30" fill="none" stroke="#fb923c" stroke-width="2"/>
+                            <line x1="150" y1="30" x2="190" y2="30" stroke="#d4af37" stroke-width="2"/>
+                            <text x="100" y="58" text-anchor="middle" fill="#fb923c" font-size="10" font-weight="bold">Simbol Resistor (Zigzag)</text>
+                        </svg>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold mb-1">FUNGSI:</p>
+                            <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                                <li>Membatasi arus listrik</li>
+                                <li>Membagi tegangan</li>
+                                <li>Menurunkan level sinyal</li>
+                                <li>Pull-up/pull-down pada input digital</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                            <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                                <li><strong>Resistor Tetap:</strong> nilai hambatan konstan</li>
+                                <li><strong>Resistor Variabel:</strong> potensiometer, trimpot</li>
+                                <li><strong>NTC/PTC:</strong> hambatan berubah terhadap suhu</li>
+                                <li><strong>LDR:</strong> hambatan berubah terhadap cahaya</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Kode Warna Resistor (4 Gelang):</h4>
+                <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-orange-500">
+                    <p class="text-gray-300 text-sm mb-3">Resistor karbon menggunakan gelang warna untuk menunjukkan nilainya. Rumus: <strong>(Gelang1 × 10 + Gelang2) × 10^Gelang3</strong></p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr class="text-luxury-gold">
+                                    <th class="p-2">Warna</th>
+                                    <th class="p-2">Angka</th>
+                                    <th class="p-2">Pengali</th>
+                                    <th class="p-2">Toleransi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-300">
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-black rounded mr-2 align-middle"></span>Hitam</td><td class="p-2">0</td><td class="p-2">×1</td><td class="p-2">-</td></tr>
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-amber-800 rounded mr-2 align-middle"></span>Coklat</td><td class="p-2">1</td><td class="p-2">×10</td><td class="p-2">±1%</td></tr>
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-red-600 rounded mr-2 align-middle"></span>Merah</td><td class="p-2">2</td><td class="p-2">×100</td><td class="p-2">±2%</td></tr>
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-orange-500 rounded mr-2 align-middle"></span>Oranye</td><td class="p-2">3</td><td class="p-2">×1k</td><td class="p-2">-</td></tr>
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-yellow-400 rounded mr-2 align-middle"></span>Kuning</td><td class="p-2">4</td><td class="p-2">×10k</td><td class="p-2">-</td></tr>
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-green-600 rounded mr-2 align-middle"></span>Hijau</td><td class="p-2">5</td><td class="p-2">×100k</td><td class="p-2">±0,5%</td></tr>
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-blue-600 rounded mr-2 align-middle"></span>Biru</td><td class="p-2">6</td><td class="p-2">×1M</td><td class="p-2">±0,25%</td></tr>
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-violet-600 rounded mr-2 align-middle"></span>Ungu</td><td class="p-2">7</td><td class="p-2">×10M</td><td class="p-2">±0,1%</td></tr>
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-gray-600 rounded mr-2 align-middle"></span>Abu-abu</td><td class="p-2">8</td><td class="p-2">-</td><td class="p-2">-</td></tr>
+                                <tr class="border-b border-luxury-800"><td class="p-2"><span class="inline-block w-4 h-4 bg-white rounded mr-2 align-middle border border-gray-500"></span>Putih</td><td class="p-2">9</td><td class="p-2">-</td><td class="p-2">-</td></tr>
+                                <tr><td class="p-2"><span class="inline-block w-4 h-4 bg-yellow-500 rounded mr-2 align-middle"></span>Emas</td><td class="p-2">-</td><td class="p-2">×0,1</td><td class="p-2">±5%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-gray-400 text-xs mt-3"><strong>Contoh:</strong> Coklat-Hitam-Merah-Emas = 1-0-×100 = <strong>1.000 Ω = 1 kΩ ±5%</strong></p>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">14.3 Kapasitor (C): Penyimpan Medan Listrik</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Kapasitor</strong> adalah komponen pasif yang berfungsi <strong>menyimpan energi dalam bentuk medan listrik</strong>. Satuan kapasitansinya adalah <strong>Farad (F)</strong>, namun dalam praktik nilai yang umum adalah mikrofarad (μF), nanofarad (nF), dan pikofarad (pF).
+                </p>
+
+                <div class="component-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-blue-500 my-6">
+                    <div class="flex items-start justify-between mb-4">
+                        <h4 class="font-bold text-blue-400 text-xl"><i class="fas fa-bolt mr-2"></i>Kapasitor</h4>
+                        <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">KOMPONEN PASIF</span>
+                    </div>
+                    
+                    <!-- Simbol Kapasitor SVG -->
+                    <div class="flex justify-center mb-4">
+                        <svg viewBox="0 0 300 80" class="w-full h-20">
+                            <!-- Kapasitor Non-Polar -->
+                            <line x1="10" y1="30" x2="40" y2="30" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="40" y1="15" x2="40" y2="45" stroke="#60a5fa" stroke-width="3"/>
+                            <line x1="50" y1="15" x2="50" y2="45" stroke="#60a5fa" stroke-width="3"/>
+                            <line x1="50" y1="30" x2="80" y2="30" stroke="#d4af37" stroke-width="2"/>
+                            <text x="45" y="70" text-anchor="middle" fill="#60a5fa" font-size="9">Non-Polar</text>
+                            
+                            <!-- Kapasitor Polar (Elco) -->
+                            <line x1="120" y1="30" x2="150" y2="30" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="150" y1="15" x2="150" y2="45" stroke="#60a5fa" stroke-width="3"/>
+                            <path d="M 160 15 Q 170 30 160 45" fill="none" stroke="#60a5fa" stroke-width="3"/>
+                            <line x1="160" y1="30" x2="190" y2="30" stroke="#d4af37" stroke-width="2"/>
+                            <text x="130" y="10" fill="#ef4444" font-size="10" font-weight="bold">+</text>
+                            <text x="155" y="70" text-anchor="middle" fill="#60a5fa" font-size="9">Polar (Elco)</text>
+                            
+                            <!-- Kapasitor Variabel -->
+                            <line x1="220" y1="30" x2="250" y2="30" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="250" y1="15" x2="250" y2="45" stroke="#60a5fa" stroke-width="3"/>
+                            <line x1="260" y1="15" x2="260" y2="45" stroke="#60a5fa" stroke-width="3"/>
+                            <line x1="240" y1="10" x2="270" y2="50" stroke="#d4af37" stroke-width="1.5" marker-end="url(#arrow)"/>
+                            <text x="255" y="70" text-anchor="middle" fill="#60a5fa" font-size="9">Variabel</text>
+                        </svg>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold mb-1">FUNGSI:</p>
+                            <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                                <li>Menyimpan muatan listrik</li>
+                                <li>Filter (perata tegangan)</li>
+                                <li>Kopling sinyal AC</li>
+                                <li>Timing (bersama resistor)</li>
+                                <li>Bypass noise</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                            <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                                <li><strong>Keramik:</strong> non-polar, nilai kecil (pF-nF)</li>
+                                <li><strong>Mylar/Polyester:</strong> non-polar, stabil</li>
+                                <li><strong>Elektrolit (Elco):</strong> <span class="text-red-400">polar</span>, nilai besar (μF)</li>
+                                <li><strong>Tantalum:</strong> <span class="text-red-400">polar</span>, presisi tinggi</li>
+                                <li><strong>Variable:</strong> tuning radio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-900/20 border border-red-500/30 p-4 rounded-lg">
+                    <h4 class="font-bold text-red-400 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Peringatan Kapasitor Terpolarisasi:</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Kapasitor elektrolit (elco) dan tantalum memiliki kutub positif (+) dan negatif (-). <strong>Memasang terbalik dapat menyebabkan kapasitor meledak</strong> karena reaksi kimia internal menghasilkan gas. Selalu periksa tanda kutub pada body kapasitor (garis putih dengan tanda "−" menunjukkan kaki negatif) dan pada PCB sebelum menyolder!
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">14.4 Induktor (L): Penyimpan Medan Magnet</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Induktor</strong> adalah komponen pasif yang berfungsi <strong>menyimpan energi dalam bentuk medan magnet</strong>. Satuan induktansinya adalah <strong>Henry (H)</strong>, dengan sub-satuan mH (milihenry) dan μH (mikrohenry). Induktor terdiri dari kawat yang dililitkan pada inti tertentu.
+                </p>
+
+                <div class="component-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-green-500 my-6">
+                    <div class="flex items-start justify-between mb-4">
+                        <h4 class="font-bold text-green-400 text-xl"><i class="fas fa-circle-notch mr-2"></i>Induktor</h4>
+                        <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">KOMPONEN PASIF</span>
+                    </div>
+                    
+                    <!-- Simbol Induktor SVG -->
+                    <div class="flex justify-center mb-4">
+                        <svg viewBox="0 0 200 60" class="w-48 h-16">
+                            <line x1="10" y1="30" x2="50" y2="30" stroke="#d4af37" stroke-width="2"/>
+                            <path d="M 50 30 Q 60 10 70 30 Q 80 10 90 30 Q 100 10 110 30 Q 120 10 130 30 Q 140 10 150 30" fill="none" stroke="#22c55e" stroke-width="2"/>
+                            <line x1="150" y1="30" x2="190" y2="30" stroke="#d4af37" stroke-width="2"/>
+                            <text x="100" y="58" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">Simbol Induktor (Lilitan)</text>
+                        </svg>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold mb-1">FUNGSI:</p>
+                            <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                                <li>Menyimpan energi medan magnet</li>
+                                <li>Filter frekuensi (choke)</li>
+                                <li>Penstabil arus</li>
+                                <li>Komponen utama trafo</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                            <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                                <li><strong>Inti udara:</strong> frekuensi tinggi</li>
+                                <li><strong>Inti ferit:</strong> frekuensi menengah-tinggi</li>
+                                <li><strong>Inti besi:</strong> frekuensi rendah (trafo)</li>
+                                <li><strong>Variable:</strong> tuning radio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">14.5 Dioda & LED: Penyearah dan Cahaya</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Dioda</strong> dan <strong>LED (Light Emitting Diode)</strong> adalah komponen aktif yang terbuat dari bahan semikonduktor. Keduanya hanya mengalirkan arus dalam <strong>satu arah</strong> (dari anoda ke katoda), sehingga disebut komponen <strong>unilateral</strong>.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Dioda -->
+                    <div class="component-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-purple-500">
+                        <div class="flex items-start justify-between mb-4">
+                            <h4 class="font-bold text-purple-400 text-xl"><i class="fas fa-arrow-right mr-2"></i>Dioda</h4>
+                            <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">AKTIF • POLAR</span>
+                        </div>
+                        
+                        <!-- Simbol Dioda SVG -->
+                        <div class="flex justify-center mb-4">
+                            <svg viewBox="0 0 200 60" class="w-48 h-16">
+                                <line x1="10" y1="30" x2="70" y2="30" stroke="#d4af37" stroke-width="2"/>
+                                <polygon points="70,15 70,45 110,30" fill="#a855f7" stroke="#a855f7" stroke-width="1"/>
+                                <line x1="110" y1="15" x2="110" y2="45" stroke="#a855f7" stroke-width="3"/>
+                                <line x1="110" y1="30" x2="190" y2="30" stroke="#d4af37" stroke-width="2"/>
+                                <text x="50" y="55" text-anchor="middle" fill="#a855f7" font-size="9">Anoda (+)</text>
+                                <text x="150" y="55" text-anchor="middle" fill="#a855f7" font-size="9">Katoda (−)</text>
+                            </svg>
+                        </div>
+
+                        <p class="text-xs text-gray-400 font-bold mb-1">FUNGSI:</p>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside mb-3">
+                            <li>Penyearah arus AC → DC</li>
+                            <li>Proteksi polaritas terbalik</li>
+                            <li>Clipping & clamping sinyal</li>
+                            <li>Regulator tegangan (Zener)</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            <li><strong>Dioda Biasa:</strong> 1N4007, 1N4148</li>
+                            <li><strong>Zener:</strong> regulator tegangan</li>
+                            <li><strong>Schottky:</strong> tegangan drop rendah</li>
+                            <li><strong>Bridge:</strong> penyearah full-wave</li>
+                        </ul>
+                    </div>
+
+                    <!-- LED -->
+                    <div class="component-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-cyan-500">
+                        <div class="flex items-start justify-between mb-4">
+                            <h4 class="font-bold text-cyan-400 text-xl"><i class="fas fa-lightbulb mr-2"></i>LED</h4>
+                            <span class="text-xs bg-cyan-500/20 text-cyan-300 px-2 py-1 rounded">AKTIF • POLAR</span>
+                        </div>
+                        
+                        <!-- Simbol LED SVG -->
+                        <div class="flex justify-center mb-4">
+                            <svg viewBox="0 0 200 70" class="w-48 h-16">
+                                <line x1="10" y1="30" x2="70" y2="30" stroke="#d4af37" stroke-width="2"/>
+                                <polygon points="70,15 70,45 110,30" fill="#06b6d4" stroke="#06b6d4" stroke-width="1"/>
+                                <line x1="110" y1="15" x2="110" y2="45" stroke="#06b6d4" stroke-width="3"/>
+                                <line x1="110" y1="30" x2="190" y2="30" stroke="#d4af37" stroke-width="2"/>
+                                <!-- Panah cahaya -->
+                                <line x1="90" y1="10" x2="100" y2="0" stroke="#fbbf24" stroke-width="1.5"/>
+                                <polygon points="100,0 97,5 103,5" fill="#fbbf24"/>
+                                <line x1="100" y1="15" x2="110" y2="5" stroke="#fbbf24" stroke-width="1.5"/>
+                                <polygon points="110,5 107,10 113,10" fill="#fbbf24"/>
+                            </svg>
+                        </div>
+
+                        <p class="text-xs text-gray-400 font-bold mb-1">FUNGSI:</p>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside mb-3">
+                            <li>Indikator cahaya</li>
+                            <li>Pencahayaan (lampu LED)</li>
+                            <li>Display (seven segment, matrix)</li>
+                            <li>Komunikasi optik (infrared)</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 font-bold mb-1">IDENTIFIKASI KUTUB:</p>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            <li><strong>Kaki panjang:</strong> Anoda (+)</li>
+                            <li><strong>Kaki pendek:</strong> Katoda (−)</li>
+                            <li><strong>Flat side body:</strong> Katoda (−)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-calculator mr-2"></i>Menghitung Resistor Pembatas LED:</h4>
+                    <p class="text-gray-300 text-sm mb-2">LED memerlukan resistor seri untuk membatasi arus. Rumus: <strong>R = (V<sub>sumber</sub> - V<sub>LED</sub>) / I<sub>LED</sub></strong></p>
+                    <div class="formula-box p-3 rounded text-sm">
+                        <p class="text-luxury-gold">Contoh: LED merah (V<sub>f</sub>=2V, I=20mA) pada sumber 12V</p>
+                        <p class="text-luxury-gold">R = (12 - 2) / 0,02 = 10 / 0,02 = <strong>500 Ω</strong> → pilih nilai standar <strong>470 Ω atau 560 Ω</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">14.6 Transistor: Sakelar dan Penguat Elektronik</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Transistor</strong> adalah komponen aktif yang menjadi fondasi seluruh elektronika modern. Transistor dapat berfungsi sebagai <strong>sakelar elektronik</strong> (on/off) atau <strong>penguat sinyal</strong> (amplifier). Tanpa transistor, tidak akan ada komputer, smartphone, atau perangkat digital lainnya.
+                </p>
+
+                <div class="component-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-pink-500 my-6">
+                    <div class="flex items-start justify-between mb-4">
+                        <h4 class="font-bold text-pink-400 text-xl"><i class="fas fa-microchip mr-2"></i>Transistor</h4>
+                        <span class="text-xs bg-pink-500/20 text-pink-300 px-2 py-1 rounded">AKTIF • POLAR</span>
+                    </div>
+                    
+                    <!-- Simbol Transistor SVG -->
+                    <div class="flex justify-center gap-8 mb-4">
+                        <div class="text-center">
+                            <svg viewBox="0 0 120 120" class="w-24 h-24">
+                                <!-- NPN -->
+                                <line x1="10" y1="60" x2="40" y2="60" stroke="#d4af37" stroke-width="2"/>
+                                <line x1="40" y1="30" x2="40" y2="90" stroke="#ec4899" stroke-width="3"/>
+                                <line x1="40" y1="45" x2="90" y2="20" stroke="#ec4899" stroke-width="2"/>
+                                <line x1="40" y1="75" x2="90" y2="100" stroke="#ec4899" stroke-width="2"/>
+                                <!-- Panah keluar -->
+                                <polygon points="85,95 90,100 83,100" fill="#ec4899"/>
+                                <text x="60" y="115" text-anchor="middle" fill="#ec4899" font-size="10" font-weight="bold">NPN</text>
+                            </svg>
+                        </div>
+                        <div class="text-center">
+                            <svg viewBox="0 0 120 120" class="w-24 h-24">
+                                <!-- PNP -->
+                                <line x1="10" y1="60" x2="40" y2="60" stroke="#d4af37" stroke-width="2"/>
+                                <line x1="40" y1="30" x2="40" y2="90" stroke="#ec4899" stroke-width="3"/>
+                                <line x1="40" y1="45" x2="90" y2="20" stroke="#ec4899" stroke-width="2"/>
+                                <line x1="40" y1="75" x2="90" y2="100" stroke="#ec4899" stroke-width="2"/>
+                                <!-- Panah masuk -->
+                                <polygon points="45,50 40,45 47,45" fill="#ec4899"/>
+                                <text x="60" y="115" text-anchor="middle" fill="#ec4899" font-size="10" font-weight="bold">PNP</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold mb-1">3 KAKI TRANSISTOR BJT:</p>
+                            <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                                <li><strong>Base (B):</strong> kaki kontrol (arus kecil)</li>
+                                <li><strong>Collector (C):</strong> kaki masukan arus besar</li>
+                                <li><strong>Emitter (E):</strong> kaki keluaran arus besar</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400 font-bold mb-1">FUNGSI:</p>
+                            <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                                <li>Sakelar elektronik (on/off)</li>
+                                <li>Penguat sinyal (amplifier)</li>
+                                <li>Osilator (pembangkit frekuensi)</li>
+                                <li>Regulator tegangan</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 bg-luxury-900/50 p-3 rounded">
+                        <p class="text-xs text-gray-400 font-bold mb-1">JENIS TRANSISTOR:</p>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            <li><strong>BJT (Bipolar Junction Transistor):</strong> NPN dan PNP, dikendalikan arus</li>
+                            <li><strong>FET (Field Effect Transistor):</strong> JFET, MOSFET, dikendalikan tegangan</li>
+                            <li><strong>IGBT:</strong> kombinasi BJT + MOSFET, untuk daya tinggi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">14.7 Identifikasi Komponen: Bentuk, Simbol, dan Karakteristik</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Kemampuan <strong>mengidentifikasi komponen</strong> adalah keterampilan praktis yang harus dilatih. Seorang teknisi harus dapat mengenali komponen berdasarkan tiga aspek:
+                </p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Komponen</th>
+                                <th class="p-4">Bentuk Fisik</th>
+                                <th class="p-4">Simbol Skematik</th>
+                                <th class="p-4 rounded-tr-lg">Cara Identifikasi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-orange-400">Resistor</td>
+                                <td class="p-4">Body silinder kecil dengan gelang warna</td>
+                                <td class="p-4">Zigzag ━╱╲╱╲╱━</td>
+                                <td class="p-4">Baca kode warna atau ukur dengan multimeter</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-blue-400">Kapasitor</td>
+                                <td class="p-4">Keramik: pipih; Elco: silinder dengan tanda kutub</td>
+                                <td class="p-4">Dua garis sejajar ━┃┃━</td>
+                                <td class="p-4">Baca kode angka (pF) atau nilai μF pada body</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-green-400">Induktor</td>
+                                <td class="p-4">Kawat dililit pada inti (ferit/besi)</td>
+                                <td class="p-4">Lilitan ━∿∿∿━</td>
+                                <td class="p-4">Ukur dengan LCR meter</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-purple-400">Dioda</td>
+                                <td class="p-4">Silinder kecil dengan gelang putih (katoda)</td>
+                                <td class="p-4">Segitiga + garis ━▷┃━</td>
+                                <td class="p-4">Gelang putih = katoda; ukur dengan mode dioda multimeter</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-cyan-400">LED</td>
+                                <td class="p-4">Body bening/berwarna dengan 2 kaki beda panjang</td>
+                                <td class="p-4">Dioda + panah cahaya</td>
+                                <td class="p-4">Kaki panjang = anoda (+); body flat = katoda (−)</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-pink-400">Transistor</td>
+                                <td class="p-4">Body hitam dengan 3 kaki (B, C, E)</td>
+                                <td class="p-4">Lingkaran dengan 3 terminal</td>
+                                <td class="p-4">Lihat datasheet untuk pinout; uji dengan multimeter mode hFE</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-lightbulb mr-2"></i>Tips Identifikasi Komponen:</h4>
+                    <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                        <li><strong>Periksa body komponen:</strong> biasanya ada kode, nilai, atau tanda kutub tercetak.</li>
+                        <li><strong>Gunakan multimeter:</strong> mode Ohm untuk resistor, mode Kapasitansi untuk kapasitor, mode Dioda untuk dioda/LED.</li>
+                        <li><strong>Cari datasheet:</strong> untuk komponen dengan kode (seperti transistor, IC), cari datasheet di internet untuk mengetahui spesifikasi dan pinout.</li>
+                        <li><strong>Perhatikan polaritas:</strong> komponen terpolarisasi (elco, dioda, LED, transistor) harus dipasang sesuai kutub.</li>
+                        <li><strong>Bandingkan dengan komponen baru:</strong> jika ragu, bandingkan dengan komponen yang masih bagus dari kit yang sama.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Setiap kali Anda membuka casing HP, remote TV, atau charger, Anda sedang melihat "kota" komponen elektronika—ratusan resistor, kapasitor, dioda, dan IC bekerja sama dalam harmoni. Dengan mempelajari komponen dasar ini, Anda kini memiliki "kamus" untuk membaca kota tersebut. Latihlah mata Anda: setiap kali melihat papan rangkaian, coba identifikasi komponen satu per satu. Inilah awal perjalanan menjadi teknisi elektronika profesional.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Beli "starter kit" elektronika murah (resistor, kapasitor, LED, dll) untuk latihan di rumah.</li>
+                    <li>Hafalkan kode warna resistor dengan jembatan keledai: "<strong>Hi<strong>t</strong>am</strong> <strong>C</strong>oklat <strong>M</strong>erah <strong>O</strong>ranje..."</li>
+                    <li>Selalu periksa polaritas komponen sebelum menyolder—sekali terpasang, sulit dilepas!</li>
+                    <li>Gunakan multimeter untuk memverifikasi nilai komponen sebelum dipasang.</li>
+                    <li>Simpan komponen dalam wadah berlabel agar tidak tercampur.</li>
+                    <li>Pelajari membaca datasheet—ini "bahasa" universal komponen elektronika.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Komponen elektronika terbagi menjadi dua kategori besar: <strong>komponen pasif</strong> (resistor, kapasitor, induktor) yang tidak dapat menguatkan sinyal, dan <strong>komponen aktif</strong> (dioda, LED, transistor) yang dapat menguatkan, menyearahkan, atau mengendalikan arus. Enam komponen dasar yang dipelajari pada pertemuan ini—resistor, kapasitor, induktor, dioda, LED, dan transistor—merupakan fondasi dari seluruh perangkat elektronik modern.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Kemampuan mengidentifikasi komponen berdasarkan bentuk fisik, simbol skematik, dan karakteristik kelistrikan adalah keterampilan praktis yang harus dilatih terus-menerus. Pemahaman polaritas (terutama pada kapasitor elektrolit, dioda, LED, dan transistor) sangat krusial untuk keselamatan dan keandalan rangkaian. Kesalahan identifikasi atau pemasangan dapat berakibat fatal: komponen meledak, rangkaian rusak, bahkan terjadi kebakaran. Oleh karena itu, prinsip "<strong>periksa dua kali sebelum menyolder</strong>" harus menjadi kebiasaan setiap teknisi elektronika.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>Boylestad, R. L., & Nashelsky, L. (2013). <em>Electronic Devices and Circuit Theory (11th ed.).</em> Pearson.</li>
+                <li>Malvino, A. P., & Bates, D. J. (2016). <em>Electronic Principles (8th ed.).</em> New York: McGraw-Hill Education.</li>
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+                <li>Sumanto. (2019). <em>Elektronika Dasar Jilid 1.</em> Yogyakarta: Andi Offset.</li>
+                <li>Platt, C. (2015). <em>Make: Electronics (2nd ed.).</em> O'Reilly Media.</li>
+                <li>Horowitz, P., & Hill, W. (2015). <em>The Art of Electronics (3rd ed.).</em> Cambridge University Press.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="13.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Bahan & Komponen
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="15.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Alat Tangan <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 14</h2>
+                <p class="text-gray-400">Komponen Dasar Elektronika</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Komponen elektronika yang TIDAK dapat menguatkan sinyal atau menghasilkan energi disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. Komponen Aktif</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Komponen Pasif</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. Komponen Digital</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. Komponen Mekanik</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Komponen yang berfungsi menghambat aliran arus listrik dan membagi tegangan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. Kapasitor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. Induktor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. Resistor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Transistor</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Satuan kapasitansi kapasitor adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. Ohm (Ω)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. Henry (H)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. Farad (F)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. Watt (W)</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Komponen yang hanya mengalirkan arus dalam SATU arah disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. Resistor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Kapasitor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. Dioda</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. Induktor</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. LED adalah singkatan dari...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. Light Emitting Diode</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. Low Energy Device</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. Linear Electric Diode</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. Light Electric Device</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Pada LED, kaki yang lebih panjang menunjukkan kutub...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. Katoda (−)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. Anoda (+)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. Base</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. Ground</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Transistor BJT memiliki tiga kaki yang disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. Anoda, Katoda, Gate</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. Base, Collector, Emitter</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. Source, Drain, Gate</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. Input, Output, Ground</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Resistor dengan gelang warna Coklat-Hitam-Merah-Emas memiliki nilai...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. 100 Ω ±5%</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. 1.000 Ω ±5%</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. 10.000 Ω ±5%</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. 120 Ω ±5%</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Komponen yang berfungsi menyimpan energi dalam bentuk MEDAN MAGNET adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. Resistor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Kapasitor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Induktor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Dioda</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Berdasarkan studi kasus "Kapasitor Meledak", penyebab utama ledakan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Kapasitor terlalu besar nilainya</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Kapasitor dipasang dengan polaritas terbalik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Kapasitor terkena air</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Kapasitor terlalu kecil ukurannya</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Jelaskan perbedaan mendasar antara komponen aktif dan komponen pasif! Berikan masing-masing 3 contoh beserta fungsi utamanya dalam rangkaian elektronika!</p>
+                            <textarea name="essay1" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Uraikan fungsi dan karakteristik dari keenam komponen dasar elektronika (resistor, kapasitor, induktor, dioda, LED, transistor)! Jelaskan pula simbol skematik masing-masing komponen!</p>
+                            <textarea name="essay2" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Jelaskan cara membaca kode warna resistor 4 gelang! Hitunglah nilai resistor dengan gelang warna: Merah-Merah-Kuning-Emas! Tuliskan juga rentang nilai toleransinya!</p>
+                            <textarea name="essay3" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Jelaskan mengapa kapasitor elektrolit (elco) dan dioda disebut komponen terpolarisasi! Apa yang terjadi jika komponen tersebut dipasang terbalik? Berikan panduan cara mengidentifikasi kutub positif dan negatif pada kedua komponen tersebut!</p>
+                            <textarea name="essay4" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Berdasarkan studi kasus "Kapasitor Meledak" di atas, analisis kesalahan yang dilakukan siswa! Rumuskan prosedur pemeriksaan komponen yang seharusnya dilakukan sebelum memasang komponen pada rangkaian untuk mencegah kejadian serupa!</p>
+                            <textarea name="essay5" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%2014%20-%20Komponen%20Dasar%20Elektronika" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 14
+        const kunciJawaban = {
+            q1: 'b',  // Komponen Pasif
+            q2: 'c',  // Resistor
+            q3: 'c',  // Farad (F)
+            q4: 'c',  // Dioda
+            q5: 'a',  // Light Emitting Diode
+            q6: 'b',  // Anoda (+)
+            q7: 'b',  // Base, Collector, Emitter
+            q8: 'b',  // 1.000 Ω ±5% (Coklat=1, Hitam=0, Merah=×100, Emas=±5%)
+            q9: 'c',  // Induktor
+            q10: 'b'  // Kapasitor dipasang dengan polaritas terbalik
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

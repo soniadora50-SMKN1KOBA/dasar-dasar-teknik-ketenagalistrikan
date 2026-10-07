@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dasar Dasar Teknik Ketenagalistrikan Kelas X Semester 1 | Sonia Dora, S.Pd.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display (Luxury Headings) & Inter (Modern Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a', // Deep Navy
+                            800: '#1e293b',
+                            gold: '#d4af37', // Classic Gold
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Efek Luxury Tambahan */
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .book-shadow {
+            box-shadow: 0 25px 50px -12px rgba(212, 175, 55, 0.25), 0 0 30px rgba(0,0,0,0.5);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/90 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-serif text-xl font-bold text-luxury-gold tracking-wider">ELEKTRO<span class="text-white">X</span></div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#about" class="hover:text-luxury-gold transition-colors duration-300">TENTANG BUKU</a>
+                <a href="#author" class="hover:text-luxury-gold transition-colors duration-300">PENULIS</a>
+                <a href="#syllabus" class="hover:text-luxury-gold transition-colors duration-300">SILABUS</a>
+                <a href="mailto:soniadora50@gmail.com" class="px-5 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">HUBUNGI PENULIS</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+            <!-- Text Content -->
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                    <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">Fase E • Kurikulum Merdeka</span>
+                </div>
+                <h1 class="font-serif text-4xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+                    Dasar Dasar Teknik <br>
+                    <span class="text-gradient-gold">Ketenagalistrikan</span>
+                </h1>
+                <p class="text-xl text-gray-400 mb-4 font-light">Kelas X Semester 1</p>
+                <p class="text-gray-300 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                    Panduan komprehensif yang memadukan wawasan industri, keselamatan kerja (K3LH), teori dasar listrik, dan praktik bengkel sesuai standar kompetensi dunia kerja modern.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#syllabus" class="px-8 py-4 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                        Lihat Daftar Isi
+                    </a>
+                    <a href="#author" class="px-8 py-4 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                        Tentang Penulis
+                    </a>
+                </div>
+            </div>
+
+            <!-- Book Cover Image -->
+            <div class="lg:w-1/2 flex justify-center perspective-1000">
+                <div class="relative group">
+                    <!-- GANTI FILE COVER DI SINI: Pastikan file 'cover-buku.png' ada di folder yang sama -->
+                    <img src="cover-buku.png" alt="Cover Buku Dasar Dasar Teknik Ketenagalistrikan" 
+                         class="relative z-10 w-72 lg:w-96 rounded-r-lg rounded-l-sm book-shadow transform group-hover:-translate-y-4 group-hover:rotate-y-6 transition-transform duration-500 ease-out border-l-4 border-luxury-gold/30">
+                    
+                    <!-- Decorative glow behind book -->
+                    <div class="absolute inset-0 bg-luxury-gold/20 blur-3xl rounded-full transform scale-75 group-hover:scale-90 transition-transform duration-500 -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Detail Buku (Stats) -->
+    <section class="border-y border-luxury-gold/10 bg-luxury-800/50">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <p class="text-3xl font-serif font-bold text-luxury-gold">6</p>
+                    <p class="text-sm text-gray-400 uppercase tracking-wider mt-1">Bab Komprehensif</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-serif font-bold text-luxury-gold">16</p>
+                    <p class="text-sm text-gray-400 uppercase tracking-wider mt-1">Pertemuan Terstruktur</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-serif font-bold text-luxury-gold">K3LH</p>
+                    <p class="text-sm text-gray-400 uppercase tracking-wider mt-1">Berbasis Keselamatan</p>
+                </div>
+                <div>
+                    <p class="text-3xl font-serif font-bold text-luxury-gold">2026</p>
+                    <p class="text-sm text-gray-400 uppercase tracking-wider mt-1">Tahun Terbit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Book -->
+    <section id="about" class="py-20 bg-luxury-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Mengapa Buku Ini <span class="text-luxury-gold">Istimewa?</span></h2>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-lg hover:border-luxury-gold/50 transition-colors duration-300">
+                    <div class="w-14 h-14 bg-luxury-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-industry text-2xl text-luxury-gold"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Link and Match Industri</h3>
+                    <p class="text-gray-400 leading-relaxed">Materi disusun berdasarkan proses bisnis nyata di industri ketenagalistrikan, mulai dari pembangkitan hingga distribusi, termasuk pengenalan IoT dan SCADA.</p>
+                </div>
+                <div class="glass-card p-8 rounded-lg hover:border-luxury-gold/50 transition-colors duration-300">
+                    <div class="w-14 h-14 bg-luxury-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hard-hat text-2xl text-luxury-gold"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Budaya K3LH yang Kuat</h3>
+                    <p class="text-gray-400 leading-relaxed">Penekanan mendalam pada Keselamatan dan Kesehatan Kerja serta Lingkungan Hidup, termasuk penggunaan APD, prosedur Lockout/Tagout, dan penanganan darurat.</p>
+                </div>
+                <div class="glass-card p-8 rounded-lg hover:border-luxury-gold/50 transition-colors duration-300">
+                    <div class="w-14 h-14 bg-luxury-gold/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-microchip text-2xl text-luxury-gold"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3">Teori & Praktik Seimbang</h3>
+                    <p class="text-gray-400 leading-relaxed">Penjelasan Hukum Ohm, rangkaian DC, hingga praktik penyambungan kabel dan penggunaan multimeter disajikan dengan bahasa yang terstruktur dan mudah dipahami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="author" class="py-20 bg-luxury-800/30 relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
+                <!-- Author Photo -->
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <!-- GANTI FILE PHOTO DI SINI: Pastikan file 'photo-penulis.png' ada di folder yang sama -->
+                        <img src="photo-penulis.png" alt="Sonia Dora, S.Pd." 
+                             class="w-64 h-64 object-cover rounded-full border-4 border-luxury-gold shadow-2xl shadow-luxury-gold/20">
+                        <div class="absolute -bottom-4 -right-4 bg-luxury-gold text-luxury-900 w-16 h-16 rounded-full flex items-center justify-center font-bold text-2xl shadow-lg">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Author Bio -->
+                <div class="md:w-2/3 text-center md:text-left">
+                    <p class="text-luxury-gold font-bold tracking-widest uppercase text-sm mb-2">Tentang Penulis</p>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Sonia Dora, S.Pd.</h2>
+                    <p class="text-gray-300 text-lg mb-6 italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Seorang pendidik berdedikasi di <strong>SMKN 1 Koto Balingka</strong>, Pasaman Barat. Dengan pengalaman mendalam dalam pengajaran teknik ketenagalistrikan, beliau menyusun buku ini untuk menjembatani kesenjangan antara teori di kelas dan tuntutan kompetensi di Dunia Kerja dan Dunia Industri (DU/DI). Pendekatan pembelajarannya mengintegrasikan budaya kerja 5R, kedisiplinan, dan penguasaan alat ukur modern.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start text-sm">
+                        <a href="mailto:soniadora50@gmail.com" class="flex items-center gap-2 text-gray-300 hover:text-luxury-gold transition">
+                            <i class="fas fa-envelope"></i> soniadora50@gmail.com
+                        </a>
+                        <span class="flex items-center gap-2 text-gray-300">
+                            <i class="fas fa-school"></i> SMKN 1 Koto Balingka
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Syllabus / Daftar Isi -->
+    <section id="syllabus" class="py-20 bg-luxury-900">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Struktur <span class="text-luxury-gold">Pembelajaran</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">6 Bab terstruktur yang mencakup 16 pertemuan. Klik pada judul pertemuan untuk membuka materi (akan terbuka di tab baru).</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- BAB 1 -->
+                <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                    <h3 class="font-serif text-xl font-bold text-luxury-gold mb-4">Bab 1: Wawasan & Proses Bisnis</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="1.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">1</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Wawasan Dunia Kerja Ketenagalistrikan</span>
+                                    <span class="text-xs text-gray-500">Ruang lingkup, peran listrik, dan bidang pekerjaan.</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="2.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">2</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Proses Bisnis Industri Ketenagalistrikan</span>
+                                    <span class="text-xs text-gray-500">Perencanaan, instalasi, pemeliharaan, dan standar kerja.</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="3.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">3</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Perkembangan Teknologi & Digitalisasi</span>
+                                    <span class="text-xs text-gray-500">Revolusi Industri 4.0, IoT, Smart Meter, dan SCADA.</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- BAB 2 -->
+                <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                    <h3 class="font-serif text-xl font-bold text-luxury-gold mb-4">Bab 2: Profesi, Budaya Kerja & K3LH</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="4.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">4</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Profesi, Job Profile & Technopreneurship</span>
+                                    <span class="text-xs text-gray-500">Kompetensi, sertifikasi, dan peluang usaha jasa kelistrikan.</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="5.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">5</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Kecakapan Kerja Dasar & Budaya Industri</span>
+                                    <span class="text-xs text-gray-500">Disiplin, komunikasi, dan penerapan budaya 5R (Ringkas, Rapi, Resik, Rawat, Rajin).</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="6.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">6</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">K3LH pada Pekerjaan Ketenagalistrikan</span>
+                                    <span class="text-xs text-gray-500">Identifikasi bahaya listrik, risiko kecelakaan, dan prinsip pencegahan.</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- BAB 3 -->
+                <div class="glass-card p-6 rounded-xl border-l-4 border-red-500/70 bg-red-900/5">
+                    <h3 class="font-serif text-xl font-bold text-red-400 mb-4">Bab 3: Prosedur Aman & Evaluasi Tengah</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="7.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-red-400 text-xs flex items-center justify-center font-bold border border-red-500/30 group-hover:bg-red-500 group-hover:text-white transition">7</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-red-400 transition">APD, Prosedur Kerja Aman & Lockout/Tagout</span>
+                                    <span class="text-xs text-gray-500">Pemeriksaan APD dan prosedur kerja sebelum, saat, dan sesudah pekerjaan.</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="8.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg bg-red-500/10 border border-red-500/30 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-red-500 text-white text-xs flex items-center justify-center font-bold">8</span>
+                                <div>
+                                    <span class="block text-red-400 font-bold">UJIAN TENGAH SEMESTER (UTS)</span>
+                                    <span class="text-xs text-red-300/70">Evaluasi komprehensif Bab 1 s.d. 3.</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- BAB 4 -->
+                <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                    <h3 class="font-serif text-xl font-bold text-luxury-gold mb-4">Bab 4: Teori Dasar Listrik & Elektronika</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="9.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">9</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Besaran, Satuan Listrik & Hukum Ohm</span>
+                                    <span class="text-xs text-gray-500">Tegangan, arus, hambatan, dan penyelesaian masalah numerik sederhana.</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="10.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">10</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Rangkaian Listrik Arus Searah (DC)</span>
+                                    <span class="text-xs text-gray-500">Sumber tegangan DC, rangkaian terbuka/tertutup, seri, dan paralel.</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="11.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">11</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Daya dan Energi Listrik</span>
+                                    <span class="text-xs text-gray-500">Perhitungan daya (P=VxI), energi (kWh), dan penerapan penghematan energi.</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- BAB 5 -->
+                <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                    <h3 class="font-serif text-xl font-bold text-luxury-gold mb-4">Bab 5: Bahan, Komponen & Alat Kerja</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="12.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">12</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Bahan & Komponen Dasar Elektronika</span>
+                                    <span class="text-xs text-gray-500">Konduktor, isolator, resistor, kapasitor, dioda, dan transistor.</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="13.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">13</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Alat Tangan dan Alat Kerja Kelistrikan</span>
+                                    <span class="text-xs text-gray-500">Obeng, tang, pemotong, pengupas kabel, dan prosedur penyimpanan K3.</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="14.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-luxury-gold text-xs flex items-center justify-center font-bold border border-luxury-gold/30 group-hover:bg-luxury-gold group-hover:text-luxury-900 transition">14</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-luxury-gold transition">Pekerjaan Dasar Penyambungan Kabel</span>
+                                    <span class="text-xs text-gray-500">Teknik pengupasan isolasi, penyambungan, dan pemasangan terminal yang aman.</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- BAB 6 -->
+                <div class="glass-card p-6 rounded-xl border-l-4 border-red-500/70 bg-red-900/5">
+                    <h3 class="font-serif text-xl font-bold text-red-400 mb-4">Bab 6: Alat Ukur & Evaluasi Akhir</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="15.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg hover:bg-white/5 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-luxury-800 text-red-400 text-xs flex items-center justify-center font-bold border border-red-500/30 group-hover:bg-red-500 group-hover:text-white transition">15</span>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-red-400 transition">Alat Ukur dan Alat Uji Kelistrikan</span>
+                                    <span class="text-xs text-gray-500">Prinsip penggunaan multimeter, pemilihan range, dan menghindari kesalahan ukur.</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="16.html" target="_blank" class="group flex items-start gap-3 p-3 rounded-lg bg-red-500/10 border border-red-500/30 transition">
+                                <span class="mt-1 w-6 h-6 rounded-full bg-red-500 text-white text-xs flex items-center justify-center font-bold">16</span>
+                                <div>
+                                    <span class="block text-red-400 font-bold">UJIAN AKHIR SEMESTER (UAS)</span>
+                                    <span class="text-xs text-red-300/70">Praktik pengukuran dasar, interpretasi hasil, dan evaluasi keterampilan K3.</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-16 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="text-center md:text-left mb-6 md:mb-0">
+                    <h3 class="font-serif text-2xl font-bold text-white mb-2">Dasar Dasar Teknik Ketenagalistrikan</h3>
+                    <p class="text-gray-500 text-sm">SMKN 1 Koto Balingka, Pasaman Barat</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="mailto:soniadora50@gmail.com" class="w-10 h-10 rounded-full bg-luxury-800 flex items-center justify-center text-luxury-gold hover:bg-luxury-gold hover:text-luxury-900 transition duration-300">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-luxury-800 flex items-center justify-center text-luxury-gold hover:bg-luxury-gold hover:text-luxury-900 transition duration-300">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-600 text-sm">&copy; 2026 Sonia Dora, S.Pd. Hak Cipta Dilindungi Undang-Undang.</p>
+                <p class="text-gray-700 text-xs mt-2 italic">"Mencetak Generasi Teknisi yang Kompeten, Aman, dan Berintegritas."</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 6: K3LH pada Pekerjaan Ketenagalistrikan - Sonia Dora, S.Pd.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="5.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="7.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-orange-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 2 • PERTEMUAN 6</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                K3LH pada Pekerjaan <br>
+                <span class="text-gradient-gold">Ketenagalistrikan</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Memahami prinsip Keselamatan, Kesehatan Kerja, dan Lingkungan Hidup (K3LH) sebagai fondasi utama dalam setiap pekerjaan kelistrikan—mengidentifikasi bahaya, menilai risiko, dan menerapkan pencegahan kecelakaan secara sistematis.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-red-500">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-shield-alt text-red-400 mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Listrik adalah sumber energi yang tak tergantikan, tetapi juga salah satu bahaya paling "senyap" dan mematikan di lingkungan kerja. Tidak seperti mesin yang bergerak atau api yang terlihat, bahaya listrik seringkali <strong>tidak terlihat, tidak terdengar, dan tidak tercium</strong>—hingga ia melukai atau merenggut nyawa. Data dari Kementerian Ketenagakerjaan RI menunjukkan bahwa kecelakaan kerja akibat listrik masih menjadi salah satu penyebab utama fatalitas di sektor konstruksi dan industri.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Oleh karena itu, <strong>K3LH (Keselamatan, Kesehatan Kerja, dan Lingkungan Hidup)</strong> bukan sekadar aturan formalitas, melainkan <strong>investasi nyawa</strong>. Bagi siswa Fase E, menanamkan kesadaran K3LH sejak awal adalah kewajiban moral dan profesional. Pertemuan ini akan membekali siswa dengan kemampuan mengidentifikasi bahaya, menilai risiko, dan menerapkan prinsip pencegahan kecelakaan secara sistematis—sebelum mereka menyentuh kabel pertama kali di bengkel maupun di dunia kerja.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Bahaya Listrik dan Pentingnya K3LH</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-white text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video edukasi bahaya listrik dan prosedur K3</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal BNSP / Dokumentasi Keselamatan Kerja</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">K3LH</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Keselamatan, Kesehatan Kerja, dan Lingkungan Hidup—sistem terpadu untuk melindungi pekerja, masyarakat, dan lingkungan dari risiko kecelakaan dan penyakit akibat kerja.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Hazard (Bahaya)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Sumber, situasi, atau tindakan yang berpotensi menyebabkan cedera, penyakit, atau kerusakan. Contoh: kabel terkelupas, panel basah, lantai licin.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Risk (Risiko)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Kombinasi antara kemungkinan (probability) terjadinya bahaya dan tingkat keparahan (severity) akibatnya. Risiko = Probabilitas × Keparahan.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Hierarchy of Control</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Hierarki pengendalian bahaya: Eliminasi → Substitusi → Rekayasa Teknik → Kontrol Administratif → APD (dari paling efektif ke paling akhir).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-red-900/20 border border-red-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-red-300 mb-4"><i class="fas fa-exclamation-triangle mr-2"></i> Studi Kasus 6: Tragedi di Ruang Panel</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Seorang teknisi muda di sebuah pabrik melakukan perbaikan panel listrik tanpa mematikan sumber listrik (tidak melakukan Lockout/Tagout). Ia hanya mengandalkan sarung tangan kain biasa, bukan sarung tangan isolasi. Saat obengnya menyentuh terminal bertegangan, terjadi hubung singkat yang menyebabkan percikan api besar. Teknisi tersebut mengalami luka bakar serius di tangan dan wajah, serta pingsan akibat sengatan listrik. Beruntung, rekan kerjanya segera memutus MCB utama dan memanggil tim medis."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-red-500">
+                <h4 class="font-bold text-red-400 mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kasus ini menunjukkan <strong>rantai kegagalan K3LH</strong>: tidak melakukan eliminasi bahaya (mematikan sumber), tidak menggunakan APD yang tepat, dan tidak menerapkan prosedur LOTO. Satu kesalahan kecil dapat berakibat fatal. K3LH bukan beban, melainkan <strong>pelindung nyawa</strong>. Setiap prosedur yang "merepotkan" sebenarnya dirancang dari pengalaman tragis masa lalu.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">6.1 Pengertian dan Tujuan K3LH</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>K3LH</strong> adalah singkatan dari <strong>Keselamatan, Kesehatan Kerja, dan Lingkungan Hidup</strong>. Berdasarkan UU No. 1 Tahun 1970 tentang Keselamatan Kerja dan PP No. 50 Tahun 2012 tentang Penerapan SMK3, K3LH bertujuan untuk:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 mt-6">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-user-shield mr-2"></i>Melindungi Pekerja</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Menjamin keselamatan dan kesehatan setiap tenaga kerja agar pulang ke rumah dalam kondisi selamat dan sehat.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-cogs mr-2"></i>Mengamankan Aset</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Mencegah kerusakan peralatan, mesin, dan fasilitas produksi akibat kecelakaan kerja.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-leaf mr-2"></i>Melestarikan Lingkungan</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Mencegah pencemaran lingkungan akibat limbah, kebocoran, atau kecelakaan industri.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-chart-line mr-2"></i>Meningkatkan Produktivitas</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">Lingkungan kerja yang aman meningkatkan efisiensi, moral pekerja, dan citra perusahaan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">6.2 Identifikasi Bahaya di Lingkungan Kerja Kelistrikan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Bahaya di lingkungan kerja kelistrikan dapat dikategorikan menjadi lima jenis utama:
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Jenis Bahaya</th>
+                                <th class="p-4">Contoh Konkret</th>
+                                <th class="p-4 rounded-tr-lg">Potensi Dampak</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-red-400">⚡ Bahaya Listrik</td>
+                                <td class="p-4">Kabel terkelupas, sambungan terbuka, panel basah, grounding buruk</td>
+                                <td class="p-4">Sengatan listrik, henti jantung, luka bakar</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-orange-400">⚙️ Bahaya Mekanik</td>
+                                <td class="p-4">Bagian berputar motor, mesin potong, benda jatuh</td>
+                                <td class="p-4">Terjepit, terpotong, memar, patah tulang</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-yellow-400">🔥 Bahaya Panas & Api</td>
+                                <td class="p-4">Hubung singkat, percikan las, permukaan panas</td>
+                                <td class="p-4">Kebakaran, ledakan, luka bakar</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-purple-400">☣️ Bahaya Kimia</td>
+                                <td class="p-4">Baterai asam, oli trafo, bahan pembersih kontak</td>
+                                <td class="p-4">Iritasi, keracunan, penyakit kulit</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-green-400">🌍 Bahaya Lingkungan</td>
+                                <td class="p-4">Lantai licin, pencahayaan buruk, kebisingan tinggi</td>
+                                <td class="p-4">Terpeleset, stres, gangguan pendengaran</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">6.3 Risiko Kecelakaan Listrik</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Kecelakaan listrik dapat terjadi melalui beberapa mekanisme utama:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400 mb-2">1. Sengatan Listrik (Electric Shock)</h4>
+                        <p class="text-gray-300 text-sm">Arus listrik mengalir melalui tubuh manusia. Arus sebesar <strong>5 mA</strong> sudah dapat menyebabkan kejutan, <strong>50 mA</strong> dapat menghentikan jantung, dan <strong>100+ mA</strong> hampir pasti fatal.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-orange-500">
+                        <h4 class="font-bold text-orange-400 mb-2">2. Hubung Singkat (Short Circuit)</h4>
+                        <p class="text-gray-300 text-sm">Terjadi ketika konduktor bertegangan menyentuh konduktor lain atau ground secara tidak sengaja, menghasilkan arus sangat besar dan percikan api.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-400 mb-2">3. Busur Listrik (Arc Flash)</h4>
+                        <p class="text-gray-300 text-sm">Ledakan energi listrik yang menghasilkan suhu hingga <strong>20.000°C</strong> (4x lebih panas dari permukaan matahari), menyebabkan luka bakar parah dan ledakan tekanan.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-red-600">
+                        <h4 class="font-bold text-red-500 mb-2">4. Kebakaran Listrik</h4>
+                        <p class="text-gray-300 text-sm">Disebabkan oleh beban lebih (overload), isolasi rusak, atau sambungan longgar yang menghasilkan panas berlebih dan memicu api.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-red-900/20 border border-red-500/30 p-5 rounded-lg">
+                    <h4 class="font-bold text-red-400 mb-2"><i class="fas fa-heartbeat mr-2"></i>Faktor yang Mempengaruhi Keparahan Sengatan Listrik:</h4>
+                    <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                        <li><strong>Besar arus (mA)</strong> yang mengalir melalui tubuh</li>
+                        <li><strong>Durasi</strong> kontak (semakin lama, semakin fatal)</li>
+                        <li><strong>Jalur arus</strong> (tangan-ke-tangan atau tangan-ke-kaki paling berbahaya karena melewati jantung)</li>
+                        <li><strong>Frekuensi</strong> arus (AC lebih berbahaya dari DC pada tegangan rendah)</li>
+                        <li><strong>Kondisi kulit</strong> (kulit basah menurunkan tahanan tubuh drastis)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">6.4 Prinsip Pencegahan dan Pelaporan Kondisi Tidak Aman</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Pencegahan kecelakaan dilakukan melalui <strong>Hierarchy of Control</strong> (Hierarki Pengendalian), dari yang paling efektif hingga terakhir:
+                </p>
+                <div class="space-y-3 mt-6">
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-green-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-green-400">1</span>
+                        <div>
+                            <h4 class="font-bold text-green-400">Eliminasi</h4>
+                            <p class="text-gray-300 text-sm">Menghilangkan sumber bahaya sepenuhnya. Contoh: Mematikan sumber listrik sebelum bekerja.</p>
+                        </div>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-lime-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-lime-400">2</span>
+                        <div>
+                            <h4 class="font-bold text-lime-400">Substitusi</h4>
+                            <p class="text-gray-300 text-sm">Mengganti bahan/alat berbahaya dengan yang lebih aman. Contoh: Menggunakan alat bertegangan rendah (24V) untuk pengujian.</p>
+                        </div>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-yellow-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-yellow-400">3</span>
+                        <div>
+                            <h4 class="font-bold text-yellow-400">Rekayasa Teknik</h4>
+                            <p class="text-gray-300 text-sm">Modifikasi peralatan atau lingkungan. Contoh: Pemasangan ELCB/GFCI, enclosure panel, sistem ventilasi.</p>
+                        </div>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-orange-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-orange-400">4</span>
+                        <div>
+                            <h4 class="font-bold text-orange-400">Kontrol Administratif</h4>
+                            <p class="text-gray-300 text-sm">Prosedur, pelatihan, rambu, izin kerja. Contoh: SOP, pelatihan K3, sistem LOTO, izin kerja panas.</p>
+                        </div>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-red-500 flex items-start gap-4">
+                        <span class="text-2xl font-bold text-red-400">5</span>
+                        <div>
+                            <h4 class="font-bold text-red-400">Alat Pelindung Diri (APD)</h4>
+                            <p class="text-gray-300 text-sm">Perlindungan terakhir bagi pekerja. Contoh: Sarung tangan isolasi, helm, sepatu safety, kacamata pelindung.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-white mt-8 mb-3">Pelaporan Kondisi Tidak Aman (Unsafe Condition & Unsafe Action):</h4>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Setiap siswa dan teknisi wajib melaporkan kondisi atau tindakan tidak aman yang ditemukan. Pelaporan dapat berupa:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>Near Miss (Hampir Celaka):</strong> Insiden yang nyaris menyebabkan kecelakaan. Contoh: Kabel terkelupas yang nyaris tersentuh.</li>
+                    <li><strong>Unsafe Condition (Kondisi Tidak Aman):</strong> Kondisi fisik yang berpotensi bahaya. Contoh: Panel terbuka tanpa penutup, lantai basah dekat sumber listrik.</li>
+                    <li><strong>Unsafe Action (Tindakan Tidak Aman):</strong> Perilaku pekerja yang melanggar prosedur. Contoh: Bekerja tanpa APD, memintas sistem pengaman.</li>
+                </ul>
+                <p class="text-gray-300 leading-relaxed mt-4">
+                    Prinsip pelaporan: <strong>"See it, Report it, Fix it"</strong>—lihat, laporkan, perbaiki. Tidak ada pelaporan yang sia-sia, karena setiap laporan berpotensi menyelamatkan nyawa.
+                </p>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Bayangkan Anda adalah orang yang paling Anda sayangi—orang tua, adik, atau sahabat. Apakah Anda akan membiarkan mereka bekerja di lingkungan yang berbahaya? Jika tidak, maka <strong>jangan pernah membiarkan diri Anda sendiri bekerja tanpa standar K3LH</strong>. Keselamatan Anda adalah tanggung jawab Anda sendiri, dan juga tanggung jawab moral Anda terhadap mereka yang menunggu Anda di rumah.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-red-500">
+                <h4 class="font-serif text-lg font-bold text-red-400 mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis K3LH</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Selalu periksa area kerja sebelum memulai praktik—identifikasi kabel terkelupas, lantai basah, atau alat rusak.</li>
+                    <li>Terapkan prinsip "Matikan, Kunci, Uji" (Lockout-Tagout) sebelum menyentuh komponen bertegangan.</li>
+                    <li>Gunakan satu tangan saat bekerja dengan rangkaian bertegangan (kurangi risiko arus melewati jantung).</li>
+                    <li>Laporkan setiap near miss, sekecil apa pun—jangan anggap remeh.</li>
+                    <li>Pelajari letak APAR, jalur evakuasi, dan kotak P3K di bengkel Anda.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                K3LH adalah fondasi tak terpisahkan dari setiap pekerjaan kelistrikan. Bahaya listrik—sengatan, hubung singkat, arc flash, dan kebakaran—dapat dicegah melalui identifikasi risiko yang sistematis dan penerapan hierarki pengendalian yang ketat, mulai dari eliminasi hingga penggunaan APD.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Budaya pelaporan kondisi tidak aman (<em>unsafe condition</em>) dan tindakan tidak aman (<em>unsafe action</em>) harus ditanamkan sejak dini. Ingatlah: <strong>setiap kecelakaan dapat dicegah</strong>, dan setiap prosedur K3LH ditulis dengan tinta pengalaman tragis masa lalu. Sebagai calon teknisi profesional, Anda adalah penjaga keselamatan—bagi diri sendiri, rekan kerja, dan lingkungan.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>Republik Indonesia. (1970). <em>Undang-Undang No. 1 Tahun 1970 tentang Keselamatan Kerja.</em> Jakarta.</li>
+                <li>Republik Indonesia. (2012). <em>Peraturan Pemerintah No. 50 Tahun 2012 tentang Penerapan Sistem Manajemen K3.</em> Jakarta.</li>
+                <li>Kementerian Ketenagakerjaan RI. (2023). <em>Panduan K3 Bidang Ketenagalistrikan.</em> Jakarta: Ditjen Binwasnaker & K3.</li>
+                <li>PLN. (2023). <em>Buku Saku Keselamatan Ketenagalistrikan.</em> Jakarta: PT PLN (Persero).</li>
+                <li>NFPA. (2021). <em>NFPA 70E: Standard for Electrical Safety in the Workplace.</em> Quincy: National Fire Protection Association.</li>
+                <li>Suma'mur. (2016). <em>Higiene Perusahaan dan Kesehatan Kerja (Hiperkes).</em> Jakarta: Sagung Seto.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="5.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Budaya Kerja 5R
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="7.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: APD & Prosedur Kerja <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 6</h2>
+                <p class="text-gray-400">K3LH pada Pekerjaan Ketenagalistrikan</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Kepanjangan dari K3LH adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. Keamanan, Kebersihan, Ketertiban, dan Keindahan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Keselamatan, Kesehatan Kerja, dan Lingkungan Hidup</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. Keamanan, Kesehatan, dan Kebersihan Harian</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. Keselamatan, Kebersihan, dan Kenyamanan Kerja</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Hierarki pengendalian bahaya (Hierarchy of Control) yang paling efektif dalam mencegah kecelakaan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. Penggunaan APD</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. Prosedur administrasi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. Eliminasi sumber bahaya</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Pelatihan pekerja</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Tindakan mematikan sumber listrik sebelum melakukan perbaikan termasuk dalam tahap pengendalian...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. Eliminasi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. Substitusi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. Rekayasa teknik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. APD</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Peristiwa ketika konduktor bertegangan menyentuh konduktor lain atau ground secara tidak langsung, menghasilkan arus sangat besar dan percikan api, disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. Over voltage</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Hubung singkat (short circuit)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. Ground fault</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. Voltage drop</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Dalam hierarki pengendalian bahaya, APD (Alat Pelindung Diri) ditempatkan pada urutan terakhir karena...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. APD adalah yang paling mahal</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. APD tidak melindungi dari semua bahaya</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. APD tidak menghilangkan sumber bahaya, hanya melindungi pekerja</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. APD hanya digunakan di laboratorium</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Besaran arus listrik yang mulai dapat menyebabkan henti jantung (ventricular fibrillation) pada manusia adalah sekitar...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. 1 mA</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. 50 mA</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. 500 mA</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. 5 A</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Insiden yang nyaris menyebabkan kecelakaan, tetapi tidak menimbulkan cedera atau kerusakan, disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. Accident (Kecelakaan)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. Incident (Insiden besar)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. Near Miss (Hampir Celaka)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. Hazard (Bahaya)</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Prosedur keselamatan yang melibatkan penguncian sumber energi dan pemberian tanda peringatan sebelum pekerjaan dilakukan disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. P3K (Pertolongan Pertama Pada Kecelakaan)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. LOTO (Lockout/Tagout)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. SOP (Standard Operating Procedure)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. APD (Alat Pelindung Diri)</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Salah satu contoh pengendalian bahaya listrik melalui rekayasa teknik adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. Memakai sarung tangan isolasi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Memberikan pelatihan K3 kepada pekerja</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Pemasangan ELCB/GFCI pada instalasi listrik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Membuat rambu peringatan</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Ketika seorang siswa menemukan kabel terkelupas di bengkel praktik, tindakan yang paling tepat adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Mengabaikannya karena bukan tanggung jawabnya</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Segera melaporkan kepada instruktur/guru dan memberi tanda peringatan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Memperbaikinya sendiri tanpa izin</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Menutupinya dengan kain biasa</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Jelaskan pengertian K3LH dan uraikan 4 (empat) tujuan utama penerapannya di lingkungan kerja kelistrikan!</p>
+                            <textarea name="essay1" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Sebutkan dan jelaskan 5 (lima) jenis bahaya di lingkungan kerja kelistrikan! Berikan masing-masing satu contoh konkret dan potensi dampaknya!</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Uraikan 4 (empat) mekanisme utama kecelakaan listrik (sengatan listrik, hubung singkat, arc flash, kebakaran listrik)! Jelaskan faktor-faktor yang mempengaruhi keparahan sengatan listrik pada manusia!</p>
+                            <textarea name="essay3" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Jelaskan secara rinci Hierarchy of Control (Hierarki Pengendalian Bahaya) dari yang paling efektif hingga yang terakhir! Berikan contoh konkret penerapan setiap tahap di bengkel ketenagalistrikan!</p>
+                            <textarea name="essay4" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Berdasarkan studi kasus "Tragedi di Ruang Panel" di atas, analisis kesalahan-kesalahan K3LH yang dilakukan oleh teknisi! Rumuskan langkah-langkah pencegahan yang seharusnya dilakukan sesuai prinsip Hierarchy of Control!</p>
+                            <textarea name="essay5" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%206%20-%20K3LH%20Ketenagalistrikan" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 6
+        const kunciJawaban = {
+            q1: 'b', // Keselamatan, Kesehatan Kerja, dan Lingkungan Hidup
+            q2: 'c', // Eliminasi sumber bahaya
+            q3: 'a', // Eliminasi
+            q4: 'b', // Hubung singkat (short circuit)
+            q5: 'c', // APD tidak menghilangkan sumber bahaya
+            q6: 'b', // 50 mA
+            q7: 'c', // Near Miss (Hampir Celaka)
+            q8: 'b', // LOTO (Lockout/Tagout)
+            q9: 'c', // Pemasangan ELCB/GFCI
+            q10: 'b' // Segera melaporkan kepada instruktur
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

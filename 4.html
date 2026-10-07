@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 4: Profesi, Job Profile dan Technopreneurship - Sonia Dora, S.Pd.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="3.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="5.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 2 • PERTEMUAN 4</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Profesi, Job Profile <br>
+                <span class="text-gradient-gold">dan Technopreneurship</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Mengenal peta profesi di dunia ketenagalistrikan, standar kompetensi dan sertifikasi yang dibutuhkan, serta peluang berwirausaha berbasis teknologi (technopreneurship) dengan memanfaatkan potensi kearifan lokal.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-briefcase text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Setelah memahami wawasan dunia kerja, proses bisnis, dan perkembangan teknologi ketenagalistrikan pada pertemuan sebelumnya, tiba saatnya bagi siswa untuk mengenal lebih dekat <strong>siapa saja aktor utama</strong> di balik industri ini. Profesi di bidang ketenagalistrikan sangat beragam—mulai dari teknisi lapangan, operator pembangkit, insinyur perancang, hingga wirausahawan jasa kelistrikan yang mandiri.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Namun, memiliki keterampilan teknis saja tidak cukup. Dunia kerja modern menuntut adanya <strong>sertifikasi kompetensi</strong> yang diakui secara nasional, sikap kerja profesional, serta kemampuan beradaptasi dengan peluang usaha. Di sinilah konsep <strong>technopreneurship</strong> menjadi relevan: menggabungkan keahlian teknis dengan jiwa kewirausahaan, memanfaatkan teknologi, dan mengangkat potensi kearifan lokal untuk menciptakan nilai ekonomi yang berkelanjutan. Pertemuan ini akan membuka mata siswa bahwa masa depan mereka tidak hanya sebagai "karyawan", tetapi juga sebagai "pencipta lapangan kerja".
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Profil Teknisi dan Wirausaha Ketenagalistrikan Sukses</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video profil profesi dan technopreneur kelistrikan</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal BNSP / Dokumentasi Dunia Usaha</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Job Profile</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Deskripsi lengkap tentang suatu pekerjaan, mencakup tugas, tanggung jawab, kompetensi yang dibutuhkan, dan jenjang karirnya.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">SKKNI (Standar Kompetensi Kerja Nasional Indonesia)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Rumusan kemampuan kerja yang mencakup aspek pengetahuan, keterampilan, dan sikap kerja yang berlaku secara nasional.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Sertifikasi Kompetensi (BNSP)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Proses pemberian pengakuan resmi oleh Badan Nasional Sertifikasi Profesi atas kompetensi yang dimiliki seseorang.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Technopreneurship</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Kewirausahaan berbasis teknologi, di mana inovasi teknis menjadi nilai utama dalam menciptakan produk atau jasa yang bernilai ekonomi.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-blue-300 mb-4"><i class="fas fa-search mr-2"></i> Studi Kasus 4: Dari Teknisi Bengkel Menjadi Pengusaha Jasa Listrik</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Pak Rudi, alumni SMK Teknik Listrik, memulai karir sebagai teknisi instalasi di sebuah perusahaan kontraktor. Setelah 5 tahun bekerja dan mengumpulkan pengalaman serta sertifikasi BNSP, ia memberanikan diri membuka usaha jasa instalasi listrik sendiri di daerah Pasaman Barat. Dengan memanfaatkan jaringan relasi dan reputasi kerjanya yang rapi dan aman, usahanya kini menangani proyek instalasi rumah, ruko, hingga panel listrik UMKM di wilayahnya."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-luxury-gold">
+                <h4 class="font-bold text-luxury-gold mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kisah Pak Rudi menunjukkan bahwa profesi teknisi listrik memiliki jalur yang jelas: mulai dari belajar, bekerja, meraih sertifikasi, hingga membuka usaha mandiri. Kunci keberhasilannya adalah <strong>kombinasi antara kompetensi teknis yang tersertifikasi, sikap kerja profesional, dan kemampuan membaca peluang pasar lokal</strong>. Ini adalah esensi technopreneurship yang dapat diteladani siswa sejak dini.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">4.1 Profil Pekerjaan Teknisi Ketenagalistrikan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Dunia ketenagalistrikan menawarkan beragam profesi dengan spesialisasi yang berbeda. Berikut adalah beberapa job profile utama yang dapat dijadikan referensi karir oleh siswa:
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Profesi</th>
+                                <th class="p-4">Deskripsi Tugas</th>
+                                <th class="p-4 rounded-tr-lg">Tempat Kerja</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Instalatir Listrik</td>
+                                <td class="p-4">Memasang sistem kelistrikan gedung, rumah, dan industri sesuai PUIL.</td>
+                                <td class="p-4">Kontraktor MEP, Proyek Konstruksi</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Operator Pembangkit</td>
+                                <td class="p-4">Mengoperasikan dan memantau mesin pembangkit (PLTU, PLTA, PLTS, dll).</td>
+                                <td class="p-4">PLN, IPP (Independent Power Producer)</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Teknisi Jaringan Distribusi</td>
+                                <td class="p-4">Memelihara jaringan SUTM/SUTR dan gardu distribusi.</td>
+                                <td class="p-4">PLN Distribusi, Kontraktor Jaringan</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Teknisi Panel & Otomasi</td>
+                                <td class="p-4">Merakit, memasang, dan memelihara panel kontrol serta sistem PLC/SCADA.</td>
+                                <td class="p-4">Pabrik, Panel Builder, Integrator Sistem</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Teknisi Maintenance</td>
+                                <td class="p-4">Melakukan perawatan preventif dan perbaikan mesin listrik di industri.</td>
+                                <td class="p-4">Pabrik, Gedung Perkantoran, Hotel</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Technopreneur Listrik</td>
+                                <td class="p-4">Membuka usaha jasa instalasi, servis, atau penjualan komponen listrik.</td>
+                                <td class="p-4">Usaha Mandiri, CV, PT Perorangan</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">4.2 Kompetensi, Sikap Kerja, dan Sertifikasi</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Untuk dapat diterima di dunia kerja atau membuka usaha, seorang teknisi harus memenuhi tiga pilar kompetensi:
+                </p>
+                <div class="grid md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-brain mr-2"></i>Kompetensi Teknis (Hard Skill)</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Kemampuan mengoperasikan alat, membaca gambar teknik, merakit panel, memasang instalasi, dan menggunakan alat ukur.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-users mr-2"></i>Kompetensi Non-Teknis (Soft Skill)</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Komunikasi, kerja sama tim, pemecahan masalah, disiplin, dan kemampuan beradaptasi dengan teknologi baru.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-shield-alt mr-2"></i>Sikap Kerja & K3LH</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Kepatuhan terhadap SOP, kesadaran keselamatan tinggi, jujur, bertanggung jawab, dan berintegritas.</p>
+                    </div>
+                </div>
+
+                <p class="text-gray-300 leading-relaxed mt-6 mb-4">
+                    <strong class="text-luxury-gold">Sertifikasi Kompetensi BNSP</strong> menjadi bukti formal bahwa seseorang telah memenuhi standar SKKNI. Beberapa skema sertifikasi yang relevan bagi lulusan SMK Teknik Listrik antara lain:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>Juru Instalasi Listrik (JIL) - Kelas Teknisi:</strong> Untuk pekerjaan instalasi bangunan gedung.</li>
+                    <li><strong>Teknisi Panel Listrik:</strong> Untuk perakitan dan pemeliharaan panel kontrol.</li>
+                    <li><strong>Teknisi Jaringan Distribusi:</strong> Untuk pekerjaan di bidang distribusi tenaga listrik.</li>
+                    <li><strong>Teknisi Mesin Listrik:</strong> Untuk pemeliharaan motor dan generator listrik.</li>
+                </ul>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">4.3 Peluang Usaha Jasa Kelistrikan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Selain bekerja sebagai karyawan, lulusan ketenagalistrikan memiliki peluang besar untuk menjadi wirausahawan. Beberapa jenis usaha jasa yang potensial antara lain:
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 mt-4">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-plug mr-2"></i>Jasa Instalasi Listrik</h4>
+                        <p class="text-gray-300 text-sm">Pemasangan instalasi rumah, ruko, gedung, dan pabrik. Permintaan selalu tinggi seiring pertumbuhan konstruksi.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-tools mr-2"></i>Jasa Perawatan & Servis</h4>
+                        <p class="text-gray-300 text-sm">Maintenance berkala untuk panel listrik, motor listrik, AC, dan genset di industri dan perkantoran.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-solar-panel mr-2"></i>Jasa Instalasi Panel Surya (PLTS Atap)</h4>
+                        <p class="text-gray-300 text-sm">Peluang emas di era transisi energi. Banyak rumah tangga dan UMKM mulai beralih ke energi surya.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-store mr-2"></i>Toko Komponen Listrik</h4>
+                        <p class="text-gray-300 text-sm">Usaha retail komponen listrik, kabel, lampu LED, dan peralatan instalasi. Dapat dikombinasikan dengan jasa.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-clipboard-check mr-2"></i>Jasa Pengujian & Sertifikasi</h4>
+                        <p class="text-gray-300 text-sm">Pengujian instalasi listrik (uji tahanan isolasi, grounding, dll) untuk keperluan sertifikasi laik fungsi.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-microchip mr-2"></i>Jasa Otomasi & Smart Home</h4>
+                        <p class="text-gray-300 text-sm">Instalasi sistem rumah pintar, kontrol lampu via smartphone, dan otomasi industri skala UMKM.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">4.4 Technopreneurship dan Kearifan Lokal</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Technopreneurship</strong> adalah gabungan antara <em>technology</em> dan <em>entrepreneurship</em>. Seorang technopreneur di bidang ketenagalistrikan tidak hanya menjual "jasa pasang kabel", tetapi menawarkan <strong>solusi berbasis teknologi</strong> yang memberikan nilai tambah bagi pelanggan.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Di Sumatera Barat, khususnya Pasaman Barat, terdapat banyak peluang yang dapat diangkat dengan pendekatan technopreneurship:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>PLTS untuk Lahan Pertanian:</strong> Banyak petani di Pasaman Barat membutuhkan pompa air bertenaga surya untuk irigasi. Ini adalah peluang usaha yang menggabungkan teknologi dan kearifan lokal agraris.</li>
+                    <li><strong>Instalasi Listrik UMKM Kuliner:</strong> Rumah makan dan usaha kuliner Minang membutuhkan instalasi listrik yang aman dan efisien. Teknisi lokal dapat menawarkan paket instalasi + maintenance berkala.</li>
+                    <li><strong>Sistem Monitoring Suhu untuk Produk Pangan:</strong> UMKM penghasil rendang, dendeng, dan keripik membutuhkan cold storage dengan kontrol suhu otomatis berbasis IoT sederhana.</li>
+                    <li><strong>Penerangan Jalan Desa Hemat Energi:</strong> Menawarkan pemasangan PJU tenaga surya untuk nagari-nagari yang ingin menghemat anggaran listrik desa.</li>
+                </ul>
+                <p class="text-gray-300 leading-relaxed mt-4">
+                    Dengan memadukan <strong>kompetensi teknis</strong>, <strong>jiwa kewirausahaan</strong>, dan <strong>pemahaman potensi lokal</strong>, siswa dapat menjadi agen perubahan yang tidak hanya mencari kerja, tetapi juga menciptakan kerja bagi orang lain.
+                </p>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Tanyakan pada diri Anda: "Apakah saya ingin menjadi karyawan, atau juga memiliki potensi untuk membuka usaha sendiri?" Keduanya mulia, tetapi persiapannya berbeda. Jika memilih jalur wirausaha, mulailah membangun jaringan, reputasi, dan tabungan sejak dini. Jangan lupa, <strong>sertifikasi kompetensi</strong> adalah tiket emas Anda untuk dipercaya oleh pelanggan atau perusahaan.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Mulailah mengumpulkan portofolio pekerjaan (foto hasil instalasi, proyek praktik) sejak di SMK.</li>
+                    <li>Ikuti Uji Kompetensi Keahlian (UKK) dengan serius sebagai batu loncatan sertifikasi BNSP.</li>
+                    <li>Pelajari dasar-dasar bisnis: cara menghitung HPP (Harga Pokok Penawaran), membuat proposal, dan melayani pelanggan.</li>
+                    <li>Amati potensi ekonomi di daerah Anda. Di mana ada kebutuhan listrik, di situ ada peluang usaha.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Profesi di bidang ketenagalistrikan sangat luas, mulai dari teknisi instalasi, operator pembangkit, teknisi panel, hingga wirausahawan jasa kelistrikan. Setiap profesi menuntut kombinasi kompetensi teknis, soft skill, dan sikap kerja profesional yang harus dibuktikan melalui <strong>sertifikasi kompetensi</strong> berstandar nasional (SKKNI/BNSP).
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Di sisi lain, peluang berwirausaha melalui konsep <strong>technopreneurship</strong> terbuka lebar bagi lulusan yang kreatif dan peka terhadap potensi lokal. Dengan memadukan teknologi kelistrikan modern dan kebutuhan masyarakat di sekitar—seperti PLTS untuk pertanian, instalasi UMKM, atau smart home—siswa dapat menjadi pencipta lapangan kerja yang berkontribusi pada pembangunan daerah.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>Badan Nasional Sertifikasi Profesi (BNSP). (2024). <em>Skema Sertifikasi Teknik Ketenagalistrikan.</em> Jakarta: BNSP.</li>
+                <li>Kementerian Ketenagakerjaan RI. (2023). <em>Standar Kompetensi Kerja Nasional Indonesia (SKKNI) Bidang Instalasi Listrik.</em> Jakarta.</li>
+                <li>Kementerian ESDM. (2022). <em>Permen ESDM No. 12 Tahun 2022 tentang Sertifikasi Kompetensi Tenaga Teknik Listrik.</em></li>
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+                <li>Alma, B. (2019). <em>Entrepreneurship dan Kewirausahaan.</em> Bandung: Alfabeta.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="3.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Perkembangan Teknologi
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="5.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Kecakapan Kerja Dasar <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 4</h2>
+                <p class="text-gray-400">Profesi, Job Profile dan Technopreneurship</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Deskripsi lengkap tentang suatu pekerjaan yang mencakup tugas, tanggung jawab, dan kompetensi yang dibutuhkan disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. SOP</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Job Profile</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. KPI</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. RAB</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Standar kompetensi yang berlaku secara nasional di Indonesia dan menjadi acuan sertifikasi profesi disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. SNI</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. PUIL</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. SKKNI</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. ISO 9001</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Lembaga yang berwenang memberikan sertifikasi kompetensi profesi di Indonesia adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. Kemendikbud</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. BNSP (Badan Nasional Sertifikasi Profesi)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. PLN</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. BPJS Ketenagakerjaan</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Profesi yang bertugas merakit, memasang, dan memelihara panel kontrol serta sistem PLC/SCADA disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. Instalatir Listrik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Teknisi Panel & Otomasi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. Operator Pembangkit</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. Teknisi Jaringan Distribusi</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Gabungan antara teknologi dan kewirausahaan, di mana inovasi teknis menjadi nilai utama dalam menciptakan produk/jasa, disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. Intrapreneurship</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. Sociopreneurship</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. Technopreneurship</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. Ecopreneurship</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Sertifikasi yang wajib dimiliki oleh teknisi yang akan mengerjakan instalasi listrik di gedung secara legal di Indonesia adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. Surat Izin Mengemudi (SIM)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. Sertifikat Kompetensi (Serkom) / Sertifikat BNSP</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. Ijazah SMA saja</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. Surat Keterangan Sehat</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Salah satu peluang usaha jasa kelistrikan yang sangat potensial di era transisi energi saat ini adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. Jasa pembuatan lampu minyak tanah</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. Jasa instalasi Panel Surya (PLTS Atap)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. Jasa reparasi radio tabung</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. Jasa pembuatan genset manual</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Tiga pilar kompetensi yang harus dimiliki seorang teknisi profesional adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. Kekayaan, koneksi, dan popularitas</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. Kompetensi teknis, soft skill, dan sikap kerja/K3LH</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. Kecepatan, kekuatan, dan keberanian</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. Pendidikan tinggi, usia matang, dan pengalaman panjang</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Contoh penerapan technopreneurship berbasis kearifan lokal di Pasaman Barat adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. Membuka usaha rental game online</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Menyediakan jasa instalasi PLTS untuk pompa irigasi pertanian lokal</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Menjadi dropshipper produk impor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Membuka warung kopi tanpa inovasi</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Sikap kerja yang paling penting bagi seorang wirausahawan jasa kelistrikan agar dipercaya pelanggan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Memberikan harga termurah tanpa memperhatikan kualitas</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Jujur, bertanggung jawab, mengutamakan keselamatan, dan hasil kerja rapi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Bekerja secepat mungkin tanpa mengindahkan SOP</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Menjanjikan garansi seumur hidup tanpa perhitungan</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Sebutkan minimal 5 (lima) profesi utama di bidang ketenagalistrikan beserta deskripsi singkat tugasnya!</p>
+                            <textarea name="essay1" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Jelaskan tiga pilar kompetensi yang harus dimiliki seorang teknisi ketenagalistrikan profesional! Mengapa ketiganya harus seimbang?</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Apa yang dimaksud dengan SKKNI dan sertifikasi BNSP? Mengapa sertifikasi kompetensi sangat penting bagi seorang teknisi listrik yang ingin bekerja secara profesional atau membuka usaha?</p>
+                            <textarea name="essay3" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Jelaskan konsep technopreneurship dalam bidang ketenagalistrikan! Berikan minimal 3 contoh peluang usaha jasa kelistrikan yang potensial di era modern!</p>
+                            <textarea name="essay4" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Berdasarkan studi kasus Pak Rudi di atas, analisis faktor-faktor apa saja yang membuat beliau berhasil beralih dari teknisi menjadi pengusaha jasa listrik! Bagaimana Anda dapat meneladani kesuksesannya sejak di bangku SMK?</p>
+                            <textarea name="essay5" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%204%20-%20Profesi%20dan%20Technopreneurship" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 4
+        const kunciJawaban = {
+            q1: 'b', // Job Profile
+            q2: 'c', // SKKNI
+            q3: 'b', // BNSP
+            q4: 'b', // Teknisi Panel & Otomasi
+            q5: 'c', // Technopreneurship
+            q6: 'b', // Sertifikat Kompetensi / BNSP
+            q7: 'b', // Jasa instalasi PLTS Atap
+            q8: 'b', // Kompetensi teknis, soft skill, sikap kerja
+            q9: 'b', // PLTS untuk pompa irigasi
+            q10: 'b' // Jujur, bertanggung jawab, K3, rapi
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

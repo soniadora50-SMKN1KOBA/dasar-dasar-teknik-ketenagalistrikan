@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 11: Rangkaian Listrik Arus Searah - Sonia Dora, S.Pd.</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(243, 229, 171, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            font-family: 'Courier New', monospace;
+        }
+        .circuit-diagram {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="10.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="12.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 4 • PERTEMUAN 11</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Rangkaian Listrik <br>
+                <span class="text-gradient-gold">Arus Searah (DC)</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Menganalisis karakteristik sumber tegangan DC, rangkaian terbuka-tertutup, serta konfigurasi seri dan paralel—fondasi utama untuk memahami instalasi listrik rumah tangga dan sistem kelistrikan industri.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-project-diagram text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Setelah menguasai Hukum Ohm pada pertemuan sebelumnya, kini saatnya menerapkan hukum tersebut pada <strong>konfigurasi rangkaian nyata</strong>. Di dunia praktis, hampir tidak ada rangkaian listrik yang hanya terdiri dari satu resistor dan satu sumber tegangan. Instalasi rumah tangga, panel kontrol industri, sistem penerangan jalan—semuanya merupakan kombinasi kompleks dari banyak komponen yang dirangkai secara <strong>seri, paralel, atau kombinasi keduanya</strong>.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Memahami perbedaan mendasar antara rangkaian seri dan paralel bukan hanya soal teori—ia memiliki implikasi praktis yang sangat nyata. Mengapa lampu hias taman yang satu putus membuat semua lampu mati? Mengapa stop kontak di rumah tetap berfungsi meski peralatan lain dicabut? Jawabannya terletak pada konfigurasi rangkaian. Pertemuan ini akan membekali siswa dengan kemampuan menganalisis arus, tegangan, dan hambatan pada berbagai konfigurasi rangkaian DC—keterampilan yang menjadi fondasi bagi seluruh kompetensi kelistrikan selanjutnya.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Rangkaian Seri vs Paralel dalam Kehidupan Nyata</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video demonstrasi rangkaian seri dan paralel</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal Edukasi Teknik / Laboratorium Listrik Dasar</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Arus Searah (DC - Direct Current)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Arus listrik yang mengalir secara konstan dalam satu arah, dari kutub positif ke kutub negatif. Sumber DC: baterai, aki, power supply, panel surya.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Rangkaian Terbuka vs Tertutup</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Rangkaian terbuka: jalur arus terputus (sakelar OFF), arus = 0. Rangkaian tertutup: jalur arus lengkap (sakelar ON), arus mengalir.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Rangkaian Seri</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Komponen disusun berurutan dalam satu jalur. Arus sama di semua titik, tegangan terbagi, hambatan total = R₁ + R₂ + R₃ + ...</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Rangkaian Paralel</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Komponen disusun bercabang. Tegangan sama di semua cabang, arus terbagi, 1/Rₜ = 1/R₁ + 1/R₂ + 1/R₃ + ...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-blue-300 mb-4"><i class="fas fa-search mr-2"></i> Studi Kasus 11: Lampu Taman yang "Moody"</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Pak Ahmad memasang 10 lampu LED hias di tamannya menggunakan rangkaian seri dari satu adaptor 12V. Semuanya menyala redup namun seragam. Suatu malam, satu lampu mati karena LED-nya putus. Anehnya, semua lampu lainnya ikut mati total! Pak Ahmad bingung dan memanggil teknisi. Teknisi menjelaskan: 'Karena semua lampu dirangkai seri, ketika satu putus, jalur arus terputus di titik itu—seperti rantai yang putus satu mata, seluruhnya tidak bisa berfungsi.' Teknisi kemudian menyarankan pemasangan secara paralel agar setiap lampu memiliki jalur arus sendiri."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-luxury-gold">
+                <h4 class="font-bold text-luxury-gold mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kasus ini adalah ilustrasi sempurna perbedaan mendasar antara rangkaian seri dan paralel. <strong>Rangkaian seri memiliki kelemahan: satu komponen rusak = seluruh sistem mati.</strong> Inilah mengapa instalasi listrik rumah tangga, lampu jalan, dan sistem kritis lainnya selalu menggunakan konfigurasi paralel—agar kegagalan satu titik tidak melumpuhkan seluruh sistem. Pemilihan konfigurasi rangkaian bukan sekadar masalah teknis, melainkan keputusan strategis yang mempengaruhi keandalan, keselamatan, dan biaya.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">11.1 Sumber Tegangan DC dan Karakteristiknya</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Arus Searah (Direct Current/DC)</strong> adalah arus listrik yang mengalir secara konstan dalam satu arah, dari kutub positif (+) ke kutub negatif (-). Sumber tegangan DC adalah jantung dari setiap rangkaian DC. Berikut adalah jenis-jenis sumber DC yang umum ditemui:
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Jenis Sumber</th>
+                                <th class="p-4">Tegangan Umum</th>
+                                <th class="p-4">Karakteristik</th>
+                                <th class="p-4 rounded-tr-lg">Aplikasi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Baterai Primer (sekali pakai)</td>
+                                <td class="p-4">1,5V (AA, AAA), 9V, 3V (koin)</td>
+                                <td class="p-4">Tidak dapat diisi ulang, habis buang</td>
+                                <td class="p-4">Remote, jam dinding, mainan</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Baterai Sekunder (isi ulang)</td>
+                                <td class="p-4">1,2V (NiMH), 3,7V (Li-ion)</td>
+                                <td class="p-4">Dapat diisi ulang ratusan kali</td>
+                                <td class="p-4">HP, laptop, mobil listrik</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Aki (Accumulator)</td>
+                                <td class="p-4">6V, 12V, 24V</td>
+                                <td class="p-4">Arus besar, berat, perlu perawatan</td>
+                                <td class="p-4">Kendaraan, UPS, sistem backup</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Power Supply (Adaptor)</td>
+                                <td class="p-4">3,3V, 5V, 12V, 24V (adjustable)</td>
+                                <td class="p-4">Stabil, arus kontinu, dari AC</td>
+                                <td class="p-4">Elektronik, panel kontrol, laboratorium</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Panel Surya (Solar Cell)</td>
+                                <td class="p-4">0,5V per sel (disusun seri/paralel)</td>
+                                <td class="p-4">Tergantung intensitas cahaya</td>
+                                <td class="p-4">PLTS, lampu taman, pompa air</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-info-circle mr-2"></i>Karakteristik Ideal Sumber Tegangan DC:</h4>
+                    <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                        <li><strong>Tegangan konstan</strong> tidak terpengaruh beban (sumber ideal).</li>
+                        <li><strong>Hambatan internal sangat kecil</strong> (mendekati 0 Ω).</li>
+                        <li><strong>Arus yang disuplai stabil</strong> sesuai kebutuhan beban.</li>
+                        <li>Pada sumber nyata, terdapat <strong>hambatan internal (r)</strong> yang menyebabkan tegangan turun saat beban berat (voltage drop).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">11.2 Rangkaian Terbuka dan Tertutup</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Agar arus listrik dapat mengalir, harus terbentuk <strong>jalur tertutup (closed loop)</strong> dari kutub positif sumber, melalui beban, kembali ke kutub negatif. Kondisi rangkaian menentukan apakah arus mengalir atau tidak:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <!-- Rangkaian Terbuka -->
+                    <div class="circuit-diagram p-6 rounded-xl">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-bold text-red-400 text-lg"><i class="fas fa-toggle-off mr-2"></i>Rangkaian Terbuka</h4>
+                            <span class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded">OPEN CIRCUIT</span>
+                        </div>
+                        <svg viewBox="0 0 300 120" class="w-full mb-4">
+                            <!-- Battery -->
+                            <line x1="20" y1="60" x2="40" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="40" y1="40" x2="40" y2="80" stroke="#d4af37" stroke-width="3"/>
+                            <line x1="50" y1="50" x2="50" y2="70" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="50" y1="60" x2="70" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <!-- Wire top -->
+                            <line x1="70" y1="60" x2="130" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <!-- Switch OPEN -->
+                            <line x1="130" y1="60" x2="145" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <circle cx="145" cy="60" r="3" fill="#d4af37"/>
+                            <line x1="145" y1="60" x2="170" y2="40" stroke="#ef4444" stroke-width="2"/>
+                            <circle cx="175" cy="60" r="3" fill="#d4af37"/>
+                            <line x1="175" y1="60" x2="200" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <!-- Lamp -->
+                            <circle cx="220" cy="60" r="15" fill="none" stroke="#6b7280" stroke-width="2"/>
+                            <line x1="210" y1="50" x2="230" y2="70" stroke="#6b7280" stroke-width="1"/>
+                            <line x1="230" y1="50" x2="210" y2="70" stroke="#6b7280" stroke-width="1"/>
+                            <!-- Wire bottom -->
+                            <line x1="235" y1="60" x2="280" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="20" y1="60" x2="20" y2="90" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="20" y1="90" x2="280" y2="90" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="280" y1="60" x2="280" y2="90" stroke="#d4af37" stroke-width="2"/>
+                            <!-- Label -->
+                            <text x="150" y="25" text-anchor="middle" fill="#ef4444" font-size="12" font-weight="bold">SAKELAR TERBUKA</text>
+                            <text x="150" y="110" text-anchor="middle" fill="#94a3b8" font-size="10">I = 0 A (tidak ada arus)</text>
+                        </svg>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            <li>Jalur arus <strong>terputus</strong></li>
+                            <li>Sakelar dalam posisi OFF</li>
+                            <li>Arus <strong>I = 0 A</strong></li>
+                            <li>Beban tidak bekerja (lampu mati)</li>
+                            <li>Tegangan sumber tetap ada, tapi tidak "dipakai"</li>
+                        </ul>
+                    </div>
+
+                    <!-- Rangkaian Tertutup -->
+                    <div class="circuit-diagram p-6 rounded-xl">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-bold text-green-400 text-lg"><i class="fas fa-toggle-on mr-2"></i>Rangkaian Tertutup</h4>
+                            <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">CLOSED CIRCUIT</span>
+                        </div>
+                        <svg viewBox="0 0 300 120" class="w-full mb-4">
+                            <!-- Battery -->
+                            <line x1="20" y1="60" x2="40" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="40" y1="40" x2="40" y2="80" stroke="#d4af37" stroke-width="3"/>
+                            <line x1="50" y1="50" x2="50" y2="70" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="50" y1="60" x2="70" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <!-- Wire top -->
+                            <line x1="70" y1="60" x2="130" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <!-- Switch CLOSED -->
+                            <line x1="130" y1="60" x2="145" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <circle cx="145" cy="60" r="3" fill="#d4af37"/>
+                            <line x1="145" y1="60" x2="175" y2="60" stroke="#22c55e" stroke-width="2"/>
+                            <circle cx="175" cy="60" r="3" fill="#d4af37"/>
+                            <line x1="175" y1="60" x2="200" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <!-- Lamp ON -->
+                            <circle cx="220" cy="60" r="15" fill="#fbbf24" fill-opacity="0.3" stroke="#fbbf24" stroke-width="2"/>
+                            <line x1="210" y1="50" x2="230" y2="70" stroke="#fbbf24" stroke-width="1"/>
+                            <line x1="230" y1="50" x2="210" y2="70" stroke="#fbbf24" stroke-width="1"/>
+                            <!-- Glow -->
+                            <circle cx="220" cy="60" r="25" fill="#fbbf24" fill-opacity="0.1"/>
+                            <!-- Wire bottom -->
+                            <line x1="235" y1="60" x2="280" y2="60" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="20" y1="60" x2="20" y2="90" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="20" y1="90" x2="280" y2="90" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="280" y1="60" x2="280" y2="90" stroke="#d4af37" stroke-width="2"/>
+                            <!-- Label -->
+                            <text x="150" y="25" text-anchor="middle" fill="#22c55e" font-size="12" font-weight="bold">SAKELAR TERTUTUP</text>
+                            <text x="150" y="110" text-anchor="middle" fill="#94a3b8" font-size="10">I &gt; 0 A (arus mengalir)</text>
+                        </svg>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            <li>Jalur arus <strong>lengkap (loop tertutup)</strong></li>
+                            <li>Sakelar dalam posisi ON</li>
+                            <li>Arus <strong>I &gt; 0</strong> (mengalir)</li>
+                            <li>Beban bekerja (lampu menyala)</li>
+                            <li>Berlaku Hukum Ohm: V = I × R</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-yellow-900/20 border border-yellow-500/30 p-4 rounded-lg">
+                    <h4 class="font-bold text-yellow-400 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Hubung Singkat (Short Circuit):</h4>
+                    <p class="text-gray-300 text-sm">Kondisi khusus ketika arus mengalir melalui jalur <strong>hambatan sangat rendah</strong> (hampir nol), melewatkan beban. Arus menjadi sangat besar (I = V/R, R → 0, I → ∞), menghasilkan panas berlebih dan berpotensi menyebabkan kebakaran. Inilah mengapa sekring (fuse) dan MCB dipasang sebagai pengaman!</p>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">11.3 Rangkaian Seri</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Pada <strong>rangkaian seri</strong>, komponen-komponen listrik disusun <strong>berurutan dalam satu jalur</strong>. Arus yang mengalir melalui satu komponen harus melewati semua komponen lainnya. Analogi: <em>satu jalur jalan raya yang harus dilalui semua kendaraan secara berurutan</em>.
+                </p>
+
+                <!-- Diagram Rangkaian Seri -->
+                <div class="circuit-diagram p-6 rounded-xl my-6">
+                    <h4 class="font-bold text-luxury-gold mb-4 text-center"><i class="fas fa-link mr-2"></i>Diagram Rangkaian Seri</h4>
+                    <svg viewBox="0 0 500 150" class="w-full">
+                        <!-- Battery -->
+                        <line x1="30" y1="75" x2="50" y2="75" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="50" y1="55" x2="50" y2="95" stroke="#d4af37" stroke-width="3"/>
+                        <line x1="60" y1="65" x2="60" y2="85" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="60" y1="75" x2="80" y2="75" stroke="#d4af37" stroke-width="2"/>
+                        <text x="55" y="45" text-anchor="middle" fill="#d4af37" font-size="12" font-weight="bold">V</text>
+                        
+                        <!-- Wire to R1 -->
+                        <line x1="80" y1="75" x2="130" y2="75" stroke="#d4af37" stroke-width="2"/>
+                        
+                        <!-- R1 (zigzag) -->
+                        <path d="M 130 75 L 140 60 L 150 90 L 160 60 L 170 90 L 180 60 L 190 75" fill="none" stroke="#60a5fa" stroke-width="2"/>
+                        <text x="160" y="110" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">R₁</text>
+                        
+                        <!-- Wire to R2 -->
+                        <line x1="190" y1="75" x2="240" y2="75" stroke="#d4af37" stroke-width="2"/>
+                        
+                        <!-- R2 -->
+                        <path d="M 240 75 L 250 60 L 260 90 L 270 60 L 280 90 L 290 60 L 300 75" fill="none" stroke="#60a5fa" stroke-width="2"/>
+                        <text x="270" y="110" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">R₂</text>
+                        
+                        <!-- Wire to R3 -->
+                        <line x1="300" y1="75" x2="350" y2="75" stroke="#d4af37" stroke-width="2"/>
+                        
+                        <!-- R3 -->
+                        <path d="M 350 75 L 360 60 L 370 90 L 380 60 L 390 90 L 400 60 L 410 75" fill="none" stroke="#60a5fa" stroke-width="2"/>
+                        <text x="380" y="110" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">R₃</text>
+                        
+                        <!-- Wire back -->
+                        <line x1="410" y1="75" x2="460" y2="75" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="30" y1="75" x2="30" y2="120" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="30" y1="120" x2="460" y2="120" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="460" y1="75" x2="460" y2="120" stroke="#d4af37" stroke-width="2"/>
+                        
+                        <!-- Current arrow -->
+                        <text x="250" y="25" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="bold">I (sama di semua titik) →</text>
+                    </svg>
+                </div>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Karakteristik Rangkaian Seri:</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <p class="text-blue-400 font-bold mb-1">Arus (I)</p>
+                        <p class="text-gray-300 text-sm">Sama di semua titik:</p>
+                        <p class="formula-box p-2 rounded text-center mt-2 text-luxury-gold font-bold">Iₜ = I₁ = I₂ = I₃</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-yellow-400 font-bold mb-1">Tegangan (V)</p>
+                        <p class="text-gray-300 text-sm">Terbagi di tiap resistor:</p>
+                        <p class="formula-box p-2 rounded text-center mt-2 text-luxury-gold font-bold">Vₜ = V₁ + V₂ + V₃</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-red-500">
+                        <p class="text-red-400 font-bold mb-1">Hambatan (R)</p>
+                        <p class="text-gray-300 text-sm">Dijumlahkan langsung:</p>
+                        <p class="formula-box p-2 rounded text-center mt-2 text-luxury-gold font-bold">Rₜ = R₁ + R₂ + R₃</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-lightbulb mr-2"></i>Ciri Khas Rangkaian Seri:</h4>
+                    <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                        <li>Satu komponen rusak/putus → <strong>seluruh rangkaian mati</strong>.</li>
+                        <li>Hambatan total selalu <strong>lebih besar</strong> dari hambatan terbesar.</li>
+                        <li>Tegangan sumber terbagi proporsional dengan nilai hambatan.</li>
+                        <li>Aplikasi: lampu hias lama, sekring, rangkaian pembagi tegangan (voltage divider).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">11.4 Rangkaian Paralel</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Pada <strong>rangkaian paralel</strong>, komponen-komponen disusun <strong>bercabang</strong>, masing-masing memiliki jalur sendiri dari sumber tegangan. Analogi: <em>jalan raya dengan banyak jalur—kendaraan bisa memilih jalur mana saja, semua menerima tekanan yang sama</em>.
+                </p>
+
+                <!-- Diagram Rangkaian Paralel -->
+                <div class="circuit-diagram p-6 rounded-xl my-6">
+                    <h4 class="font-bold text-luxury-gold mb-4 text-center"><i class="fas fa-code-branch mr-2"></i>Diagram Rangkaian Paralel</h4>
+                    <svg viewBox="0 0 500 200" class="w-full">
+                        <!-- Battery -->
+                        <line x1="30" y1="100" x2="50" y2="100" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="50" y1="80" x2="50" y2="120" stroke="#d4af37" stroke-width="3"/>
+                        <line x1="60" y1="90" x2="60" y2="110" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="60" y1="100" x2="100" y2="100" stroke="#d4af37" stroke-width="2"/>
+                        <text x="55" y="70" text-anchor="middle" fill="#d4af37" font-size="12" font-weight="bold">V</text>
+                        
+                        <!-- Main wire splits -->
+                        <line x1="100" y1="100" x2="100" y2="50" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="100" y1="100" x2="100" y2="150" stroke="#d4af37" stroke-width="2"/>
+                        
+                        <!-- Branch 1 (top) -->
+                        <line x1="100" y1="50" x2="180" y2="50" stroke="#d4af37" stroke-width="2"/>
+                        <path d="M 180 50 L 190 35 L 200 65 L 210 35 L 220 65 L 230 35 L 240 50" fill="none" stroke="#60a5fa" stroke-width="2"/>
+                        <text x="210" y="25" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">R₁</text>
+                        <line x1="240" y1="50" x2="400" y2="50" stroke="#d4af37" stroke-width="2"/>
+                        
+                        <!-- Branch 2 (middle) -->
+                        <line x1="100" y1="100" x2="180" y2="100" stroke="#d4af37" stroke-width="2"/>
+                        <path d="M 180 100 L 190 85 L 200 115 L 210 85 L 220 115 L 230 85 L 240 100" fill="none" stroke="#60a5fa" stroke-width="2"/>
+                        <text x="210" y="130" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">R₂</text>
+                        <line x1="240" y1="100" x2="400" y2="100" stroke="#d4af37" stroke-width="2"/>
+                        
+                        <!-- Branch 3 (bottom) -->
+                        <line x1="100" y1="150" x2="180" y2="150" stroke="#d4af37" stroke-width="2"/>
+                        <path d="M 180 150 L 190 135 L 200 165 L 210 135 L 220 165 L 230 135 L 240 150" fill="none" stroke="#60a5fa" stroke-width="2"/>
+                        <text x="210" y="185" text-anchor="middle" fill="#60a5fa" font-size="12" font-weight="bold">R₃</text>
+                        <line x1="240" y1="150" x2="400" y2="150" stroke="#d4af37" stroke-width="2"/>
+                        
+                        <!-- Merge -->
+                        <line x1="400" y1="50" x2="400" y2="150" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="400" y1="100" x2="460" y2="100" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="30" y1="100" x2="30" y2="170" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="30" y1="170" x2="460" y2="170" stroke="#d4af37" stroke-width="2"/>
+                        <line x1="460" y1="100" x2="460" y2="170" stroke="#d4af37" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Karakteristik Rangkaian Paralel:</h4>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-yellow-400 font-bold mb-1">Tegangan (V)</p>
+                        <p class="text-gray-300 text-sm">Sama di semua cabang:</p>
+                        <p class="formula-box p-2 rounded text-center mt-2 text-luxury-gold font-bold">Vₜ = V₁ = V₂ = V₃</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <p class="text-blue-400 font-bold mb-1">Arus (I)</p>
+                        <p class="text-gray-300 text-sm">Terbagi di tiap cabang:</p>
+                        <p class="formula-box p-2 rounded text-center mt-2 text-luxury-gold font-bold">Iₜ = I₁ + I₂ + I₃</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-4 rounded-lg border-l-4 border-red-500">
+                        <p class="text-red-400 font-bold mb-1">Hambatan (R)</p>
+                        <p class="text-gray-300 text-sm">Kebalikan jumlah kebalikan:</p>
+                        <p class="formula-box p-2 rounded text-center mt-2 text-luxury-gold font-bold">1/Rₜ = 1/R₁ + 1/R₂ + 1/R₃</p>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-lightbulb mr-2"></i>Ciri Khas Rangkaian Paralel:</h4>
+                    <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                        <li>Satu cabang rusak → <strong>cabang lain tetap berfungsi</strong>.</li>
+                        <li>Hambatan total selalu <strong>lebih kecil</strong> dari hambatan terkecil.</li>
+                        <li>Arus total = jumlah arus di semua cabang (Hukum Kirchhoff I).</li>
+                        <li>Aplikasi: <strong>instalasi listrik rumah tangga</strong>, stop kontak, penerangan jalan, panel distribusi.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">11.5 Analisis Numerik Rangkaian DC</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Berikut adalah contoh-contoh penyelesaian masalah rangkaian DC yang akan sering dihadapi teknisi:
+                </p>
+
+                <div class="space-y-4 mt-6">
+                    <!-- Contoh 1: Seri -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 1: Rangkaian Seri Sederhana</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Tiga resistor R₁ = 10Ω, R₂ = 20Ω, R₃ = 30Ω dirangkai seri pada sumber tegangan 12V. Hitung hambatan total, arus total, dan tegangan pada masing-masing resistor!</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold"><strong>Langkah 1:</strong> Rₜ = R₁ + R₂ + R₃ = 10 + 20 + 30 = <strong>60 Ω</strong></p>
+                            <p class="text-luxury-gold"><strong>Langkah 2:</strong> Iₜ = V / Rₜ = 12 / 60 = <strong>0,2 A</strong> (arus sama di semua titik)</p>
+                            <p class="text-luxury-gold"><strong>Langkah 3:</strong> V₁ = I × R₁ = 0,2 × 10 = <strong>2V</strong></p>
+                            <p class="text-luxury-gold">V₂ = I × R₂ = 0,2 × 20 = <strong>4V</strong></p>
+                            <p class="text-luxury-gold">V₃ = I × R₃ = 0,2 × 30 = <strong>6V</strong></p>
+                            <p class="text-luxury-gold"><strong>Verifikasi:</strong> V₁ + V₂ + V₃ = 2 + 4 + 6 = 12V ✓ (sesuai sumber)</p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 2: Paralel -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 2: Rangkaian Paralel Sederhana</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Dua resistor R₁ = 10Ω dan R₂ = 10Ω dirangkai paralel pada sumber 12V. Hitung hambatan total, arus total, dan arus di tiap cabang!</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold"><strong>Langkah 1:</strong> 1/Rₜ = 1/R₁ + 1/R₂ = 1/10 + 1/10 = 2/10</p>
+                            <p class="text-luxury-gold">Rₜ = 10/2 = <strong>5 Ω</strong></p>
+                            <p class="text-luxury-gold"><strong>Langkah 2:</strong> Iₜ = V / Rₜ = 12 / 5 = <strong>2,4 A</strong></p>
+                            <p class="text-luxury-gold"><strong>Langkah 3:</strong> Karena V sama di semua cabang (12V):</p>
+                            <p class="text-luxury-gold">I₁ = V / R₁ = 12 / 10 = <strong>1,2 A</strong></p>
+                            <p class="text-luxury-gold">I₂ = V / R₂ = 12 / 10 = <strong>1,2 A</strong></p>
+                            <p class="text-luxury-gold"><strong>Verifikasi:</strong> I₁ + I₂ = 1,2 + 1,2 = 2,4 A ✓ (sesuai Iₜ)</p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 3: Aplikasi Nyata -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">📝 Contoh 3: Instalasi Lampu Paralel di Rumah</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Sebuah rumah memiliki 4 lampu LED masing-masing berhambatan 1.100Ω yang dirangkai paralel pada tegangan 220V. Hitung hambatan total, arus total, dan analisis mengapa jika satu lampu putus, lampu lain tetap menyala!</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold"><strong>Langkah 1:</strong> 1/Rₜ = 4 × (1/1100) = 4/1100</p>
+                            <p class="text-luxury-gold">Rₜ = 1100/4 = <strong>275 Ω</strong></p>
+                            <p class="text-luxury-gold"><strong>Langkah 2:</strong> Iₜ = V / Rₜ = 220 / 275 = <strong>0,8 A</strong></p>
+                            <p class="text-luxury-gold"><strong>Langkah 3:</strong> Arus per lampu = 220 / 1100 = <strong>0,2 A</strong></p>
+                            <p class="text-luxury-gold"><strong>Analisis:</strong> Karena rangkaian paralel, setiap lampu memiliki jalur sendiri. Jika satu lampu putus (open), arus tetap mengalir melalui 3 cabang lainnya. Inilah mengapa instalasi rumah menggunakan paralel!</p>
+                        </div>
+                    </div>
+
+                    <!-- Contoh 4: Perbandingan -->
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400 mb-2">⚠️ Contoh 4: Mengapa Seri vs Paralel Penting?</h4>
+                        <p class="text-gray-300 text-sm mb-2"><strong>Soal:</strong> Dua lampu identik (R = 100Ω) dihubungkan ke sumber 12V. Bandingkan kondisi saat dirangkai seri vs paralel!</p>
+                        <div class="formula-box p-3 rounded text-sm">
+                            <p class="text-luxury-gold"><strong>Seri:</strong> Rₜ = 200Ω → I = 12/200 = 0,06A → V per lampu = 6V → <strong>nyala redup</strong></p>
+                            <p class="text-luxury-gold"><strong>Paralel:</strong> Rₜ = 50Ω → I = 12/50 = 0,24A → V per lampu = 12V → <strong>nyala terang penuh</strong></p>
+                            <p class="text-red-400 mt-2"><strong>⚠️ Kesimpulan:</strong> Rangkaian paralel memberikan tegangan penuh ke setiap beban, sehingga peralatan bekerja pada kapasitas optimal. Inilah alasan instalasi listrik standar menggunakan paralel!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Setiap kali Anda menyalakan lampu di rumah, mencolokkan charger HP, atau menghidupkan AC, Anda sedang memanfaatkan prinsip rangkaian paralel. Setiap stop kontak adalah cabang paralel yang independen. Setiap MCB di panel rumah melindungi cabang tertentu. Memahami rangkaian DC bukan hanya soal lulus ujian—ia adalah <strong>kunci untuk memahami seluruh sistem kelistrikan di sekitar Anda</strong>.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Hafalkan "mantra" rangkaian: <strong>Seri = Arus Sama, Paralel = Tegangan Sama</strong>.</li>
+                    <li>Gunakan segitiga Ohm (V=IR) untuk menghitung nilai yang belum diketahui.</li>
+                    <li>Selalu verifikasi hasil: total V di seri harus = V sumber; total I di paralel harus = I sumber.</li>
+                    <li>Latih minimal 5 soal perhitungan rangkaian setiap hari.</li>
+                    <li>Amati instalasi listrik di rumah Anda—identifikasi mana yang seri dan paralel.</li>
+                    <li>Jangan bingung dengan rumus 1/Rₜ pada paralel—ingat: "paralel = kebalikan dijumlahkan".</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Rangkaian listrik arus searah (DC) merupakan fondasi utama analisis kelistrikan. Melalui pemahaman sumber tegangan DC, perbedaan rangkaian terbuka-tertutup, serta karakteristik rangkaian seri dan paralel, siswa kini memiliki alat analitis untuk memecahkan permasalahan kelistrikan nyata.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                <strong>Rangkaian seri</strong> ditandai dengan arus yang sama di semua titik, tegangan yang terbagi, dan hambatan total yang merupakan penjumlahan langsung. <strong>Rangkaian paralel</strong> ditandai dengan tegangan yang sama di semua cabang, arus yang terbagi, dan hambatan total yang lebih kecil dari hambatan terkecil. Pemahaman ini menjadi kunci untuk menganalisis instalasi listrik rumah tangga, merancang panel kontrol, dan mendiagnosis gangguan pada sistem kelistrikan.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+                <li>Sumanto. (2019). <em>Instalasi Listrik Arus Kuat Jilid 1.</em> Yogyakarta: Andi Offset.</li>
+                <li>Boylestad, R. L. (2016). <em>Introductory Circuit Analysis (13th ed.).</em> Pearson.</li>
+                <li>Malvino, A. P., & Bates, D. J. (2016). <em>Electronic Principles (8th ed.).</em> New York: McGraw-Hill Education.</li>
+                <li>PLN. (2023). <em>Buku Saku Instalasi Listrik Rumah Tangga.</em> Jakarta: PT PLN (Persero).</li>
+                <li>PUIL 2011. <em>Persyaratan Umum Instalasi Listrik.</em> Jakarta: SNI.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="10.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Hukum Ohm
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="12.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Daya & Energi <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 11</h2>
+                <p class="text-gray-400">Rangkaian Listrik Arus Searah</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Arus listrik yang mengalir secara konstan dalam satu arah disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. Arus Bolak-balik (AC)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Arus Searah (DC)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. Arus Statis</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. Arus Pulsasi</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Pada rangkaian terbuka (sakelar OFF), kondisi yang benar adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. Arus mengalir maksimum</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. Arus = 0 A, beban tidak bekerja</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. Terjadi hubung singkat</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Tegangan sumber hilang</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Ciri utama rangkaian seri adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. Tegangan sama di semua komponen</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. Arus sama di semua titik, tegangan terbagi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. Komponen disusun bercabang</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. Hambatan total lebih kecil dari hambatan terkecil</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Pada rangkaian paralel, besaran yang nilainya SAMA di semua cabang adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. Arus</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Hambatan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. Tegangan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. Daya</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Tiga resistor 10Ω, 20Ω, dan 30Ω dirangkai seri. Hambatan totalnya adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. 5 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. 30 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. 60 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. 600 Ω</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Dua resistor masing-masing 10Ω dirangkai paralel. Hambatan totalnya adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. 5 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. 10 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. 20 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. 100 Ω</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Sebuah rangkaian seri dengan Rₜ = 4Ω dihubungkan ke sumber 12V. Arus total yang mengalir adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. 0,33 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. 3 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. 16 A</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. 48 A</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Sumber tegangan DC yang TIDAK dapat diisi ulang disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. Baterai sekunder</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. Aki</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. Baterai primer</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. Power supply</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Jika tiga resistor identik masing-masing 6Ω dirangkai paralel, hambatan totalnya adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. 2 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. 3 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. 6 Ω</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. 18 Ω</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Pada rangkaian seri lampu hias, jika satu lampu putus maka...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Hanya lampu yang putus yang mati</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Semua lampu ikut mati karena jalur arus terputus</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Lampu lain menyala lebih terang</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Tidak ada pengaruh sama sekali</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Jelaskan perbedaan mendasar antara rangkaian seri dan rangkaian paralel! Uraikan karakteristik arus, tegangan, dan hambatan pada masing-masing jenis rangkaian! Berikan contoh aplikasi nyata dari kedua jenis rangkaian tersebut dalam kehidupan sehari-hari!</p>
+                            <textarea name="essay1" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Sebutkan minimal 5 jenis sumber tegangan DC! Jelaskan karakteristik dan aplikasi masing-masing! Mengapa aki (accumulator) banyak digunakan pada kendaraan bermotor?</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Selesaikan soal berikut dengan langkah-langkah lengkap:
+                               Tiga resistor R₁ = 15Ω, R₂ = 30Ω, dan R₃ = 60Ω dirangkai paralel pada sumber tegangan 60V. Hitunglah:
+                               a. Hambatan total rangkaian
+                               b. Arus total yang mengalir dari sumber
+                               c. Arus yang mengalir di masing-masing cabang (I₁, I₂, I₃)
+                               d. Verifikasi bahwa Iₜ = I₁ + I₂ + I₃</p>
+                            <textarea name="essay3" rows="6" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Berdasarkan studi kasus "Lampu Taman yang Moody" di atas, analisis mengapa pemasangan lampu secara seri tidak cocok untuk aplikasi penerangan! Jelaskan mengapa instalasi listrik rumah tangga wajib menggunakan rangkaian paralel! Berikan minimal 3 keuntungan rangkaian paralel untuk instalasi rumah!</p>
+                            <textarea name="essay4" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Jelaskan perbedaan antara rangkaian terbuka, rangkaian tertutup, dan hubung singkat (short circuit)! Mengapa hubung singkat sangat berbahaya dan bagaimana cara mencegahnya? Sebutkan minimal 2 alat pengaman yang digunakan untuk mencegah dampak hubung singkat!</p>
+                            <textarea name="essay5" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%2011%20-%20Rangkaian%20DC" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 11
+        const kunciJawaban = {
+            q1: 'b',  // Arus Searah (DC)
+            q2: 'b',  // Arus = 0 A, beban tidak bekerja
+            q3: 'b',  // Arus sama di semua titik, tegangan terbagi
+            q4: 'c',  // Tegangan
+            q5: 'c',  // 60 Ω (10+20+30)
+            q6: 'a',  // 5 Ω (10×10)/(10+10)
+            q7: 'b',  // 3 A (12/4)
+            q8: 'c',  // Baterai primer
+            q9: 'a',  // 2 Ω (6/3)
+            q10: 'b'  // Semua lampu ikut mati
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

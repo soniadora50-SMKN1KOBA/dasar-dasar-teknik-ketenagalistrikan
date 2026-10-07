@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 1: Wawasan Dunia Kerja Ketenagalistrikan - Sonia Dora, S.Pd.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a', // Deep Navy
+                            800: '#1e293b',
+                            gold: '#d4af37', // Classic Gold
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="index.html#about" class="hover:text-luxury-gold transition-colors duration-300">Tentang Buku</a>
+                <a href="index.html#syllabus" class="hover:text-luxury-gold transition-colors duration-300">Daftar Bab</a>
+                <a href="2.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 1 • PERTEMUAN 1</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Wawasan Dunia Kerja <br>
+                <span class="text-gradient-gold">Bidang Ketenagalistrikan</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Memahami prinsip, ruang lingkup, peran strategis, dan peta kompetensi dalam industri ketenagalistrikan untuk membangun fondasi karir yang kokoh sejak Fase E.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-lightbulb text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Wawasan dunia kerja merupakan pintu gerbang utama bagi siswa Fase E (Kelas X) untuk memahami ekosistem ketenagalistrikan. Seringkali, siswa hanya mengenal listrik sebagai "sakelar yang ditekan dan lampu menyala". Padahal, di balik itu terdapat rantai nilai (value chain) yang panjang, mulai dari pembangkitan, transmisi, distribusi, hingga instalasi dan pemeliharaan.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Mempelajari wawasan ini bukan hanya tentang menghafal definisi, tetapi tentang membangun <strong>mindset profesional</strong>. Siswa perlu menyadari bahwa setiap komponen yang mereka pelajari memiliki keterkaitan langsung dengan kebutuhan industri, keselamatan kerja, dan perkembangan teknologi seperti IoT dan Smart Grid. Pemahaman yang kuat di pertemuan pertama ini akan menjadi kompas yang menuntun siswa sepanjang pembelajaran di Fase E hingga Fase F.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Mengenal Ekosistem Ketenagalistrikan</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video profil industri ketenagalistrikan</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal Edukasi Teknik / Dokumentasi Industri</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Teknik Ketenagalistrikan</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Bidang ilmu dan praktik yang mempelajari pembangkitan, penyaluran, distribusi, dan pemanfaatan energi listrik secara aman, efisien, dan andal.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Rantai Nilai (Value Chain)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Alur proses bisnis listrik: Pembangkitan (Generation) → Transmisi (Transmission) → Distribusi (Distribution) → Pemanfaatan (Utilization).</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Fase E (Kelas X)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Fase fondasi di Kurikulum Merdeka yang berfokus pada pengenalan wawasan dunia kerja, K3LH, dan dasar-dasar teori serta alat kerja.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Fase F (Kelas XI-XII)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Fase pendalaman dan spesialisasi keahlian, di mana siswa mulai mempelajari mata pelajaran konsentrasi kejuruan secara lebih kompleks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-blue-300 mb-4"><i class="fas fa-search mr-2"></i> Studi Kasus 1: Kebingungan Memilih Jalur Karir</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Andi, siswa kelas X, sangat tertarik dengan dunia kelistrikan. Namun, ia bingung membedakan antara bekerja di 'Pembangkit Listrik', 'Instalasi Gedung', dan 'Pemeliharaan Mesin Industri'. Ia mengira semua teknisi listrik pekerjaannya sama, yaitu memperbaiki kabel yang putus."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-luxury-gold">
+                <h4 class="font-bold text-luxury-gold mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kebingungan seperti ini umum terjadi jika wawasan dunia kerja tidak diperkenalkan sejak awal. Dengan memahami ruang lingkup (Pembangkitan = memproduksi energi; Transmisi = menyalurkan jarak jauh; Distribusi = membagi ke konsumen; Instalasi = pemasangan di sisi konsumen), siswa dapat memetakan minat dan kompetensi yang perlu mereka kembangkan sejak Fase E.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">1.1 Ruang Lingkup dan Peran Ketenagalistrikan</h3>
+            
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed">
+                    Teknik ketenagalistrikan mencakup seluruh aspek pengolahan energi listrik. Peran tenaga listrik dalam kehidupan dan pembangunan sangat strategis, antara lain:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong class="text-luxury-gold">Penggerak Ekonomi:</strong> Industri manufaktur, pertambangan, dan teknologi digital sangat bergantung pada pasokan listrik yang stabil.</li>
+                    <li><strong class="text-luxury-gold">Kualitas Hidup:</strong> Penerangan, pendingin ruangan, peralatan medis, dan komunikasi modern tidak dapat berfungsi tanpa listrik.</li>
+                    <li><strong class="text-luxury-gold">Transisi Energi:</strong> Peran teknisi kini meluas ke pengembangan Energi Baru Terbarukan (EBT) seperti panel surya dan pembangkit listrik tenaga bayu (angin).</li>
+                </ul>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">1.2 Bidang Pekerjaan Utama</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-luxury-800 text-luxury-gold">
+                            <th class="p-4 rounded-tl-lg">Bidang Pekerjaan</th>
+                            <th class="p-4">Deskripsi Singkat</th>
+                            <th class="p-4 rounded-tr-lg">Contoh Peran</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300 text-sm">
+                        <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                            <td class="p-4 font-semibold text-white">Pembangkitan</td>
+                            <td class="p-4">Mengubah energi primer (air, uap, panas bumi, surya) menjadi energi listrik.</td>
+                            <td class="p-4">Operator PLTU, Teknisi Panel Surya</td>
+                        </tr>
+                        <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                            <td class="p-4 font-semibold text-white">Transmisi</td>
+                            <td class="p-4">Menyalurkan listrik tegangan tinggi dari pembangkit ke gardu induk jarak jauh.</td>
+                            <td class="p-4">Teknisi Saluran Udara Tegangan Tinggi (SUTT)</td>
+                        </tr>
+                        <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                            <td class="p-4 font-semibold text-white">Distribusi</td>
+                            <td class="p-4">Mendistribusikan listrik dari gardu induk ke konsumen (rumah, industri) melalui jaringan tegangan menengah dan rendah.</td>
+                            <td class="p-4">Teknisi Jaringan Distribusi, Crew PLN</td>
+                        </tr>
+                        <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                            <td class="p-4 font-semibold text-white">Instalasi</td>
+                            <td class="p-4">Pemasangan sistem kelistrikan di dalam gedung, pabrik, atau rumah tinggal sesuai standar (PUIL).</td>
+                            <td class="p-4">Instalatir Listrik, Kontraktor MEP</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-4 font-semibold text-white">Pemeliharaan & Perbaikan</td>
+                            <td class="p-4">Perawatan preventif dan korektif terhadap mesin, panel, atau jaringan agar tetap andal.</td>
+                            <td class="p-4">Teknisi Maintenance, Service Elektronik</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa Indonesia</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Indonesia memiliki potensi energi terbarukan yang sangat besar (panas bumi, hidro, surya). Sebagai calon teknisi masa depan, bagaimana Anda dapat mempersiapkan diri sejak sekarang agar tidak hanya menjadi pengguna teknologi, tetapi juga pencipta solusi kelistrikan yang ramah lingkungan di daerah Anda?
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Kunjungi website atau kanal YouTube resmi PLN untuk melihat proses bisnis kelistrikan secara visual.</li>
+                    <li>Mulailah membiasakan diri membaca simbol-simbol keselamatan kerja (K3) di sekitar bengkel atau rumah.</li>
+                    <li>Bergabunglah dengan ekstrakurikuler yang relevan (misal: klub robotik atau elektronik) untuk mengasah logika dasar.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Wawasan dunia kerja bidang ketenagalistrikan adalah fondasi utama yang harus dikuasai siswa Fase E. Memahami ruang lingkup, mulai dari pembangkitan hingga pemeliharaan, membantu siswa melihat "big picture" dari kompetensi yang akan mereka pelajari. 
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Keterkaitan antara Fase E (dasar) dan Fase F (keahlian) menuntut siswa untuk tidak hanya cakap secara teknis, tetapi juga memiliki sikap profesional, kesadaran K3LH yang tinggi, dan kemampuan beradaptasi dengan perkembangan teknologi digital di industri.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>Kepala BSKAP. (2025). <em>Keputusan Kepala BSKAP Nomor 046/H/KR/2025 tentang Capaian Pembelajaran pada PAUD, Jenjang Pendidikan Dasar, dan Menengah.</em> Jakarta: Kemendikbudristek.</li>
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+                <li>PLN. (2023). <em>Buku Saku Keselamatan Ketenagalistrikan.</em> Jakarta: PT PLN (Persero).</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="index.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Kembali ke Daftar Bab
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="2.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Proses Bisnis <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 1</h2>
+                <p class="text-gray-400">Wawasan Dunia Kerja Bidang Ketenagalistrikan</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Bidang pekerjaan ketenagalistrikan yang bertugas menyalurkan energi listrik dari pembangkit ke gardu induk dengan tegangan tinggi disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. Distribusi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Transmisi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. Instalasi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. Pemeliharaan</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Dalam Kurikulum Merdeka, Fase E setara dengan jenjang pendidikan...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. Kelas VII SMP</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. Kelas X SMK</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. Kelas XI SMK</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Kelas XII SMK</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Peran tenaga listrik yang paling mendasar dalam mendukung pembangunan ekonomi suatu negara adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. Sebagai penghias kota</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. Sebagai penggerak utama industri dan teknologi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. Sebagai pengganti tenaga manusia sepenuhnya</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. Sebagai sumber polusi utama</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Keterkaitan antara Fase E dan Fase F dalam pembelajaran ketenagalistrikan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. Fase E fokus pada praktik lanjutan, Fase F pada teori dasar</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Fase E membangun fondasi dasar, Fase F mendalami kompetensi kejuruan spesifik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. Tidak ada keterkaitan antara keduanya</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. Fase E untuk siswa umum, Fase F hanya untuk guru</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Contoh pekerjaan di bidang "Instalasi" adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. Mengoperasikan turbin di PLTA</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. Memasang jaringan kabel dan panel listrik di gedung perkantoran</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. Memperbaiki trafo distribusi di jalan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. Merancang pembangkit listrik tenaga nuklir</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Salah satu dampak perkembangan Revolusi Industri 4.0 pada bidang ketenagalistrikan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. Penghapusan total penggunaan listrik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. Munculnya teknologi Smart Meter, IoT, dan SCADA</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. Kembali ke sistem manual tanpa teknologi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. Berkurangnya kebutuhan akan keselamatan kerja</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Tujuan utama mempelajari "Wawasan Dunia Kerja" di kelas X adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. Agar siswa bisa langsung bekerja tanpa belajar teori</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. Membangun mindset profesional dan pemahaman alur bisnis industri sejak dini</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. Menghafal nama-nama direktur perusahaan listrik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. Mengganti pelajaran praktik di bengkel</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Bidang pekerjaan yang bertanggung jawab membagi daya listrik dari gardu induk ke rumah-rumah penduduk disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. Pembangkitan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. Transmisi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. Distribusi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. Manufaktur</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Sikap kerja yang paling utama ditekankan dalam dunia kerja ketenagalistrikan mengingat risiko bahaya yang tinggi adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. Kecepatan tanpa mempedulikan prosedur</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Kedisiplinan dan kepatuhan terhadap prosedur K3LH</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Bekerja secara individual tanpa komunikasi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Mengandalkan perasaan daripada alat ukur</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Energi Baru Terbarukan (EBT) yang sangat berpotensi dikembangkan di Indonesia dan termasuk dalam ruang lingkup ketenagalistrikan modern adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Minyak bumi dan batu bara saja</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Panel surya, pembangkit listrik tenaga bayu, dan panas bumi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Generator diesel konvensional</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Baterai kering sekali pakai</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Jelaskan secara singkat perbedaan mendasar antara bidang pekerjaan "Transmisi" dan "Distribusi" dalam industri ketenagalistrikan!</p>
+                            <textarea name="essay1" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Mengapa pemahaman tentang "Wawasan Dunia Kerja" sangat penting bagi siswa kelas X (Fase E) sebelum mereka mempelajari teori dan praktik yang lebih mendalam?</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Sebutkan 3 (tiga) contoh profesi atau pekerjaan yang ada di bidang "Pemeliharaan dan Perbaikan" peralatan kelistrikan!</p>
+                            <textarea name="essay3" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Bagaimana perkembangan teknologi seperti Internet of Things (IoT) dan Smart Meter mengubah cara kerja seorang teknisi ketenagalistrikan di era modern?</p>
+                            <textarea name="essay4" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Jelaskan keterkaitan antara pembelajaran di Fase E (Kelas X) dengan kompetensi yang akan dipelajari di Fase F (Kelas XI-XII)!</p>
+                            <textarea name="essay5" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%201%20-%20Dasar%20Ketenagalistrikan" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda
+        const kunciJawaban = {
+            q1: 'b', // Transmisi
+            q2: 'b', // Kelas X SMK
+            q3: 'b', // Penggerak utama industri
+            q4: 'b', // Fase E fondasi, Fase F pendalaman
+            q5: 'b', // Memasang jaringan kabel di gedung
+            q6: 'b', // Smart Meter, IoT, SCADA
+            q7: 'b', // Membangun mindset profesional
+            q8: 'c', // Distribusi
+            q9: 'b', // Kedisiplinan dan K3LH
+            q10: 'b' // Panel surya, bayu, panas bumi
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Hapus kelas 'selected' dari semua opsi dalam grup yang sama
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                // Tambah kelas 'selected' ke opsi yang diklik
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            // Validasi data siswa
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            // Hitung skor Pilihan Ganda
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            // Tampilkan hasil
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            
+            // Scroll ke hasil
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

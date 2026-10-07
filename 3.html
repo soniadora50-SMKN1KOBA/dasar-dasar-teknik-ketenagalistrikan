@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 3: Perkembangan Teknologi Ketenagalistrikan - Sonia Dora, S.Pd.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="2.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="4.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 1 • PERTEMUAN 3</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Perkembangan Teknologi <br>
+                <span class="text-gradient-gold">Ketenagalistrikan</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Menelusuri transformasi sistem kelistrikan dari era konvensional menuju era digital, serta memahami dampak Revolusi Industri 4.0, IoT, SCADA, dan Smart Grid terhadap profesi teknisi masa depan.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-microchip text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Dunia ketenagalistrikan sedang mengalami transformasi besar-besaran. Jika beberapa dekade lalu sistem kelistrikan sepenuhnya bergantung pada perangkat elektromekanik konvensional, kini industri ini telah memasuki era <strong>digitalisasi</strong> yang ditandai dengan kehadiran sensor cerdas, komunikasi data real-time, dan kecerdasan buatan (AI). 
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Bagi siswa Fase E, memahami perkembangan teknologi ini bukan sekadar pengetahuan tambahan, melainkan <strong>kewajiban strategis</strong>. Teknisi masa depan tidak hanya dituntut mampu memasang kabel dan membaca multimeter, tetapi juga harus mampu berinteraksi dengan sistem berbasis data, memahami antarmuka digital, dan beradaptasi dengan perangkat yang semakin "pintar". Pertemuan ini akan membuka wawasan tentang bagaimana revolusi industri mengubah wajah ketenagalistrikan secara global maupun di Indonesia.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Menuju Smart Grid dan Industri 4.0</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video transformasi digital di sektor ketenagalistrikan</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Dokumentasi PLN / Kanal Edukasi Teknologi</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Revolusi Industri 4.0</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Era industri yang mengintegrasikan teknologi cyber-fisik, IoT, cloud computing, dan AI ke dalam proses produksi dan layanan, termasuk sektor ketenagalistrikan.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Internet of Things (IoT)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Jaringan perangkat fisik yang dilengkapi sensor, perangkat lunak, dan konektivitas untuk mengumpulkan dan bertukar data secara real-time melalui internet.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">SCADA (Supervisory Control and Data Acquisition)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Sistem kontrol industri yang memungkinkan operator memantau dan mengendalikan proses industri (seperti pembangkit dan gardu induk) dari jarak jauh.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">HMI (Human Machine Interface)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Antarmuka visual (layar/dashboard) yang memungkinkan operator berinteraksi dengan mesin atau sistem kontrol, menampilkan data proses secara real-time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-blue-300 mb-4"><i class="fas fa-search mr-2"></i> Studi Kasus 3: Transformasi Digital di PLN</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "PT PLN (Persero) telah memasang jutaan Smart Meter di berbagai wilayah Indonesia, termasuk di Sumatera Barat. Pelanggan kini dapat memantau konsumsi listrik harian melalui aplikasi mobile, sementara petugas PLN dapat membaca meter dan mendeteksi anomali dari jarak jauh tanpa harus datang ke lokasi."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-luxury-gold">
+                <h4 class="font-bold text-luxury-gold mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kasus ini menunjukkan bagaimana teknologi digital mengubah cara kerja teknisi. Tugas yang dulu bersifat manual (pencatatan meter, inspeksi fisik) kini digantikan oleh sistem otomatis. Teknisi masa depan harus memiliki kemampuan tambahan: membaca data digital, menganalisis pola konsumsi, dan mengoperasikan perangkat IoT. Adaptasi bukan lagi pilihan, melainkan keharusan.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">3.1 Evolusi Teknologi Ketenagalistrikan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Teknologi ketenagalistrikan telah mengalami evolusi signifikan dalam lebih dari satu abad. Secara garis besar, perkembangannya dapat dibagi menjadi tiga fase utama:
+                </p>
+                <div class="grid md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-gray-500">
+                        <h4 class="font-bold text-gray-300 mb-2">Era Konvensional</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Sistem elektromekanik, pembacaan meter manual, kontrol berbasis relay konvensional, komunikasi terbatas.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-blue-500">
+                        <h4 class="font-bold text-blue-300 mb-2">Era Transisi</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Mulai dikenalnya PLC, sistem otomasi dasar, meter elektronik, dan SCADA skala terbatas.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">Era Digital (4.0)</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">IoT, Smart Grid, AI, cloud computing, Smart Meter, dan integrasi Energi Baru Terbarukan (EBT).</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">3.2 Revolusi Industri 4.0 dalam Ketenagalistrikan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Revolusi Industri 4.0 membawa paradigma baru di sektor ketenagalistrikan, ditandai dengan:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong class="text-luxury-gold">Interkoneksi Sistem:</strong> Pembangkit, jaringan, dan konsumen saling terhubung melalui jaringan komunikasi data.</li>
+                    <li><strong class="text-luxury-gold">Data-Driven Decision:</strong> Keputusan operasional didasarkan pada analisis data real-time, bukan lagi intuisi semata.</li>
+                    <li><strong class="text-luxury-gold">Otomasi Cerdas:</strong> Sistem dapat melakukan diagnosis dan tindakan korektif secara mandiri (self-healing grid).</li>
+                    <li><strong class="text-luxury-gold">Integrasi EBT:</strong> Panel surya rooftop, pembangkit bayu, dan sistem baterai terintegrasi ke dalam jaringan cerdas.</li>
+                </ul>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">3.3 Digitalisasi: IoT, Smart Meter, Smart Sensor, dan Smart Appliances</h3>
+            <div class="grid md:grid-cols-2 gap-6 mt-4">
+                <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-wifi mr-2"></i>Smart Meter</h4>
+                    <p class="text-gray-300 text-sm">Meter listrik digital yang mampu mencatat konsumsi secara real-time dan mengirim data ke pusat kontrol melalui jaringan komunikasi (GPRS/RF).</p>
+                </div>
+                <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-thermometer-half mr-2"></i>Smart Sensor</h4>
+                    <p class="text-gray-300 text-sm">Sensor cerdas yang memantau parameter seperti suhu trafo, getaran motor, atau kualitas daya, lalu mengirimkan data untuk analisis prediktif.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-home mr-2"></i>Smart Appliances</h4>
+                    <p class="text-gray-300 text-sm">Peralatan rumah tangga (AC, kulkas, lampu) yang dapat dikendalikan jarak jauh melalui smartphone dan terintegrasi dengan sistem manajemen energi.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-network-wired mr-2"></i>IoT (Internet of Things)</h4>
+                    <p class="text-gray-300 text-sm">Ekosistem yang menghubungkan semua perangkat di atas dalam satu jaringan, memungkinkan pertukaran data dan koordinasi otomatis.</p>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">3.4 SCADA dan HMI: Sistem Saraf Industri Modern</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Dalam industri ketenagalistrikan modern, <strong>SCADA</strong> dan <strong>HMI</strong> menjadi tulang punggung sistem kontrol. SCADA mengumpulkan data dari ribuan titik (sensor, meter, relay) di seluruh jaringan, sementara HMI menyajikan data tersebut dalam bentuk visual yang mudah dipahami operator.
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Contoh penerapannya: Operator di Pusat Pengatur Beban (Dispatching) PLN dapat melihat status seluruh Gardu Induk di Sumatera dalam satu layar HMI, memberikan perintah buka/tutup PMT dari jarak jauh, serta menerima alarm otomatis saat terjadi gangguan. Ini meningkatkan keandalan suplai dan mempercepat waktu pemulihan (restorasi).
+                </p>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">3.5 Dampak terhadap Profesi Teknisi</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Transformasi ini membawa konsekuensi besar bagi dunia kerja:
+            </p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-luxury-800 text-luxury-gold">
+                            <th class="p-4 rounded-tl-lg">Aspek</th>
+                            <th class="p-4">Dulu (Konvensional)</th>
+                            <th class="p-4 rounded-tr-lg">Kini (Digital)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300 text-sm">
+                        <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                            <td class="p-4 font-semibold text-white">Pencatatan Meter</td>
+                            <td class="p-4">Manual oleh petugas</td>
+                            <td class="p-4">Otomatis via Smart Meter</td>
+                        </tr>
+                        <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                            <td class="p-4 font-semibold text-white">Pemeliharaan</td>
+                            <td class="p-4">Berdasarkan jadwal tetap</td>
+                            <td class="p-4">Prediktif berbasis data sensor</td>
+                        </tr>
+                        <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                            <td class="p-4 font-semibold text-white">Diagnosis Gangguan</td>
+                            <td class="p-4">Inspeksi fisik lapangan</td>
+                            <td class="p-4">Remote monitoring via SCADA</td>
+                        </tr>
+                        <tr class="hover:bg-white/5 transition">
+                            <td class="p-4 font-semibold text-white">Kompetensi Teknisi</td>
+                            <td class="p-4">Mekanik & listrik murni</td>
+                            <td class="p-4">Listrik + IT + analisis data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Bayangkan Anda bekerja 10 tahun dari sekarang. Apakah Anda akan tetap menggunakan obeng dan multimeter saja, atau juga mengoperasikan tablet untuk mendiagnosis panel listrik dari jarak jauh? Persiapan dari sekarang—mempelajari dasar jaringan komputer, logika pemrograman, dan bahasa Inggris teknis—akan menjadi modal berharga.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Mulailah mengenal platform IoT sederhana seperti Arduino atau ESP32 untuk memahami konsep sensor dan komunikasi data.</li>
+                    <li>Tonton video profil Smart Grid PLN di YouTube untuk melihat implementasi nyata di Indonesia.</li>
+                    <li>Ikuti akun media sosial resmi PLN, Schneider Electric, atau Siemens untuk update teknologi terkini.</li>
+                    <li>Pelajari dasar-dasar jaringan komputer (IP address, protokol komunikasi) sebagai bekal tambahan.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Perkembangan teknologi ketenagalistrikan dari era konvensional menuju digital merupakan sebuah keniscayaan. Revolusi Industri 4.0 telah mengubah wajah industri ini secara fundamental melalui kehadiran IoT, Smart Meter, Smart Sensor, SCADA, dan HMI. 
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Bagi siswa Fase E, memahami transformasi ini adalah investasi jangka panjang. Teknisi masa depan tidak lagi hanya "tangan terampil", melainkan "pemikir sistem" yang mampu mengintegrasikan kompetensi listrik dengan literasi digital. Adaptasi terhadap teknologi bukan hanya tuntutan industri, tetapi juga peluang untuk meningkatkan nilai profesional dan daya saing di pasar kerja global.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>PT PLN (Persero). (2024). <em>Rencana Usaha Penyediaan Tenaga Listrik (RUPTL) 2025-2034: Era Smart Grid.</em> Jakarta.</li>
+                <li>Bollen, M. H. J., & Hassan, F. (2021). <em>Smart Grid: Technology and Applications.</em> Wiley.</li>
+                <li>Kementerian ESDM. (2023). <em> roadmap  Digitalisasi Sektor Energi dan Ketenagalistrikan Indonesia.</em></li>
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="2.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Proses Bisnis
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="4.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Profesi & Technopreneurship <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 3</h2>
+                <p class="text-gray-400">Perkembangan Teknologi Ketenagalistrikan</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Era industri yang mengintegrasikan teknologi cyber-fisik, IoT, dan kecerdasan buatan ke dalam proses produksi dan layanan disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. Revolusi Industri 1.0</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Revolusi Industri 2.0</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. Revolusi Industri 3.0</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. Revolusi Industri 4.0</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Sistem kontrol industri yang memungkinkan operator memantau dan mengendalikan proses dari jarak jauh (seperti di Gardu Induk PLN) disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. MCB</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. SCADA</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. kWh Meter</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Transformator</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Meter listrik digital yang mampu mencatat konsumsi secara real-time dan mengirim data ke pusat kontrol melalui jaringan komunikasi disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. kWh Meter Analog</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. Smart Meter</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. Multimeter</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. Ohmmeter</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Antarmuka visual (layar/dashboard) yang memungkinkan operator berinteraksi dengan mesin atau sistem kontrol disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. PLC</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Relay</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. HMI (Human Machine Interface)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. MCB</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Jaringan perangkat fisik yang dilengkapi sensor dan konektivitas untuk bertukar data melalui internet disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. IoT (Internet of Things)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. LAN (Local Area Network)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. USB (Universal Serial Bus)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. HDMI (High Definition Multimedia Interface)</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Salah satu ciri utama sistem kelistrikan era digital (Smart Grid) adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. Pemantauan dan kontrol dua arah antara penyedia dan konsumen</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. Hanya menggunakan generator diesel</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. Tidak memerlukan komunikasi data</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. Kembali ke sistem mekanik murni</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Sensor yang mampu memantau parameter seperti suhu trafo atau getaran motor dan mengirimkan data untuk analisis prediktif disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. Sakelar mekanik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. Fuse (sekering)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. Smart Sensor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. Transformator konvensional</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Salah satu dampak positif digitalisasi terhadap pemeliharaan peralatan listrik adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. Memperpanjang waktu pemadaman</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. Memungkinkan pemeliharaan prediktif berbasis data</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. Menghilangkan kebutuhan akan teknisi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. Meningkatkan ketergantungan pada pencatatan manual</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Peralatan rumah tangga yang dapat dikendalikan jarak jauh melalui smartphone dan terintegrasi dengan sistem manajemen energi disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. Peralatan mekanik biasa</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Peralatan analog</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Smart Appliances</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Generator portabel</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Konsekuensi utama perkembangan teknologi digital terhadap profesi teknisi ketenagalistrikan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Teknisi tidak lagi diperlukan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Teknisi perlu menambah kompetensi IT dan analisis data</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Teknisi hanya perlu menguasai obeng dan tang</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Teknisi tidak perlu memahami K3LH lagi</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Jelaskan tiga fase evolusi teknologi ketenagalistrikan (Era Konvensional, Era Transisi, dan Era Digital 4.0) beserta ciri khas masing-masing!</p>
+                            <textarea name="essay1" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Apa yang dimaksud dengan Revolusi Industri 4.0 dalam konteks ketenagalistrikan? Sebutkan minimal 4 ciri utamanya!</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Jelaskan perbedaan fungsi antara SCADA dan HMI dalam sistem kontrol industri ketenagalistrikan, serta bagaimana keduanya saling melengkapi!</p>
+                            <textarea name="essay3" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Berdasarkan studi kasus Smart Meter di PLN, analisis bagaimana teknologi digital mengubah cara kerja teknisi dan layanan kepada pelanggan! Apa keuntungan dan tantangannya?</p>
+                            <textarea name="essay4" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Sebagai siswa Fase E yang akan menjadi teknisi masa depan, kompetensi tambahan apa saja yang perlu Anda pelajari selain kompetensi listrik dasar agar siap menghadapi era digital? Jelaskan alasannya!</p>
+                            <textarea name="essay5" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%203%20-%20Perkembangan%20Teknologi%20Ketenagalistrikan" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 3
+        const kunciJawaban = {
+            q1: 'd', // Revolusi Industri 4.0
+            q2: 'b', // SCADA
+            q3: 'b', // Smart Meter
+            q4: 'c', // HMI
+            q5: 'a', // IoT
+            q6: 'a', // Pemantauan dua arah
+            q7: 'c', // Smart Sensor
+            q8: 'b', // Pemeliharaan prediktif
+            q9: 'c', // Smart Appliances
+            q10: 'b' // Kompetensi IT dan analisis data
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

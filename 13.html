@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 13: Bahan dan Komponen Ketenagalistrikan - Sonia Dora, S.Pd.</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(243, 229, 171, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="12.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="14.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 5 • PERTEMUAN 13</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Bahan dan Komponen <br>
+                <span class="text-gradient-gold">Ketenagalistrikan</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Mengenal klasifikasi material listrik—konduktor, isolator, dan semikonduktor—serta memahami sifat fisis, aplikasi, dan kriteria pemilihan bahan berdasarkan fungsi, keselamatan, dan kondisi kerja.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-atom text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Setelah menguasai teori dasar listrik (Hukum Ohm, rangkaian DC, daya-energi), kini saatnya memasuki dunia <strong>material</strong>—zat-zat yang menjadi "tubuh" dari setiap sistem kelistrikan. Kabel tembaga yang menghantarkan arus, isolasi PVC yang melindungi dari sengatan, chip silikon yang mengendalikan aliran elektron—semuanya adalah produk dari pemilihan material yang tepat.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Pemilihan bahan yang keliru dapat berakibat fatal: kabel aluminium yang dipaksa menggantikan tembaga pada arus tinggi dapat menyebabkan kebakaran; isolasi yang tidak tahan panas akan meleleh dan memicu hubung singkat; komponen semikonduktor yang salah pilih akan merusak seluruh rangkaian elektronika. Oleh karena itu, pemahaman mendalam tentang <strong>konduktor, isolator, dan semikonduktor</strong> bukan hanya pengetahuan akademis—ia adalah <strong>keterampilan keselamatan dan profesionalisme</strong> yang membedakan teknisi terampil dengan amatir.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Material dalam Dunia Kelistrikan</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video klasifikasi material listrik</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal Edukasi Teknik / Dokumentasi Laboratorium Material</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-blue-400 mb-2"><i class="fas fa-bolt mr-2"></i>Konduktor</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Bahan yang mudah menghantarkan arus listrik karena memiliki elektron bebas yang banyak. Contoh: tembaga, aluminium, perak, emas.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-red-400 mb-2"><i class="fas fa-shield-alt mr-2"></i>Isolator</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Bahan yang sangat sulit menghantarkan arus listrik karena elektronnya terikat kuat. Contoh: karet, PVC, kaca, keramik, udara kering.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-microchip mr-2"></i>Semikonduktor</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Bahan yang konduktivitasnya berada di antara konduktor dan isolator, dapat dikendalikan. Contoh: silikon, germanium, gallium arsenide.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-blue-300 mb-4"><i class="fas fa-search mr-2"></i> Studi Kasus 13: Kebakaran Akibat Salah Pilih Kabel</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Seorang kontraktor listrik di Pasaman Barat memasang kabel aluminium berukuran 2,5 mm² untuk instalasi rumah dengan beban total 4.500 Watt pada tegangan 220V. Ia beranggapan aluminium lebih murah daripada tembaga. Namun, aluminium memiliki hambatan jenis 1,6 kali lebih besar dari tembaga. Akibatnya, kabel menjadi panas, isolasi PVC meleleh, dan terjadi hubung singkat yang memicu kebakaran dinding. Kerugian ditaksir mencapai puluhan juta rupiah."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-luxury-gold">
+                <h4 class="font-bold text-luxury-gold mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kasus ini menunjukkan bahwa <strong>harga murah bukan satu-satunya kriteria pemilihan material</strong>. Hambatan jenis (ρ), kemampuan hantar arus (ampasitas), ketahanan panas, dan kesesuaian dengan standar PUIL adalah faktor yang jauh lebih penting. Seorang teknisi profesional harus memahami sifat fisis material dan memilihnya berdasarkan aplikasi spesifik—bukan sekadar mengikuti kebiasaan atau menekan biaya.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">13.1 Konduktor: Penghantar Arus Listrik</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Konduktor</strong> adalah bahan yang memiliki kemampuan sangat baik dalam menghantarkan arus listrik. Hal ini disebabkan oleh struktur atomnya yang memiliki <strong>elektron bebas (free electrons)</strong> dalam jumlah besar—elektron-elektron ini dapat bergerak mudah saat diberi beda potensial.
+                </p>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Sifat Fisis Konduktor:</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>Hambatan jenis (ρ) sangat rendah:</strong> 10⁻⁸ hingga 10⁻⁶ Ω·m</li>
+                    <li><strong>Konduktivitas (σ) tinggi:</strong> σ = 1/ρ</li>
+                    <li><strong>Koefisien suhu positif:</strong> hambatan naik saat suhu naik</li>
+                    <li><strong>Memiliki elektron valensi 1-3</strong> yang mudah lepas</li>
+                </ul>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Jenis-Jenis Konduktor dan Aplikasinya:</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Material</th>
+                                <th class="p-4">ρ (Ω·m)</th>
+                                <th class="p-4">Kelebihan</th>
+                                <th class="p-4 rounded-tr-lg">Aplikasi Utama</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Perak (Ag)</td>
+                                <td class="p-4">1,59 × 10⁻⁸</td>
+                                <td class="p-4">Konduktor terbaik, anti korosi</td>
+                                <td class="p-4">Kontak relay presisi, peralatan audio high-end</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Tembaga (Cu)</td>
+                                <td class="p-4">1,68 × 10⁻⁸</td>
+                                <td class="p-4">Konduktivitas tinggi, ulet, mudah dibentuk</td>
+                                <td class="p-4">Kabel instalasi, motor, trafo, PCB</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Emas (Au)</td>
+                                <td class="p-4">2,44 × 10⁻⁸</td>
+                                <td class="p-4">Tidak berkarat, kontak stabil</td>
+                                <td class="p-4">Konektor elektronik, chip IC, connector audio</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Aluminium (Al)</td>
+                                <td class="p-4">2,82 × 10⁻⁸</td>
+                                <td class="p-4">Ringan, murah, cukup konduktif</td>
+                                <td class="p-4">SUTET, SUTM, busbar panel, kabel overhead</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Besi/Baja</td>
+                                <td class="p-4">10 × 10⁻⁸</td>
+                                <td class="p-4">Kuat mekanis, murah</td>
+                                <td class="p-4">Kabel baja inti (ACSR), grounding rod</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-info-circle mr-2"></i>Mengapa Tembaga Menjadi Standar Kabel Listrik?</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Tembaga dipilih sebagai standar kabel instalasi karena kombinasi optimal: konduktivitas tinggi (hanya kalah dari perak), ulet (mudah ditarik menjadi kawat halus), tahan korosi, dan dapat disolder dengan mudah. Aluminium, meski lebih murah, memiliki hambatan jenis 1,6× lebih tinggi dan cenderung "mulur" (creep) pada sambungan, sehingga memerlukan teknik penyambungan khusus.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">13.2 Isolator: Pelindung dari Bahaya Listrik</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Isolator</strong> adalah bahan yang sangat sulit menghantarkan arus listrik karena elektron-elektronnya terikat kuat pada inti atom. Fungsi utamanya adalah <strong>melindungi manusia dari sengatan listrik</strong> dan <strong>mencegah arus mengalir ke tempat yang tidak diinginkan</strong>.
+                </p>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Sifat Fisis Isolator:</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>Hambatan jenis sangat tinggi:</strong> 10⁸ hingga 10¹⁶ Ω·m</li>
+                    <li><strong>Kekuatan dielektrik tinggi:</strong> mampu menahan tegangan tinggi tanpa tembus</li>
+                    <li><strong>Tahan panas dan kimia</strong> (tergantung jenis material)</li>
+                    <li><strong>Tidak memiliki elektron bebas</strong></li>
+                </ul>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Jenis-Jenis Isolator dan Aplikasinya:</h4>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400 mb-2"><i class="fas fa-circle mr-2"></i>Isolator Organik</h4>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            <li><strong>Karet:</strong> sarung tangan isolasi, sol sepatu safety</li>
+                            <li><strong>PVC (Polyvinyl Chloride):</strong> selubung kabel NYM, NYAF</li>
+                            <li><strong>XLPE:</strong> isolasi kabel tanah NYY</li>
+                            <li><strong>Kertas impregnasi:</strong> isolasi kabel lama, kapasitor</li>
+                            <li><strong>Ebonit:</strong> handle alat tangan</li>
+                        </ul>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-orange-500">
+                        <h4 class="font-bold text-orange-400 mb-2"><i class="fas fa-circle mr-2"></i>Isolator Anorganik</h4>
+                        <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            <li><strong>Kaca:</strong> isolator tiang listrik, lampu</li>
+                            <li><strong>Keramik/Porselen:</strong> isolator tegangan tinggi, trafo</li>
+                            <li><strong>Mika:</strong> isolasi slot motor, pemanas</li>
+                            <li><strong>Asbes:</strong> (sudah jarang) isolasi tahan panas</li>
+                            <li><strong>Udara kering:</strong> isolator alami pada SUTT</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-red-900/20 border border-red-500/30 p-5 rounded-lg">
+                    <h4 class="font-bold text-red-400 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>Kekuatan Dielektrik dan Tegangan Tembus:</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-2">
+                        Setiap isolator memiliki batas tegangan maksimum yang dapat ditahan sebelum "jebol" (breakdown). Jika tegangan melebihi kekuatan dielektrik, isolator akan menjadi konduktor sesaat—dan ini sangat berbahaya!
+                    </p>
+                    <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                        <li><strong>Udara kering:</strong> ≈ 3 kV/mm</li>
+                        <li><strong>PVC:</strong> ≈ 20-40 kV/mm</li>
+                        <li><strong>Karet isolasi:</strong> ≈ 20-30 kV/mm</li>
+                        <li><strong>Keramik:</strong> ≈ 10-30 kV/mm</li>
+                        <li><strong>XLPE:</strong> ≈ 25-40 kV/mm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">13.3 Semikonduktor: Jantung Elektronika Modern</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    <strong>Semikonduktor</strong> adalah bahan dengan konduktivitas di antara konduktor dan isolator. Keunikan semikonduktor adalah <strong>konduktivitasnya dapat dikendalikan</strong> melalui pemberian kotoran (doping), pemanasan, atau penyinaran. Inilah yang menjadikannya fondasi seluruh industri elektronika modern.
+                </p>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Sifat Fisis Semikonduktor:</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong>Hambatan jenis menengah:</strong> 10⁻⁴ hingga 10⁴ Ω·m</li>
+                    <li><strong>Koefisien suhu negatif:</strong> hambatan TURUN saat suhu NAIK (berlawanan dengan konduktor)</li>
+                    <li><strong>Dapat didoping</strong> menjadi tipe-P (positif) atau tipe-N (negatif)</li>
+                    <li><strong>Sensitif terhadap cahaya, panas, dan medan magnet</strong></li>
+                </ul>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Jenis-Jenis Semikonduktor:</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Material</th>
+                                <th class="p-4">Karakteristik</th>
+                                <th class="p-4 rounded-tr-lg">Aplikasi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Silikon (Si)</td>
+                                <td class="p-4">Paling umum, tahan panas hingga 200°C</td>
+                                <td class="p-4">Dioda, transistor, IC, chip komputer, panel surya</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Germanium (Ge)</td>
+                                <td class="p-4">Konduktivitas lebih tinggi, tapi sensitif panas</td>
+                                <td class="p-4">Dioda detektor, transistor audio vintage</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Gallium Arsenide (GaAs)</td>
+                                <td class="p-4">Kecepatan tinggi, frekuensi tinggi</td>
+                                <td class="p-4">LED, laser, komponen microwave, satelit</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Silicon Carbide (SiC)</td>
+                                <td class="p-4">Tahan suhu sangat tinggi, tegangan tinggi</td>
+                                <td class="p-4">Power electronics, mobil listrik, inverter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 bg-purple-900/20 border border-purple-500/30 p-5 rounded-lg">
+                    <h4 class="font-bold text-purple-400 mb-2"><i class="fas fa-microchip mr-2"></i>Mengapa Semikonduktor Revolusioner?</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Tanpa semikonduktor, tidak akan ada komputer, smartphone, TV LED, panel surya, atau mobil listrik. Doping silikon dengan fosfor menghasilkan tipe-N (kelebihan elektron), doping dengan boron menghasilkan tipe-P (kelebihan "hole"). Pertemuan tipe-P dan tipe-N menciptakan dioda—komponen yang hanya mengalirkan arus satu arah. Kombinasi P-N-P atau N-P-N menciptakan transistor—sakelar dan penguat sinyal yang menjadi fondasi seluruh elektronika modern.
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">13.4 Pemilihan Bahan Berdasarkan Fungsi, Keselamatan, dan Kondisi Kerja</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Pemilihan material dalam pekerjaan kelistrikan tidak boleh sembarangan. Seorang teknisi profesional harus mempertimbangkan <strong>minimal 5 faktor</strong> berikut:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-4 mt-6">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-bullseye mr-2"></i>1. Fungsi Teknis</h4>
+                        <p class="text-gray-300 text-sm">Apakah bahan akan menghantarkan arus (konduktor), mengisolasi (isolator), atau mengendalikan (semikonduktor)? Sesuaikan dengan tujuan rangkaian.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400 mb-2"><i class="fas fa-shield-alt mr-2"></i>2. Keselamatan (Safety)</h4>
+                        <p class="text-gray-300 text-sm">Apakah bahan memenuhi standar PUIL? Apakah tahan api (FR)? Apakah memiliki kekuatan dielektrik yang cukup untuk tegangan kerja?</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-orange-500">
+                        <h4 class="font-bold text-orange-400 mb-2"><i class="fas fa-thermometer-half mr-2"></i>3. Kondisi Lingkungan Kerja</h4>
+                        <p class="text-gray-300 text-sm">Apakah lingkungan lembab, panas, berminyak, atau korosif? Pilih bahan yang tahan terhadap kondisi spesifik (misal: XLPE untuk kabel tanah, PVC tahan api untuk indoor).</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-400 mb-2"><i class="fas fa-bolt mr-2"></i>4. Kemampuan Hantar Arus (Ampasitas)</h4>
+                        <p class="text-gray-300 text-sm">Untuk konduktor, pastikan ukuran kabel sesuai dengan arus beban. Tabel PUIL menjadi acuan wajib untuk menghindari overheating.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-400 mb-2"><i class="fas fa-money-bill-wave mr-2"></i>5. Biaya dan Ketersediaan</h4>
+                        <p class="text-gray-300 text-sm">Pertimbangkan anggaran proyek dan ketersediaan material di pasar lokal. Namun, JANGAN mengorbankan keselamatan demi harga murah!</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-400 mb-2"><i class="fas fa-leaf mr-2"></i>6. Dampak Lingkungan</h4>
+                        <p class="text-gray-300 text-sm">Pilih bahan yang ramah lingkungan, dapat didaur ulang, dan tidak mengandung zat berbahaya (misal: hindari kabel dengan selubung PVC mengandung timbal).</p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Contoh Aplikasi Pemilihan Bahan:</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Aplikasi</th>
+                                <th class="p-4">Bahan yang Dipilih</th>
+                                <th class="p-4 rounded-tr-lg">Alasan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Kabel instalasi rumah</td>
+                                <td class="p-4">Tembaga + PVC</td>
+                                <td class="p-4">Konduktivitas tinggi, isolasi aman, fleksibel</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Kabel tanah (direct burial)</td>
+                                <td class="p-4">Tembaga + XLPE + sheath PE</td>
+                                <td class="p-4">Tahan lembab, tahan tekanan tanah, anti rayap</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">SUTT (Saluran Udara Tegangan Tinggi)</td>
+                                <td class="p-4">ACSR (Aluminium + baja inti)</td>
+                                <td class="p-4">Ringan, kuat tarik, konduktif, murah untuk jarak jauh</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Isolator tiang listrik</td>
+                                <td class="p-4">Porselen / keramik</td>
+                                <td class="p-4">Tahan cuaca, kekuatan dielektrik tinggi, tahan UV</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Sarung tangan teknisi</td>
+                                <td class="p-4">Karet isolasi kelas sesuai tegangan</td>
+                                <td class="p-4">Fleksibel, isolasi baik, tahan tegangan kerja</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Chip prosesor komputer</td>
+                                <td class="p-4">Silikon doped (semikonduktor)</td>
+                                <td class="p-4">Dapat dikendalikan, miniaturisasi tinggi, efisien</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Setiap kali Anda melihat kabel listrik, tanyakan pada diri sendiri: "Mengapa bahan ini dipilih? Mengapa tembaganya di dalam, PVC-nya di luar? Mengapa ukurannya segini?" Kebiasaan berpikir kritis tentang material akan menjadikan Anda teknisi yang tidak hanya "tahu memasang", tetapi juga "tahu mengapa"—dan itulah ciri profesional sejati.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Hafalkan urutan konduktivitas: Ag > Cu > Au > Al > Fe.</li>
+                    <li>Selalu baca label kabel: jenis konduktor, ukuran (mm²), jenis isolasi, dan standar (SNI/IEC).</li>
+                    <li>Pelajari Tabel Ampasitas Kabel di PUIL—ini "kitab suci" instalasi listrik.</li>
+                    <li>Jangan pernah mengganti material tanpa perhitungan teknis yang matang.</li>
+                    <li>Periksa kondisi isolasi kabel sebelum digunakan—retak, mengeras, atau berubah warna = ganti!</li>
+                    <li>Kenali simbol-simbol material pada datasheet komponen elektronika.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Material ketenagalistrikan terbagi menjadi tiga kategori utama berdasarkan konduktivitasnya: <strong>konduktor</strong> (tembaga, aluminium, perak) untuk menghantarkan arus; <strong>isolator</strong> (PVC, karet, keramik, kaca) untuk melindungi dari bahaya listrik; dan <strong>semikonduktor</strong> (silikon, germanium, GaAs) untuk mengendalikan aliran elektron dalam elektronika modern.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Pemilihan bahan yang tepat harus mempertimbangkan fungsi teknis, keselamatan, kondisi lingkungan kerja, kemampuan hantar arus, biaya, dan dampak lingkungan. Kesalahan pemilihan material—seperti menggunakan kabel aluminium tanpa perhitungan pada instalasi rumah—dapat berakibat fatal: kebakaran, kerusakan peralatan, bahkan korban jiwa. Oleh karena itu, pemahaman mendalam tentang sifat fisis material dan standar PUIL adalah kompetensi wajib bagi setiap teknisi profesional.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>PUIL 2011 / PUIL 2024. <em>Persyaratan Umum Instalasi Listrik.</em> Jakarta: Departemen ESDM.</li>
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+                <li>Sumanto. (2019). <em>Instalasi Listrik Arus Kuat Jilid 1.</em> Yogyakarta: Andi Offset.</li>
+                <li>Boylestad, R. L., & Nashelsky, L. (2013). <em>Electronic Devices and Circuit Theory (11th ed.).</em> Pearson.</li>
+                <li>PLN. (2023). <em>Standar Material Kabel dan Komponen Listrik.</em> Jakarta: PT PLN (Persero).</li>
+                <li>BSN. (2016). <em>SNI 04-5023-2005: Konduktor Kabel dan Penghantar.</em> Jakarta: Badan Standardisasi Nasional.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="12.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Daya & Energi
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="14.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Komponen Elektronika <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 13</h2>
+                <p class="text-gray-400">Bahan dan Komponen Ketenagalistrikan</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Bahan yang memiliki kemampuan sangat baik dalam menghantarkan arus listrik disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. Isolator</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Konduktor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. Semikonduktor</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. Superkonduktor</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Konduktor listrik yang PALING BAIK (paling rendah hambatan jenisnya) adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. Tembaga</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. Aluminium</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. Perak</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Emas</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Bahan yang umum digunakan sebagai selubung kabel instalasi rumah (NYM) adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. Karet alam</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. PVC (Polyvinyl Chloride)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. Kaca</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. Keramik</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Material yang paling banyak digunakan sebagai bahan dasar chip komputer dan panel surya adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. Germanium</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Silikon</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. Gallium Arsenide</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. Tembaga</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Sifat khas semikonduktor yang BERBEDA dari konduktor adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. Hambatan naik saat suhu naik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. Hambatan turun saat suhu naik (koefisien suhu negatif)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. Selalu menghantarkan arus dengan baik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. Tidak dapat didoping</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Alasan utama aluminium digunakan untuk SUTT (Saluran Udara Tegangan Tinggi) adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. Lebih konduktif dari tembaga</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. Ringan, murah, dan cukup konduktif untuk jarak jauh</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. Lebih tahan korosi dari tembaga</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. Lebih mudah disolder</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Kekuatan dielektrik udara kering adalah sekitar...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. 0,3 kV/mm</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. 3 kV/mm</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. 30 kV/mm</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. 300 kV/mm</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Proses penambahan kotoran (impurity) pada semikonduktor untuk mengubah konduktivitasnya disebut...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. Annealing</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. Doping</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. Sintering</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. Etching</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Isolator yang umum digunakan untuk tiang listrik tegangan tinggi karena tahan cuaca dan memiliki kekuatan dielektrik tinggi adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. PVC</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Karet</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Porselen/Keramik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Kertas</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Berdasarkan studi kasus kebakaran akibat salah pilih kabel, faktor utama yang diabaikan kontraktor adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Warna kabel</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Hambatan jenis dan ampasitas kabel sesuai standar PUIL</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Merek kabel</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Panjang kabel</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Jelaskan perbedaan mendasar antara konduktor, isolator, dan semikonduktor ditinjau dari struktur atom, hambatan jenis, dan kemampuan menghantarkan arus! Berikan masing-masing 3 contoh material beserta aplikasinya!</p>
+                            <textarea name="essay1" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Mengapa tembaga menjadi standar material konduktor untuk kabel instalasi listrik, meskipun perak memiliki konduktivitas lebih tinggi? Jelaskan minimal 4 alasan teknis dan ekonomis!</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Jelaskan konsep kekuatan dielektrik pada isolator! Mengapa setiap isolator memiliki batas tegangan maksimum? Berikan contoh 3 jenis isolator beserta kekuatan dielektriknya dan aplikasi masing-masing!</p>
+                            <textarea name="essay3" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Jelaskan mengapa semikonduktor disebut "jantung elektronika modern"! Uraikan konsep doping tipe-P dan tipe-N, serta bagaimana pertemuan keduanya menghasilkan dioda dan transistor! Sebutkan 5 aplikasi semikonduktor dalam kehidupan sehari-hari!</p>
+                            <textarea name="essay4" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Berdasarkan studi kasus "Kebakaran Akibat Salah Pilih Kabel" di atas, analisis kesalahan yang dilakukan kontraktor! Rumuskan 6 faktor yang harus dipertimbangkan dalam pemilihan material kelistrikan, dan jelaskan mengapa masing-masing faktor tersebut krusial!</p>
+                            <textarea name="essay5" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%2013%20-%20Bahan%20dan%20Komponen%20Ketenagalistrikan" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 13
+        const kunciJawaban = {
+            q1: 'b',  // Konduktor
+            q2: 'c',  // Perak (konduktor terbaik, ρ = 1,59 × 10⁻⁸)
+            q3: 'b',  // PVC
+            q4: 'b',  // Silikon
+            q5: 'b',  // Hambatan turun saat suhu naik (koefisien negatif)
+            q6: 'b',  // Ringan, murah, cukup konduktif untuk jarak jauh
+            q7: 'b',  // 3 kV/mm
+            q8: 'b',  // Doping
+            q9: 'c',  // Porselen/Keramik
+            q10: 'b'  // Hambatan jenis dan ampasitas kabel sesuai standar PUIL
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

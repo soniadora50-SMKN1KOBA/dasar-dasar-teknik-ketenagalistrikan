@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 5: Kecakapan Kerja Dasar dan Budaya Kerja Industri - Sonia Dora, S.Pd.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="4.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="6.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 2 • PERTEMUAN 5</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Kecakapan Kerja Dasar <br>
+                <span class="text-gradient-gold">dan Budaya Kerja Industri</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Membangun fondasi sikap profesional, menerapkan budaya kerja 5R, serta memahami tata tertib dan pengelolaan lingkungan kerja bengkel sebagai cerminan kompetensi seorang teknisi masa depan.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-user-tie text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Kompetensi teknis yang tinggi tanpa dibarengi sikap kerja profesional dan budaya kerja yang baik ibarat mobil mewah tanpa pengemudi yang terlatih—tidak akan mencapai tujuan dengan selamat. Di dunia industri ketenagalistrikan, <strong>soft skill</strong> seperti disiplin, tanggung jawab, ketelitian, dan kerja sama tim seringkali menjadi pembeda utama antara teknisi biasa dan teknisi profesional yang diandalkan.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Budaya kerja industri yang dikenal dengan prinsip <strong>5R (Ringkas, Rapi, Resik, Rawat, Rajin)</strong>—atau dalam bahasa Jepang disebut <em>5S (Seiri, Seiton, Seiso, Seiketsu, Shitsuke)</em>—telah terbukti meningkatkan produktivitas, keselamatan kerja, dan kualitas hasil kerja secara signifikan. Pertemuan ini akan membekali siswa dengan kecakapan kerja dasar (<em>basic job skills</em>) dan menanamkan budaya kerja industri yang akan menjadi identitas profesional mereka sepanjang karir.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Budaya Kerja 5R di Bengkel Industri Modern</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video penerapan 5R di bengkel kelistrikan</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Dokumentasi Industri / Kanal Edukasi Vokasi</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Basic Job Skills</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Kecakapan kerja dasar yang mencakup sikap profesional, komunikasi, kerja sama, dan ketelitian—fondasi bagi semua kompetensi teknis.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Budaya Kerja 5R</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Ringkas, Rapi, Resik, Rawat, dan Rajin—sistem manajemen tempat kerja yang berasal dari Jepang untuk meningkatkan efisiensi dan keselamatan.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Tata Tertib Bengkel</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Aturan tertulis yang mengatur perilaku, alur kerja, dan penggunaan fasilitas di bengkel/laboratorium untuk menjamin keselamatan dan ketertiban.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2">Pengelolaan Alat & Bahan</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Prosedur penyimpanan, perawatan, dan inventarisasi alat serta bahan kerja agar selalu siap pakai dan berumur panjang.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-blue-900/20 border border-blue-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-blue-300 mb-4"><i class="fas fa-search mr-2"></i> Studi Kasus 5: Bengkel yang Kacau vs Bengkel yang Teratur</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Dua bengkel sekolah memiliki peralatan yang sama lengkapnya. Bengkel A selalu berantakan—kabel berserakan, alat tidak dikembalikan ke tempat, dan tidak ada jadwal kebersihan. Sering terjadi kehilangan alat, kecelakaan kecil (tersengat listrik ringan), dan hasil praktik siswa tidak maksimal. Bengkel B menerapkan budaya 5R secara ketat: setiap alat memiliki tempatnya, ada jadwal piket, dan siswa dibiasakan membersihkan area kerja sebelum pulang. Hasilnya: zero accident selama satu semester, alat awet, dan kualitas praktik siswa jauh lebih baik."
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-luxury-gold">
+                <h4 class="font-bold text-luxury-gold mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Perbedaan mendasar antara kedua bengkel ini bukan pada kelengkapan alat, melainkan pada <strong>budaya kerja</strong>. Penerapan 5R dan sikap profesional bukan sekadar aturan, melainkan investasi yang menghasilkan keselamatan, efisiensi, dan kualitas. Siswa yang terbiasa dengan budaya ini akan lebih mudah beradaptasi saat masuk ke dunia industri.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">5.1 Sikap Kerja Profesional</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Sikap kerja profesional adalah fondasi dari semua kompetensi teknis. Tanpa sikap yang benar, keterampilan teknis tidak akan menghasilkan karya yang berkualitas. Lima sikap utama yang harus dibangun sejak dini adalah:
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-clock mr-2"></i>Disiplin</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Tepat waktu, mematuhi prosedur, dan konsisten dalam melaksanakan tugas tanpa perlu diawasi.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-handshake mr-2"></i>Tanggung Jawab</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Berani menanggung konsekuensi atas tindakan, menjaga alat, dan menyelesaikan tugas hingga tuntas.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-comments mr-2"></i>Komunikasi</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Menyampaikan informasi dengan jelas, mendengarkan instruksi, dan melaporkan masalah secara profesional.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-users mr-2"></i>Kerja Sama</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Mampu bekerja dalam tim, menghargai pendapat orang lain, dan berkontribusi untuk tujuan bersama.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-search-plus mr-2"></i>Ketelitian</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Cermat dalam membaca gambar, merangkai komponen, dan memeriksa hasil kerja—kritis di bidang listrik yang berisiko tinggi.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-t-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-brain mr-2"></i>Inisiatif</h4>
+                        <p class="text-gray-400 text-xs leading-relaxed">Bertindak proaktif tanpa menunggu perintah, mencari solusi, dan terus belajar dari kesalahan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">5.2 Budaya Kerja Industri: 5R</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Budaya kerja 5R adalah sistem terstruktur yang dikembangkan di Jepang pasca Perang Dunia II oleh Toyota. Konsep ini telah diadopsi oleh industri di seluruh dunia, termasuk Indonesia. Setiap "R" memiliki makna dan implementasi spesifik:
+                </p>
+                <div class="space-y-4 mt-6">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-400 mb-2">1. RINGKAS (Seiri) — Memilah</h4>
+                        <p class="text-gray-300 text-sm">Memisahkan barang yang diperlukan dan tidak diperlukan di area kerja. Singkirkan alat rusak, kabel bekas, atau komponen yang tidak terpakai. <em>Prinsip: "Jika tidak dipakai dalam 30 hari terakhir, pindahkan atau buang."</em></p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-orange-500">
+                        <h4 class="font-bold text-orange-400 mb-2">2. RAPI (Seiton) — Menata</h4>
+                        <p class="text-gray-300 text-sm">Menata barang yang diperlukan agar mudah ditemukan, digunakan, dan dikembalikan. Setiap alat memiliki "rumah" yang tetap, diberi label, dan disimpan dalam posisi yang ergonomis. <em>Prinsip: "30 detik untuk menemukan alat apa pun."</em></p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-400 mb-2">3. RESIK (Seiso) — Membersihkan</h4>
+                        <p class="text-gray-300 text-sm">Membersihkan area kerja, alat, dan peralatan secara rutin. Pembersihan juga merupakan bentuk inspeksi—saat membersihkan, kita sekaligus memeriksa kondisi alat. <em>Prinsip: "Membersihkan adalah memeriksa."</em></p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-400 mb-2">4. RAWAT (Seiketsu) — Membakukan</h4>
+                        <p class="text-gray-300 text-sm">Mempertahankan standar 3R pertama agar tetap konsisten melalui pembuatan SOP, jadwal piket, dan visual management (poster, label warna). <em>Prinsip: "Standarisasi adalah kunci konsistensi."</em></p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-400 mb-2">5. RAJIN (Shitsuke) – Membiasakan</h4>
+                        <p class="text-gray-300 text-sm">Membentuk disiplin diri untuk menjalankan 4R secara konsisten tanpa perlu diperintah. Ini adalah puncak dari budaya 5R—ketika kebiasaan baik menjadi karakter. <em>Prinsip: "Disiplin adalah jembatan antara tujuan dan pencapaian."</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">5.3 Identifikasi Area Kerja dan Tata Tertib Bengkel</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Bengkel ketenagalistrikan harus dibagi menjadi beberapa zona kerja yang jelas untuk menjamin keselamatan dan efisiensi:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">Zona Teori/Diskusi</h4>
+                        <p class="text-gray-300 text-sm">Area untuk briefing, penjelasan materi, dan diskusi. Dilengkapi papan tulis/proyektor dan tempat duduk.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">Zona Praktik Instalasi</h4>
+                        <p class="text-gray-300 text-sm">Area dengan panel praktik, meja kerja, dan sumber listrik yang terkontrol untuk latihan penyambungan dan perakitan.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">Zona Alat Ukur</h4>
+                        <p class="text-gray-300 text-sm">Area khusus untuk penggunaan multimeter, osiloskop, dan alat ukur presisi lainnya. Harus bebas getaran dan debu.</p>
+                    </div>
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                        <h4 class="font-bold text-luxury-gold mb-2">Zona Penyimpanan</h4>
+                        <p class="text-gray-300 text-sm">Gudang/rak untuk menyimpan alat tangan, bahan, dan komponen. Dikunci dan diinventarisasi secara berkala.</p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-white mt-6 mb-3">Tata Tertib Bengkel Ketenagalistrikan:</h4>
+                <ol class="list-decimal list-inside text-gray-300 space-y-2 ml-4 text-sm">
+                    <li>Wajib mengenakan seragam kerja dan APD lengkap sebelum memasuki bengkel.</li>
+                    <li>Dilarang makan, minum, atau bercanda berlebihan di area praktik.</li>
+                    <li>Tidak menyalakan sumber listrik tanpa izin instruktur/guru.</li>
+                    <li>Setiap siswa bertanggung jawab atas alat yang dipinjamkan kepadanya.</li>
+                    <li>Laporkan segera setiap kerusakan alat, kebocoran, atau kondisi tidak aman.</li>
+                    <li>Bersihkan area kerja dan kembalikan alat ke tempatnya sebelum meninggalkan bengkel.</li>
+                    <li>Dilarang meninggalkan bengkel sebelum mendapat izin dari instruktur.</li>
+                </ol>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">5.4 Pengelolaan Alat, Bahan, dan Lingkungan Kerja</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Pengelolaan alat dan bahan yang baik adalah cermin profesionalisme seorang teknisi. Prinsip-prinsip utamanya:
+                </p>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 ml-4">
+                    <li><strong class="text-luxury-gold">Inventarisasi:</strong> Setiap alat dicatat dalam kartu stok, diberi nomor inventaris, dan dicek keberadaannya sebelum dan sesudah praktik.</li>
+                    <li><strong class="text-luxury-gold">Penyimpanan Berdasarkan Frekuensi:</strong> Alat yang sering digunakan diletakkan di tempat mudah dijangkau; yang jarang digunakan disimpan di rak lebih tinggi.</li>
+                    <li><strong class="text-luxury-gold">Perawatan Berkala:</strong> Alat tangan dibersihkan setelah dipakai, diberi pelumas jika perlu, dan dicek kondisinya secara periodik.</li>
+                    <li><strong class="text-luxury-gold">Pengelolaan Bahan:</strong> Kabel, komponen, dan bahan habis pakai disimpan dalam wadah berlabel, terlindung dari kelembaban, dan digunakan sesuai prinsip FIFO (First In, First Out).</li>
+                    <li><strong class="text-luxury-gold">Pengelolaan Limbah:</strong> Sisa kabel, komponen rusak, dan bahan bekas dipisahkan sesuai kategori (limbah B3, limbah logam, limbah umum) dan dibuang sesuai regulasi lingkungan.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Tanyakan pada diri Anda: "Apakah meja belajar saya di rumah sudah menerapkan prinsip 5R?" Jika belum, mulailah dari sana. Kebiasaan kecil yang dibangun di rumah akan terbawa ke bengkel, dan akhirnya ke dunia kerja. Ingat, <strong>teknisi hebat bukan hanya yang jago merakit, tetapi juga yang menjaga lingkungannya tetap prima</strong>.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Terapkan 5R di tas sekolah dan meja belajar Anda sebagai latihan awal.</li>
+                    <li>Buatlah checklist harian untuk memastikan semua alat kembali ke tempatnya setelah praktik.</li>
+                    <li>Luangkan 5 menit terakhir setiap sesi praktik untuk "reset" area kerja Anda.</li>
+                    <li>Jadilah "5R Champion" di kelompok Anda—ingatkan teman dengan cara yang positif.</li>
+                    <li>Dokumentasikan kondisi area kerja Anda sebelum dan sesudah praktik sebagai bukti komitmen.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Kecakapan kerja dasar dan budaya kerja industri adalah fondasi tak terlihat yang menopang seluruh kompetensi teknis seorang teknisi. Sikap profesional—disiplin, tanggung jawab, komunikasi, kerja sama, dan ketelitian—harus dibangun sejak dini melalui pembiasaan di bengkel sekolah.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Budaya 5R (Ringkas, Rapi, Resik, Rawat, Rajin) bukan sekadar slogan, melainkan sistem manajemen tempat kerja yang telah terbukti meningkatkan keselamatan, efisiensi, dan kualitas di industri kelas dunia. Ditambah dengan pemahaman tata tertib bengkel dan pengelolaan alat-bahan yang baik, siswa akan memiliki "mentalitas industri" yang menjadi modal utama untuk sukses di dunia kerja maupun berwirausaha.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>Hirano, H. (1995). <em>5S: A Practical Approach to Improving Productivity and Quality.</em> Portland: Productivity Press.</li>
+                <li>Imai, M. (2012). <em>Gemba Kaizen: A Commonsense Approach to Continuous Improvement.</em> McGraw-Hill Education.</li>
+                <li>Kementerian Perindustrian RI. (2020). <em>Panduan Implementasi Budaya Kerja Industri 5R di SMK.</em> Jakarta.</li>
+                <li>Sumayang, D. R. (2018). <em>Dasar-Dasar Manajemen Bengkel.</em> Yogyakarta: Andi Offset.</li>
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="4.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Profesi & Technopreneurship
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="6.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: K3LH Ketenagalistrikan <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 5</h2>
+                <p class="text-gray-400">Kecakapan Kerja Dasar dan Budaya Kerja Industri</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Budaya kerja 5R yang berasal dari Jepang dikenal juga dengan istilah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. 5W (What, Where, When, Who, Why)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. 5S (Seiri, Seiton, Seiso, Seiketsu, Shitsuke)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. 5K (Keamanan, Kebersihan, Ketertiban, Keindahan, Kekeluargaan)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. 5M (Man, Money, Material, Machine, Method)</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Langkah pertama dalam budaya 5R adalah "Ringkas" (Seiri), yang bermakna...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. Membersihkan area kerja dari debu</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. Memilah barang yang diperlukan dan tidak diperlukan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. Menata alat agar rapi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Membakukan standar kerja</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Prinsip "Setiap alat memiliki rumah yang tetap dan diberi label" merupakan implementasi dari budaya 5R tahap...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. Ringkas</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. Rapi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. Resik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. Rajin</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Dalam konteks ketenagalistrikan, sikap "ketelitian" sangat penting karena...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. Agar pekerjaan selesai lebih cepat</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Kesalahan kecil dapat berakibat fatal (sengatan listrik, kebakaran)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. Agar terlihat profesional di depan atasan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. Untuk menghindari teguran dari guru</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Tahap "Rawat" (Seiketsu) dalam budaya 5R bertujuan untuk...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. Membersihkan lantai bengkel</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. Membuang barang tidak terpakai</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. Mempertahankan dan membakukan standar 3R pertama</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. Menghukum siswa yang melanggar aturan</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Puncak dari budaya 5R adalah tahap "Rajin" (Shitsuke), yang bermakna...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. Bekerja keras tanpa henti</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. Membentuk disiplin diri untuk menjalankan 4R secara konsisten tanpa diperintah</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. Membersihkan bengkel setiap hari</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. Menambah jumlah alat di bengkel</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Salah satu tata tertib bengkel ketenagalistrikan yang paling krusial untuk keselamatan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. Dilarang membawa makanan ke bengkel</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. Tidak menyalakan sumber listrik tanpa izin instruktur</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. Wajib mengenakan seragam sekolah</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. Dilarang berbicara selama praktik</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Prinsip FIFO (First In, First Out) dalam pengelolaan bahan berarti...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. Bahan yang pertama masuk, pertama digunakan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. Bahan yang paling mahal digunakan lebih dulu</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. Bahan yang baru dibeli disimpan di belakang</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. Bahan dibiarkan menumpuk di gudang</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Salah satu contoh penerapan "Ringkas" (Seiri) di bengkel listrik adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. Mengecat ulang dinding bengkel</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Memisahkan kabel bekas yang sudah tidak terpakai dari alat yang masih digunakan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Membersihkan lantai dengan pel</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Membuat jadwal piket kebersihan</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Manfaat utama penerapan budaya 5R di bengkel ketenagalistrikan adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Meningkatkan keselamatan, efisiensi, dan kualitas kerja</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Menghilangkan kebutuhan akan alat keselamatan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Mengurangi jam pelajaran praktik</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Mengganti peran instruktur dengan robot</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Jelaskan secara rinci lima sikap kerja profesional yang harus dimiliki oleh seorang teknisi ketenagalistrikan! Mengapa masing-masing sikap tersebut sangat penting dalam pekerjaan yang berisiko tinggi seperti kelistrikan?</p>
+                            <textarea name="essay1" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Uraikan makna dan implementasi masing-masing tahap budaya kerja 5R (Ringkas, Rapi, Resik, Rawat, Rajin) di bengkel ketenagalistrikan! Berikan contoh konkret untuk setiap tahap!</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Berdasarkan studi kasus "Bengkel A vs Bengkel B" di atas, analisis faktor-faktor apa yang menyebabkan perbedaan hasil kerja antara kedua bengkel tersebut! Bagaimana budaya kerja 5R dapat menjadi solusi?</p>
+                            <textarea name="essay3" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Sebutkan minimal 5 (lima) tata tertib bengkel ketenagalistrikan yang menurut Anda paling krusial untuk keselamatan! Jelaskan alasan mengapa setiap tata tertib tersebut penting!</p>
+                            <textarea name="essay4" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Rancang sebuah rencana sederhana penerapan 5R di meja belajar atau bengkel praktik Anda! Jelaskan langkah konkret yang akan Anda lakukan untuk setiap tahap (Ringkas, Rapi, Resik, Rawat, Rajin) dan bagaimana Anda akan menjaga konsistensinya!</p>
+                            <textarea name="essay5" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%205%20-%20Kecakapan%20Kerja%20dan%20Budaya%205R" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 5
+        const kunciJawaban = {
+            q1: 'b', // 5S (Seiri, Seiton, Seiso, Seiketsu, Shitsuke)
+            q2: 'b', // Memilah barang yang diperlukan dan tidak
+            q3: 'b', // Rapi (Seiton)
+            q4: 'b', // Kesalahan kecil berakibat fatal
+            q5: 'c', // Mempertahankan dan membakukan standar 3R pertama
+            q6: 'b', // Disiplin diri menjalankan 4R tanpa diperintah
+            q7: 'b', // Tidak menyalakan sumber listrik tanpa izin
+            q8: 'a', // Bahan pertama masuk, pertama digunakan
+            q9: 'b', // Memisahkan kabel bekas dari alat terpakai
+            q10: 'a' // Meningkatkan keselamatan, efisiensi, kualitas
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

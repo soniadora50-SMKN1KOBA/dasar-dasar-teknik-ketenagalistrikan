@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 15: Alat Tangan dan Alat Kerja Kelistrikan - Sonia Dora, S.Pd.</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        luxury: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            gold: '#d4af37',
+                            goldlight: '#f3e5ab',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-gradient-gold {
+            background: linear-gradient(to right, #d4af37, #f3e5ab, #d4af37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        .quiz-option:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            border-color: #d4af37;
+        }
+        .quiz-option.selected {
+            background-color: rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+            color: #f3e5ab;
+        }
+        .tool-card {
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-luxury-900 text-gray-200 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-luxury-900/95 backdrop-blur-md border-b border-luxury-gold/20">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-xl font-bold text-luxury-gold tracking-wider hover:text-white transition">
+                <i class="fas fa-book-open mr-2"></i> ELEKTRO<span class="text-white">X</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="index.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-home mr-1"></i> Beranda</a>
+                <a href="14.html" class="hover:text-luxury-gold transition-colors duration-300"><i class="fas fa-arrow-left mr-1"></i> Bab Sebelumnya</a>
+                <a href="16.html" class="px-4 py-2 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-colors duration-300">Bab Selanjutnya <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-luxury-gold/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-amber-900/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <div class="inline-block px-4 py-1 mb-6 border border-luxury-gold/50 rounded-full bg-luxury-gold/10">
+                <span class="text-luxury-gold text-xs font-bold tracking-[0.2em] uppercase">BAB 5 • PERTEMUAN 15</span>
+            </div>
+            <h1 class="font-serif text-3xl lg:text-5xl font-bold leading-tight mb-6 text-white">
+                Alat Tangan dan <br>
+                <span class="text-gradient-gold">Alat Kerja Kelistrikan</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-400 mb-8 font-light leading-relaxed">
+                Mengenal "senjata" utama seorang teknisi—obeng, tang, pemotong, pengupas kabel, tespen, dan alat bantu lainnya—serta memahami cara pemilihan, pemeriksaan, penggunaan, dan penyimpanan yang aman sesuai prosedur K3.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#materi" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20">
+                    Mulai Membaca
+                </a>
+                <a href="#uji-formatif" class="px-8 py-3 border border-gray-600 text-white font-medium rounded-sm hover:border-luxury-gold hover:text-luxury-gold transition-all duration-300">
+                    <i class="fas fa-clipboard-check mr-2"></i> Uji Formatif
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="materi" class="container mx-auto px-6 py-12 max-w-5xl">
+        
+        <!-- Pendahuluan -->
+        <section class="glass-card p-8 rounded-xl mb-12 border-l-4 border-luxury-gold">
+            <h2 class="font-serif text-2xl font-bold text-white mb-4"><i class="fas fa-tools text-luxury-gold mr-3"></i>Pendahuluan</h2>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Setelah menguasai teori dasar listrik dan mengenal komponen elektronika, kini saatnya memasuki dunia <strong>praktik</strong>—di mana tangan Anda akan berbicara lebih banyak daripada rumus. Alat tangan adalah <strong>perpanjangan tubuh</strong> seorang teknisi. Kualitas pekerjaan Anda sangat ditentukan oleh dua hal: <strong>keterampilan menggunakan alat</strong> dan <strong>kondisi alat itu sendiri</strong>.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Bayangkan seorang ahli bedah yang menggunakan pisau tumpul—hasilnya tidak akan pernah prima, bahkan bisa membahayakan pasien. Demikian pula teknisi listrik yang menggunakan obeng yang salah ukuran, tang yang rahangnya aus, atau tespen yang sudah rusak. Kesalahan pemilihan alat tidak hanya menghasilkan pekerjaan yang buruk, tetapi juga <strong>berisiko menyebabkan cedera diri, kerusakan komponen, hingga kecelakaan listrik</strong>. Pertemuan ini akan membekali siswa dengan pengetahuan praktis tentang alat-alat tangan yang wajib dikuasai setiap teknisi kelistrikan—mulai dari identifikasi, pemilihan, pemeriksaan, penggunaan, hingga penyimpanan yang aman.
+            </p>
+        </section>
+
+        <!-- Video Placeholder -->
+        <section class="mb-12">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">🎬 Video Pengantar: Alat Tangan Wajib Teknisi Listrik</h3>
+            <div class="aspect-video bg-luxury-800 rounded-xl flex items-center justify-center border border-luxury-gold/20 relative overflow-hidden group cursor-pointer">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition"></div>
+                <div class="relative z-10 text-center">
+                    <div class="w-16 h-16 bg-luxury-gold rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-play text-luxury-900 text-2xl ml-1"></i>
+                    </div>
+                    <p class="text-white font-medium">Klik untuk memutar video demonstrasi alat tangan kelistrikan</p>
+                    <p class="text-gray-400 text-sm mt-1">Sumber: Kanal Edukasi Teknik / Dokumentasi Bengkel Listrik</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Konsep Kunci -->
+        <section class="mb-12">
+            <h3 class="font-serif text-2xl font-bold text-white mb-6 flex items-center">
+                <span class="w-8 h-8 bg-luxury-gold text-luxury-900 rounded-full flex items-center justify-center text-sm font-bold mr-3">🔑</span>
+                Konsep Kunci
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-hand-paper mr-2"></i>Alat Tangan (Hand Tools)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Alat yang dioperasikan secara manual menggunakan tenaga manusia. Contoh: obeng, tang, palu, gergaji. Memerlukan keterampilan dan teknik yang tepat.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-plug mr-2"></i>Alat Kerja Listrik (Power Tools)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Alat yang digerakkan oleh sumber daya listrik atau baterai. Contoh: bor listrik, gerinda, solder. Lebih cepat namun lebih berbahaya jika tidak hati-hati.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-screwdriver mr-2"></i>Alat Bantu (Auxiliary Tools)</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Alat pendukung yang membantu pekerjaan utama. Contoh: tespen, multimeter, solder, tang crimping, stripper kabel.</p>
+                </div>
+                <div class="bg-luxury-800/50 p-6 rounded-lg border border-luxury-gold/20">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-shield-alt mr-2"></i>Prosedur K3 Alat</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Aturan pemeriksaan, penggunaan, dan penyimpanan alat yang menjamin keselamatan pengguna dan keawetan alat itu sendiri.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studi Kasus -->
+        <section class="mb-12 bg-red-900/20 border border-red-500/30 p-6 rounded-xl">
+            <h3 class="font-serif text-xl font-bold text-red-300 mb-4"><i class="fas fa-exclamation-triangle mr-2"></i> Studi Kasus 15: Obeng yang "Salah"</h3>
+            <p class="text-gray-300 mb-4 italic">
+                "Seorang siswa sedang memasang stop kontak di bengkel praktik. Ia menggunakan obeng minus (flathead) yang ujungnya sudah aus dan tidak pas dengan sekrup Phillips (plus) pada stop kontak. Karena dipaksa, ujung obeng selip dan menusuk tangan kirinya, menyebabkan luka cukup dalam. Lebih parah, kepala sekrup menjadi rusak (cam-out) sehingga stop kontak tidak bisa dipasang dengan benar dan harus diganti. Guru pembimbing menegur: 'Obeng yang salah ukuran bukan hanya merusak sekrup—ia bisa melukai Anda.'"
+            </p>
+            <div class="bg-luxury-900/50 p-4 rounded-lg border-l-4 border-red-500">
+                <h4 class="font-bold text-red-400 mb-2">Pembelajaran:</h4>
+                <p class="text-gray-300 text-sm">
+                    Kasus ini menunjukkan bahwa <strong>alat yang salah = bahaya ganda</strong>—bahaya bagi diri sendiri (cedera) dan bahaya bagi pekerjaan (kerusakan komponen). Pemilihan alat yang tepat bukan soal kenyamanan semata, melainkan <strong>keharusan keselamatan</strong>. Setiap alat dirancang untuk tugas spesifik—menggunakannya di luar fungsi adalah pelanggaran prosedur K3 yang dapat berakibat fatal, terutama saat bekerja di dekat sumber listrik.
+                </p>
+            </div>
+        </section>
+
+        <!-- Materi Inti -->
+        <section class="mb-12 space-y-8">
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2">15.1 Alat Tangan Utama dalam Pekerjaan Kelistrikan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Setiap teknisi listrik wajib memiliki "starter kit" alat tangan yang lengkap. Berikut adalah alat-alat utama yang harus dikuasai penggunaannya:
+                </p>
+
+                <!-- Grid Alat Tangan Utama -->
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    
+                    <!-- Obeng -->
+                    <div class="tool-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-yellow-500">
+                        <div class="flex items-start justify-between mb-3">
+                            <h4 class="font-bold text-yellow-400 text-lg"><i class="fas fa-screwdriver mr-2"></i>Obeng (Screwdriver)</h4>
+                            <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">WAJIB</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3"><strong>Fungsi:</strong> Mengencangkan atau mengendurkan sekrup.</p>
+                        <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                        <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside mb-3">
+                            <li><strong>Obeng Plus (Phillips/PH):</strong> PH0, PH1, PH2, PH3</li>
+                            <li><strong>Obeng Minus (Flat/SL):</strong> SL3, SL5, SL6</li>
+                            <li><strong>Obeng Plus-Plus (Pozidriv/PZ):</strong> untuk sekrup Eropa</li>
+                            <li><strong>Obeng Torx/Hex:</strong> untuk sekrup khusus</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 font-bold mb-1">ATURAN EMAS:</p>
+                        <p class="text-gray-300 text-xs">Selalu pilih ujung obeng yang <strong>pas</strong> dengan kepala sekrup. Ujung longgar = cam-out (sekrup rusak) + cedera tangan.</p>
+                    </div>
+
+                    <!-- Tang -->
+                    <div class="tool-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-blue-500">
+                        <div class="flex items-start justify-between mb-3">
+                            <h4 class="font-bold text-blue-400 text-lg"><i class="fas fa-hand-rock mr-2"></i>Tang (Pliers)</h4>
+                            <span class="text-xs bg-blue-500/20 text-blue-300 px-2 py-1 rounded">WAJIB</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3"><strong>Fungsi:</strong> Menjepit, menarik, membengkokkan, memotong kawat.</p>
+                        <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                        <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside mb-3">
+                            <li><strong>Tang Kombinasi:</strong> multifungsi (jepit + potong)</li>
+                            <li><strong>Tang Lancip (Long Nose):</strong> untuk area sempit</li>
+                            <li><strong>Tang Buaya (Locking):</strong> menjepit kuat tanpa tangan</li>
+                            <li><strong>Tang Crimping:</strong> memasang terminal/konektor</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 font-bold mb-1">ATURAN EMAS:</p>
+                        <p class="text-gray-300 text-xs">Gunakan tang berinsulasi 1000V saat bekerja dekat bagian bertegangan. Jangan gunakan tang sebagai palu!</p>
+                    </div>
+
+                    <!-- Pemotong -->
+                    <div class="tool-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-red-500">
+                        <div class="flex items-start justify-between mb-3">
+                            <h4 class="font-bold text-red-400 text-lg"><i class="fas fa-cut mr-2"></i>Pemotong (Cutter)</h4>
+                            <span class="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded">WAJIB</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3"><strong>Fungsi:</strong> Memotong kabel, kawat, tie wrap, dan material lunak.</p>
+                        <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                        <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside mb-3">
+                            <li><strong>Side Cutter:</strong> potong rata dengan permukaan</li>
+                            <li><strong>End Cutter:</strong> potong rata dari ujung</li>
+                            <li><strong>Bolt Cutter:</strong> untuk baut/besi besar</li>
+                            <li><strong>Utility Cutter:</strong> pisau potong serbaguna</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 font-bold mb-1">ATURAN EMAS:</p>
+                        <p class="text-gray-300 text-xs">Jangan potong kabel bertegangan dengan cutter biasa! Selalu arahkan mata pisau menjauhi tubuh.</p>
+                    </div>
+
+                    <!-- Pengupas Kabel -->
+                    <div class="tool-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-green-500">
+                        <div class="flex items-start justify-between mb-3">
+                            <h4 class="font-bold text-green-400 text-lg"><i class="fas fa-link mr-2"></i>Pengupas Kabel (Wire Stripper)</h4>
+                            <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">WAJIB</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3"><strong>Fungsi:</strong> Mengupas isolasi kabel tanpa merusak konduktor.</p>
+                        <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                        <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside mb-3">
+                            <li><strong>Stripper Manual:</strong> dengan lubang ukuran berbeda</li>
+                            <li><strong>Stripper Otomatis:</strong> sekali tekan, isolasi lepas</li>
+                            <li><strong>Stripper Kabel Koaksial:</strong> untuk kabel antena</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 font-bold mb-1">ATURAN EMAS:</p>
+                        <p class="text-gray-300 text-xs">Pilih lubang stripper sesuai diameter kabel. Lubang terlalu kecil = konduktor tergores/putus. Lubang terlalu besar = isolasi tidak terkelupas.</p>
+                    </div>
+
+                    <!-- Tespen -->
+                    <div class="tool-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-purple-500">
+                        <div class="flex items-start justify-between mb-3">
+                            <h4 class="font-bold text-purple-400 text-lg"><i class="fas fa-bolt mr-2"></i>Tespen (Test Pen)</h4>
+                            <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded">KRITIS</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3"><strong>Fungsi:</strong> Mendeteksi ada/tidaknya tegangan listrik pada kabel atau terminal.</p>
+                        <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                        <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside mb-3">
+                            <li><strong>Tespen Konvensional:</strong> dengan lampu neon</li>
+                            <li><strong>Tespen Digital:</strong> dengan layar LED + buzzer</li>
+                            <li><strong>Tespen Non-Contact:</strong> deteksi tanpa sentuhan</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 font-bold mb-1">ATURAN EMAS:</p>
+                        <p class="text-gray-300 text-xs">Uji tespen pada sumber yang <strong>diketahui bertegangan</strong> sebelum dan sesudah digunakan untuk memastikan alat berfungsi!</p>
+                    </div>
+
+                    <!-- Palu -->
+                    <div class="tool-card bg-luxury-800/50 p-6 rounded-xl border-l-4 border-orange-500">
+                        <div class="flex items-start justify-between mb-3">
+                            <h4 class="font-bold text-orange-400 text-lg"><i class="fas fa-hammer mr-2"></i>Palu (Hammer)</h4>
+                            <span class="text-xs bg-orange-500/20 text-orange-300 px-2 py-1 rounded">PENDUKUNG</span>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-3"><strong>Fungsi:</strong> Memukul paku, menyetem benda, memasang klem kabel.</p>
+                        <p class="text-xs text-gray-400 font-bold mb-1">JENIS:</p>
+                        <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside mb-3">
+                            <li><strong>Palu Kuku (Claw Hammer):</strong> serbaguna, bisa mencabut paku</li>
+                            <li><strong>Palu Ball-Peen:</strong> untuk pekerjaan logam</li>
+                            <li><strong>Palu Karet/Plastik:</strong> untuk benda yang tidak boleh lecet</li>
+                        </ul>
+                        <p class="text-xs text-gray-400 font-bold mb-1">ATURAN EMAS:</p>
+                        <p class="text-gray-300 text-xs">Periksa gagang palu sebelum digunakan—retak atau longgar = bahaya (kepala palu bisa terbang).</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">15.2 Alat Bantu dan Alat Khusus</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Selain alat tangan utama, terdapat berbagai alat bantu yang sering digunakan dalam pekerjaan kelistrikan:
+                </p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Alat</th>
+                                <th class="p-4">Fungsi</th>
+                                <th class="p-4 rounded-tr-lg">Aplikasi Khas</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-fire text-orange-400 mr-2"></i>Solder & Timah</td>
+                                <td class="p-4">Menyambung komponen elektronika dengan timah cair</td>
+                                <td class="p-4">Rangkaian PCB, perbaikan elektronik</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-tape text-yellow-400 mr-2"></i>Isolasi Lakban</td>
+                                <td class="p-4">Melindungi sambungan kabel dari kontak dan kelembaban</td>
+                                <td class="p-4">Pembungkusan sambungan kabel</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-ruler text-blue-400 mr-2"></i>Meteran & Waterpass</td>
+                                <td class="p-4">Mengukur jarak dan memastikan kerataan pemasangan</td>
+                                <td class="p-4">Pemasangan panel, tray kabel</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-wrench text-green-400 mr-2"></i>Kunci Pas/Ring</td>
+                                <td class="p-4">Mengencangkan baut dan mur</td>
+                                <td class="p-4">Pemasangan terminal, busbar</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-drill text-purple-400 mr-2"></i>Bor Listrik</td>
+                                <td class="p-4">Membuat lubang pada dinding, panel, atau kayu</td>
+                                <td class="p-4">Pemasangan kotak sambung, panel</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-compress-arrows-alt text-red-400 mr-2"></i>Tang Crimping</td>
+                                <td class="p-4">Memasang terminal, konektor RJ45, kabel sepatu</td>
+                                <td class="p-4">Pembuatan kabel jaringan, terminal panel</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white"><i class="fas fa-lightbulb text-cyan-400 mr-2"></i>Lampu Kerja (Work Light)</td>
+                                <td class="p-4">Menerangi area kerja yang gelap</td>
+                                <td class="p-4">Panel gelap, ruang bawah tanah, plafon</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">15.3 Pemilihan Alat Sesuai Jenis Pekerjaan</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Tidak semua alat cocok untuk semua pekerjaan. Seorang teknisi profesional harus mampu <strong>memilih alat yang tepat</strong> berdasarkan jenis tugas, ukuran komponen, dan kondisi lingkungan kerja.
+                </p>
+
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-luxury-800 text-luxury-gold">
+                                <th class="p-4 rounded-tl-lg">Jenis Pekerjaan</th>
+                                <th class="p-4">Alat yang Dipilih</th>
+                                <th class="p-4 rounded-tr-lg">Alasan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300 text-sm">
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Memasang sekrup kecil di PCB</td>
+                                <td class="p-4">Obeng plus presisi PH0/PH1</td>
+                                <td class="p-4">Ujung kecil pas dengan sekrup mikro</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Mengupas kabel NYAF 1,5 mm²</td>
+                                <td class="p-4">Wire stripper lubang 1,5 mm</td>
+                                <td class="p-4">Ukuran pas, konduktor tidak tergores</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Menjangkau komponen di area sempit</td>
+                                <td class="p-4">Tang lancip (long nose)</td>
+                                <td class="p-4">Rahang panjang dan runcing</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Memasang terminal kabel 2,5 mm²</td>
+                                <td class="p-4">Tang crimping ukuran sesuai</td>
+                                <td class="p-4">Sambungan kuat, tidak mudah lepas</td>
+                            </tr>
+                            <tr class="border-b border-luxury-800 hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Mengecek tegangan 220V</td>
+                                <td class="p-4">Tespen berinsulasi 1000V</td>
+                                <td class="p-4">Aman untuk tegangan rumah tangga</td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="p-4 font-semibold text-white">Memotong kabel NYY 4×4 mm²</td>
+                                <td class="p-4">Side cutter besar atau bolt cutter</td>
+                                <td class="p-4">Daya potong cukup untuk kabel besar</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 bg-luxury-800/50 p-5 rounded-lg border-l-4 border-luxury-gold">
+                    <h4 class="font-bold text-luxury-gold mb-2"><i class="fas fa-info-circle mr-2"></i>Prinsip Pemilihan Alat:</h4>
+                    <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                        <li><strong>Right Tool for the Right Job:</strong> gunakan alat sesuai fungsi aslinya.</li>
+                        <li><strong>Ukuran Sesuai:</strong> obeng pas dengan kepala sekrup, tang pas dengan diameter kabel.</li>
+                        <li><strong>Material Sesuai:</strong> alat berinsulasi untuk pekerjaan listrik, alat anti-spark untuk area mudah terbakar.</li>
+                        <li><strong>Kondisi Baik:</strong> tidak boleh menggunakan alat rusak, aus, atau retak.</li>
+                        <li><strong>Standar Keamanan:</strong> pilih alat berlabel SNI/IEC, terutama untuk alat kerja listrik.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="font-serif text-2xl font-bold text-white border-b border-luxury-gold/30 pb-2 pt-6">15.4 Pemeriksaan, Penggunaan, dan Penyimpanan Sesuai K3</h3>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Alat tangan yang terawat adalah alat yang aman. Setiap teknisi wajib menerapkan <strong>3 tahap pengelolaan alat</strong>: pemeriksaan sebelum pakai, penggunaan yang benar, dan penyimpanan yang tepat.
+                </p>
+
+                <!-- 3 Tahap -->
+                <div class="space-y-4 mt-6">
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-400 mb-3"><i class="fas fa-search mr-2"></i>TAHAP 1: PEMERIKSAAN SEBELUM DIGUNAKAN (Pre-Use Inspection)</h4>
+                        <p class="text-gray-300 text-sm mb-3">Lakukan pemeriksaan visual dan fungsional sebelum setiap penggunaan:</p>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <div class="bg-luxury-900/50 p-3 rounded">
+                                <p class="text-xs text-gray-400 font-bold mb-1">OBENG:</p>
+                                <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside">
+                                    <li>Ujung tidak aus atau tumpul</li>
+                                    <li>Gagang tidak retak/longgar</li>
+                                    <li>Batang tidak bengkok</li>
+                                </ul>
+                            </div>
+                            <div class="bg-luxury-900/50 p-3 rounded">
+                                <p class="text-xs text-gray-400 font-bold mb-1">TANG:</p>
+                                <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside">
+                                    <li>Rahang tidak aus/tumpul</li>
+                                    <li>Pegas kembali berfungsi</li>
+                                    <li>Insulasi utuh (jika berinsulasi)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-luxury-900/50 p-3 rounded">
+                                <p class="text-xs text-gray-400 font-bold mb-1">PALU:</p>
+                                <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside">
+                                    <li>Gagang tidak retak</li>
+                                    <li>Kepala terpasang kuat</li>
+                                    <li>Muka palu tidak pecah</li>
+                                </ul>
+                            </div>
+                            <div class="bg-luxury-900/50 p-3 rounded">
+                                <p class="text-xs text-gray-400 font-bold mb-1">TESPEN:</p>
+                                <ul class="text-gray-300 text-xs space-y-1 list-disc list-inside">
+                                    <li>Body tidak retak</li>
+                                    <li>Lampu neon/LED berfungsi</li>
+                                    <li>Uji pada sumber known-live</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-yellow-400 mb-3"><i class="fas fa-hand-paper mr-2"></i>TAHAP 2: PENGGUNAAN YANG BENAR</h4>
+                        <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                            <li><strong>Pegang dengan benar:</strong> grip yang nyaman, tidak terlalu kuat (cegah kelelahan).</li>
+                            <li><strong>Arahkan dengan hati-hati:</strong> jika alat slip, ia harus meluncur ke arah yang tidak berbahaya.</li>
+                            <li><strong>Jangan memaksa:</strong> jika alat tidak berfungsi normal, berhenti—mungkin salah alat atau salah teknik.</li>
+                            <li><strong>Gunakan APD pendukung:</strong> kacamata safety saat memotong/memukul, sarung tangan saat perlu.</li>
+                            <li><strong>Fokus penuh:</strong> jangan menggunakan alat sambil mengobrol atau terganggu.</li>
+                            <li><strong>Matikan sumber listrik:</strong> saat bekerja dekat komponen bertegangan, gunakan alat berinsulasi.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-luxury-800/50 p-5 rounded-lg border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-400 mb-3"><i class="fas fa-box mr-2"></i>TAHAP 3: PENYIMPANAN YANG TEPAT</h4>
+                        <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                            <li><strong>Bersihkan setelah pakai:</strong> lap dari minyak, debu, atau sisa material.</li>
+                            <li><strong>Kembalikan ke tempatnya:</strong> gunakan tool box, tool rack, atau foam insert.</li>
+                            <li><strong>Simpan di tempat kering:</strong> jauh dari kelembaban yang menyebabkan karat.</li>
+                            <li><strong>Pisahkan alat tajam:</strong> cutter, gergaji—gunakan pelindung mata pisau.</li>
+                            <li><strong>Alat berinsulasi:</strong> simpan terpisah dari alat tajam yang dapat merobek insulasi.</li>
+                            <li><strong>Alat listrik:</strong> cabut kabel, gulung dengan rapi, simpan di tempat aman.</li>
+                            <li><strong>Lakukan inventarisasi berkala:</strong> cek kelengkapan dan kondisi setiap minggu.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-red-900/20 border border-red-500/30 p-5 rounded-lg">
+                    <h4 class="font-bold text-red-400 mb-2"><i class="fas fa-ban mr-2"></i>Larangan Keras dalam Penggunaan Alat Tangan:</h4>
+                    <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                        <li>❌ Menggunakan alat rusak atau cacat.</li>
+                        <li>❌ Menggunakan obeng sebagai pahat atau pengungkit.</li>
+                        <li>❌ Menggunakan tang sebagai palu.</li>
+                        <li>❌ Memotong kabel bertegangan dengan cutter non-insulated.</li>
+                        <li>❌ Meninggalkan alat tajam menghadap ke atas di meja kerja.</li>
+                        <li>❌ Menyimpan alat basah atau berminyak di tool box tertutup.</li>
+                        <li>❌ Meminjamkan alat berinsulasi kepada orang yang tidak paham K3.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Refleksi & Tips -->
+        <section class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="glass-card p-6 rounded-xl">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-mirror mr-2"></i> Refleksi untuk Siswa</h4>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Alat tangan Anda adalah cermin profesionalisme Anda. Bengkel yang rapi dengan alat-alat tertata menunjukkan teknisi yang disiplin. Tool box yang berantakan dengan alat rusak di dalamnya menunjukkan ketidakpedulian yang bisa berakibat fatal. <strong>Mulailah merawat alat Anda seperti Anda merawat diri sendiri</strong>—karena pada akhirnya, alat yang baik akan menghasilkan pekerjaan yang baik, dan pekerjaan yang baik akan membangun reputasi Anda sebagai teknisi profesional.
+                </p>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-luxury-gold">
+                <h4 class="font-serif text-lg font-bold text-luxury-gold mb-3"><i class="fas fa-lightbulb mr-2"></i> Tips Praktis</h4>
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Investasikan pada <strong>starter kit berkualitas</strong>—lebih baik mahal sedikit tapi awet.</li>
+                    <li>Buat <strong>checklist pemeriksaan alat</strong> pribadi dan gunakan setiap sebelum praktik.</li>
+                    <li>Biasakan <strong>"clean as you go"</strong>—bersihkan alat segera setelah selesai digunakan.</li>
+                    <li>Labeli tool box Anda dengan nama—mencegah kehilangan dan tertukar.</li>
+                    <li>Pelajari <strong>teknik grip</strong> yang benar untuk setiap alat—mencegah cedera otot.</li>
+                    <li>Simpan <strong>datasheet/manual</strong> alat listrik untuk referensi perawatan.</li>
+                    <li>Jangan malu <strong>meminta penggantian</strong> jika alat rusak—keselamatan lebih penting.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Kesimpulan -->
+        <section class="bg-luxury-800/50 p-8 rounded-xl mb-16 border border-luxury-gold/20">
+            <h3 class="font-serif text-2xl font-bold text-white mb-4">Kesimpulan</h3>
+            <p class="text-gray-300 leading-relaxed mb-4">
+                Alat tangan dan alat kerja kelistrikan adalah perpanjangan tubuh teknisi. Penguasaan terhadap jenis, fungsi, dan cara penggunaan alat—mulai dari obeng, tang, pemotong, pengupas kabel, tespen, hingga alat bantu seperti solder dan tang crimping—merupakan kompetensi praktis yang wajib dikuasai setiap calon teknisi.
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+                Pemilihan alat yang tepat sesuai jenis pekerjaan, pemeriksaan kondisi sebelum digunakan, serta penyimpanan yang benar sesuai prosedur K3 adalah tiga pilar pengelolaan alat yang menjamin keselamatan pekerja dan keawetan alat. Kesalahan dalam pemilihan atau penggunaan alat tidak hanya merusak pekerjaan, tetapi juga berpotensi menyebabkan cedera serius dan kecelakaan listrik. Oleh karena itu, prinsip <strong>"Right Tool for the Right Job"</strong> dan <strong>"Inspect Before Use"</strong> harus menjadi kebiasaan yang mendarah daging sejak siswa berada di bangku Fase E.
+            </p>
+        </section>
+
+        <!-- Daftar Pustaka -->
+        <section class="mb-16">
+            <h3 class="font-serif text-xl font-bold text-white mb-4">📚 Daftar Pustaka</h3>
+            <ul class="text-gray-400 text-sm space-y-2 list-disc list-inside">
+                <li>Sumanto. (2019). <em>Instalasi Listrik Arus Kuat Jilid 1.</em> Yogyakarta: Andi Offset.</li>
+                <li>Zuhal. (2020). <em>Dasar Teknik Ketenagalistrikan.</em> Bandung: Refika Aditama.</li>
+                <li>PLN. (2023). <em>Buku Saku Keselamatan Ketenagalistrikan.</em> Jakarta: PT PLN (Persero).</li>
+                <li>Kementerian Ketenagakerjaan RI. (2020). <em>Permenaker No. 8 Tahun 2020 tentang K3 Pesawat Listrik dan Elektronik.</em> Jakarta.</li>
+                <li>PUIL 2011. <em>Persyaratan Umum Instalasi Listrik.</em> Jakarta: SNI.</li>
+                <li>Austin, K. (2018). <em>Electrical Wiring Residential (19th ed.).</em> Cengage Learning.</li>
+            </ul>
+        </section>
+
+        <!-- Navigasi Bawah -->
+        <div class="flex justify-between items-center border-t border-luxury-gold/20 pt-8 mb-20">
+            <a href="14.html" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-left mr-2"></i> Bab Sebelumnya: Komponen Elektronika
+            </a>
+            <a href="#top" class="flex items-center text-gray-400 hover:text-luxury-gold transition">
+                <i class="fas fa-arrow-up mr-2"></i> Ke Atas
+            </a>
+            <a href="16.html" class="flex items-center bg-luxury-gold text-luxury-900 font-bold px-6 py-3 rounded-sm hover:bg-white transition">
+                Bab Selanjutnya: Penyambungan Kabel <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- UJI FORMATIF TERINTEGRASI -->
+        <!-- ========================================== -->
+        <section id="uji-formatif" class="bg-luxury-800 rounded-2xl p-8 lg:p-12 border border-luxury-gold/30 shadow-2xl">
+            <div class="text-center mb-10">
+                <span class="inline-block px-4 py-1 mb-4 border border-luxury-gold/50 rounded-full bg-luxury-gold/10 text-luxury-gold text-xs font-bold tracking-widest uppercase">Evaluasi Pembelajaran</span>
+                <h2 class="font-serif text-3xl font-bold text-white mb-2">📋 Uji Formatif 15</h2>
+                <p class="text-gray-400">Alat Tangan dan Alat Kerja Kelistrikan</p>
+                <div class="w-24 h-1 bg-luxury-gold mx-auto mt-4"></div>
+            </div>
+
+            <form id="quizForm" class="space-y-8" onsubmit="event.preventDefault(); hitungNilai();">
+                
+                <!-- Data Siswa -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-4 border-b border-gray-700 pb-2">📋 Data Siswa</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap <span class="text-red-500">*</span></label>
+                            <input type="text" name="nama" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">NIS (Nomor Induk Siswa) <span class="text-red-500">*</span></label>
+                            <input type="text" name="nis" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Tanggal <span class="text-red-500">*</span></label>
+                            <input type="date" name="tanggal" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-1">Kelas <span class="text-red-500">*</span></label>
+                            <select name="kelas" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition">
+                                <option value="">Pilih Kelas</option>
+                                <option value="X TPL 1">X TPL 1</option>
+                                <option value="X TPL 2">X TPL 2</option>
+                                <option value="X TITL 1">X TITL 1</option>
+                                <option value="X TITL 2">X TITL 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian A: Pilihan Ganda -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">✍️ Bagian A: Pilihan Ganda (10 Soal, Skor 10/Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon lengkapi semua 10 soal pilihan ganda terlebih dahulu!</p>
+
+                    <div class="space-y-6" id="pg-questions">
+                        <!-- Soal 1 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">1. Alat tangan yang berfungsi untuk mengencangkan atau mengendurkan sekrup adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="a" class="mr-3 accent-luxury-gold"> a. Tang</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="b" class="mr-3 accent-luxury-gold"> b. Obeng</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="c" class="mr-3 accent-luxury-gold"> c. Palu</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q1" value="d" class="mr-3 accent-luxury-gold"> d. Gergaji</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 2 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">2. Obeng dengan ujung berbentuk silang disebut obeng...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="a" class="mr-3 accent-luxury-gold"> a. Minus (Flat/SL)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="b" class="mr-3 accent-luxury-gold"> b. Plus (Phillips/PH)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="c" class="mr-3 accent-luxury-gold"> c. Torx</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q2" value="d" class="mr-3 accent-luxury-gold"> d. Hex</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 3 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">3. Alat yang digunakan untuk mengupas isolasi kabel tanpa merusak konduktor adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="a" class="mr-3 accent-luxury-gold"> a. Side cutter</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="b" class="mr-3 accent-luxury-gold"> b. Tang lancip</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="c" class="mr-3 accent-luxury-gold"> c. Wire stripper</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q3" value="d" class="mr-3 accent-luxury-gold"> d. Obeng</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 4 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">4. Alat yang berfungsi mendeteksi ada/tidaknya tegangan listrik pada kabel adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="a" class="mr-3 accent-luxury-gold"> a. Multimeter</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="b" class="mr-3 accent-luxury-gold"> b. Tespen</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="c" class="mr-3 accent-luxury-gold"> c. Tang crimping</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q4" value="d" class="mr-3 accent-luxury-gold"> d. Solder</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 5 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">5. Tang yang paling cocok untuk menjangkau komponen di area sempit adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="a" class="mr-3 accent-luxury-gold"> a. Tang kombinasi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="b" class="mr-3 accent-luxury-gold"> b. Tang buaya</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="c" class="mr-3 accent-luxury-gold"> c. Tang lancip (long nose)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q5" value="d" class="mr-3 accent-luxury-gold"> d. Tang crimping</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 6 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">6. Alat yang digunakan untuk memasang terminal atau konektor pada ujung kabel adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="a" class="mr-3 accent-luxury-gold"> a. Tang kombinasi</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="b" class="mr-3 accent-luxury-gold"> b. Tang crimping</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="c" class="mr-3 accent-luxury-gold"> c. Side cutter</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q6" value="d" class="mr-3 accent-luxury-gold"> d. Palu</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 7 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">7. Prinsip pemilihan alat yang benar adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="a" class="mr-3 accent-luxury-gold"> a. Menggunakan alat apa saja yang tersedia</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="b" class="mr-3 accent-luxury-gold"> b. Right Tool for the Right Job (alat tepat untuk pekerjaan tepat)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="c" class="mr-3 accent-luxury-gold"> c. Menggunakan alat termahal</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q7" value="d" class="mr-3 accent-luxury-gold"> d. Menggunakan alat bekas saja</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 8 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">8. Hal yang HARUS dilakukan sebelum menggunakan tespen adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="a" class="mr-3 accent-luxury-gold"> a. Langsung digunakan tanpa pemeriksaan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="b" class="mr-3 accent-luxury-gold"> b. Menguji pada sumber yang diketahui bertegangan (known-live)</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="c" class="mr-3 accent-luxury-gold"> c. Mencelupkannya ke air</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q8" value="d" class="mr-3 accent-luxury-gold"> d. Memanaskannya terlebih dahulu</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 9 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">9. Penyimpanan alat tangan yang benar adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="a" class="mr-3 accent-luxury-gold"> a. Dibiarkan berserakan di meja kerja</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="b" class="mr-3 accent-luxury-gold"> b. Disimpan basah di tool box tertutup</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="c" class="mr-3 accent-luxury-gold"> c. Dibersihkan, dikembalikan ke tempatnya, di tempat kering</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q9" value="d" class="mr-3 accent-luxury-gold"> d. Ditumpuk sembarangan di sudut bengkel</label>
+                            </div>
+                        </div>
+
+                        <!-- Soal 10 -->
+                        <div class="quiz-item">
+                            <p class="font-medium text-white mb-3">10. Berdasarkan studi kasus "Obeng yang Salah", kesalahan utama yang dilakukan siswa adalah...</p>
+                            <div class="space-y-2">
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="a" class="mr-3 accent-luxury-gold"> a. Menggunakan obeng dengan ukuran yang tidak pas dengan kepala sekrup</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="b" class="mr-3 accent-luxury-gold"> b. Menggunakan obeng terlalu panjang</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="c" class="mr-3 accent-luxury-gold"> c. Tidak menggunakan sarung tangan</label>
+                                <label class="quiz-option flex items-center p-3 rounded-lg border border-gray-700 cursor-pointer transition"><input type="radio" name="q10" value="d" class="mr-3 accent-luxury-gold"> d. Memasang stop kontak dengan benar</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Essay -->
+                <div class="glass-card p-6 rounded-xl">
+                    <h3 class="font-serif text-lg font-bold text-luxury-gold mb-6 border-b border-gray-700 pb-2">📝 Bagian B: Essay (5 Soal)</h3>
+                    <p class="text-red-400 text-sm mb-6"><i class="fas fa-exclamation-triangle mr-1"></i> Mohon isi semua 5 soal essay dengan jawaban yang jelas dan terstruktur!</p>
+
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium text-white mb-2">1. Sebutkan dan jelaskan minimal 6 (enam) alat tangan utama yang wajib dimiliki seorang teknisi kelistrikan! Jelaskan fungsi masing-masing alat dan berikan contoh aplikasinya dalam pekerjaan kelistrikan!</p>
+                            <textarea name="essay1" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">2. Jelaskan perbedaan antara alat tangan (hand tools) dan alat kerja listrik (power tools)! Berikan masing-masing 3 contoh! Mengapa alat kerja listrik memerlukan pelatihan khusus sebelum digunakan?</p>
+                            <textarea name="essay2" rows="3" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">3. Jelaskan prinsip "Right Tool for the Right Job" dalam pemilihan alat tangan! Berikan 4 contoh konkret pemilihan alat yang tepat untuk jenis pekerjaan kelistrikan yang berbeda, beserta alasan pemilihannya!</p>
+                            <textarea name="essay3" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">4. Uraikan prosedur pemeriksaan kondisi alat tangan sebelum digunakan (Pre-Use Inspection) untuk 4 jenis alat: obeng, tang, palu, dan tespen! Mengapa pemeriksaan ini sangat penting dari sudut pandang K3?</p>
+                            <textarea name="essay4" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <p class="font-medium text-white mb-2">5. Berdasarkan studi kasus "Obeng yang Salah" di atas, analisis kesalahan yang dilakukan siswa dan dampaknya! Rumuskan prosedur standar penggunaan alat tangan yang seharusnya diterapkan di bengkel sekolah untuk mencegah kejadian serupa!</p>
+                            <textarea name="essay5" rows="4" required class="w-full bg-luxury-900 border border-gray-600 rounded-lg px-4 py-2 text-white focus:border-luxury-gold focus:ring-1 focus:ring-luxury-gold outline-none transition"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Aksi -->
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <div id="hasilNilai" class="hidden mb-6 p-4 bg-luxury-900 rounded-lg border border-luxury-gold">
+                        <p class="text-gray-300 mb-2">Skor Pilihan Ganda Anda:</p>
+                        <p class="text-4xl font-serif font-bold text-luxury-gold" id="skorPG">0</p>
+                        <p class="text-sm text-gray-400 mt-2">*Nilai Essay akan dinilai secara manual oleh guru. Silakan kirimkan jawaban Anda.</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button type="submit" class="px-8 py-3 bg-luxury-gold text-luxury-900 font-bold rounded-sm hover:bg-white transition-all duration-300 shadow-lg shadow-luxury-gold/20 flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> KIRIM JAWABAN & LIHAT HASIL
+                        </button>
+                        <button type="button" onclick="resetForm()" class="px-8 py-3 border border-gray-600 text-gray-300 font-medium rounded-sm hover:border-red-500 hover:text-red-500 transition-all duration-300 flex items-center justify-center">
+                            <i class="fas fa-redo mr-2"></i> MULAI ULANG
+                        </button>
+                    </div>
+                    
+                    <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
+                        <a href="#" onclick="alert('Fitur unduh PDF akan aktif setelah jawaban dikirim.')" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-file-pdf mr-1"></i> Unduh PDF Lengkap</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="mailto:soniadora50@gmail.com?subject=Hasil%20Uji%20Formatif%2015%20-%20Alat%20Tangan%20Kelistrikan" class="text-luxury-gold hover:text-white transition flex items-center"><i class="fas fa-envelope mr-1"></i> Kirim Email ke Guru</a>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-luxury-gold/20 pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 text-sm mb-2">&copy; 2026 Sonia Dora, S.Pd. — SMKN 1 Koto Balingka, Pasaman Barat</p>
+            <p class="text-gray-700 text-xs italic">"Listrik adalah tulang punggung peradaban modern, dan keselamatan adalah fondasi utamanya."</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Uji Formatif -->
+    <script>
+        // Kunci Jawaban Pilihan Ganda Pertemuan 15
+        const kunciJawaban = {
+            q1: 'b',  // Obeng
+            q2: 'b',  // Plus (Phillips/PH)
+            q3: 'c',  // Wire stripper
+            q4: 'b',  // Tespen
+            q5: 'c',  // Tang lancip (long nose)
+            q6: 'b',  // Tang crimping
+            q7: 'b',  // Right Tool for the Right Job
+            q8: 'b',  // Menguji pada sumber known-live
+            q9: 'c',  // Dibersihkan, dikembalikan, di tempat kering
+            q10: 'a'  // Menggunakan obeng ukuran tidak pas
+        };
+
+        // Efek visual saat memilih opsi
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const name = this.querySelector('input').name;
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.parentElement.classList.remove('selected');
+                });
+                this.classList.add('selected');
+                this.querySelector('input').checked = true;
+            });
+        });
+
+        function hitungNilai() {
+            const form = document.getElementById('quizForm');
+            if (!form.checkValidity()) {
+                alert('Mohon lengkapi semua data siswa dan jawaban (Pilihan Ganda & Essay) terlebih dahulu!');
+                form.reportValidity();
+                return;
+            }
+
+            let skor = 0;
+            let terjawab = 0;
+
+            for (let i = 1; i <= 10; i++) {
+                const jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+                if (jawaban) {
+                    terjawab++;
+                    if (jawaban.value === kunciJawaban[`q${i}`]) {
+                        skor += 10;
+                    }
+                }
+            }
+
+            if (terjawab < 10) {
+                alert(`Anda baru menjawab ${terjawab} dari 10 soal Pilihan Ganda. Mohon lengkapi semua soal!`);
+                return;
+            }
+
+            document.getElementById('skorPG').innerText = skor;
+            document.getElementById('hasilNilai').classList.remove('hidden');
+            document.getElementById('hasilNilai').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            alert(`Terima kasih! Jawaban Anda telah tercatat.\nSkor Pilihan Ganda Anda: ${skor}/100\n\nGuru akan meninjau jawaban Essay Anda.`);
+        }
+
+        function resetForm() {
+            if(confirm('Apakah Anda yakin ingin mengosongkan semua jawaban?')) {
+                document.getElementById('quizForm').reset();
+                document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                document.getElementById('hasilNilai').classList.add('hidden');
+                window.scrollTo({ top: document.getElementById('uji-formatif').offsetTop, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>
